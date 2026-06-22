@@ -23,7 +23,10 @@ export default defineConfig({
           { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
         ],
       },
-      devOptions: { enabled: true },
+      // Keep the service worker OFF in dev — it caches the app shell and can
+      // serve a stale/broken state back to every device. The SW still builds
+      // for production (`npm run build`); offline install is verified in Phase 3.
+      devOptions: { enabled: false },
     }),
   ],
 })
