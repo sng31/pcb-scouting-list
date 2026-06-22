@@ -1,0 +1,4 @@
+node_modules/
+dist/
+coastal-companion-backup.json
+.DS_Store
