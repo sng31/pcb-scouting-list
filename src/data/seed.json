@@ -1,0 +1,4144 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "17784d16-1f6f-451f-b44b-cf0adf4d8e29",
+      "name": "Schooners",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Beachfront bar billed as 'the last local beach club'; sunsets, live music, casual Gulf-front eats.",
+      "notes": "",
+      "tags": [
+        "beach-bar",
+        "gulf-view",
+        "live-music",
+        "sunset",
+        "local-favorite"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Schooners+Panama+City+Beach+FL",
+      "cuisine": "American/Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "d21fcc1d-bc37-4882-be5d-4597f9d7deea",
+      "name": "Runaway Island",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Big beachfront spot with multiple sunset decks, fresh seafood, and nightly live music.",
+      "notes": "",
+      "tags": [
+        "beachfront",
+        "sunset",
+        "live-music",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Runaway+Island+Panama+City+Beach+FL",
+      "cuisine": "Seafood/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "2be6af1b-6c0c-4b0c-99e0-cf0a1c4c9252",
+      "name": "Pineapple Willy's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Iconic beachfront restaurant famous for Jack Daniel's BBQ ribs in a sandcastle bucket.",
+      "notes": "",
+      "tags": [
+        "beachfront",
+        "ribs",
+        "family",
+        "cocktails"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pineapple+Willy%27s+Panama+City+Beach+FL",
+      "cuisine": "BBQ/Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "0db356c8-2e35-4dc0-b42c-fc30622be14b",
+      "name": "Dusty's Oyster Bar",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Local-favorite oyster bar with grouper po-boys and watch-the-shuckers energy.",
+      "notes": "",
+      "tags": [
+        "oysters",
+        "dive",
+        "local-favorite",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dusty%27s+Oyster+Bar+Panama+City+Beach+FL",
+      "cuisine": "Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "bd7fd41f-afd2-4b8c-83e5-3fd5507ddfb4",
+      "name": "The Back Porch",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Casual Front Beach Road spot for grilled or fried fresh fish and smoked tuna dip.",
+      "notes": "",
+      "tags": [
+        "fresh-fish",
+        "casual",
+        "gulf-view"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Back+Porch+Panama+City+Beach+FL",
+      "cuisine": "Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "9f4eb1a4-4d92-401a-bfa5-472492bf441b",
+      "name": "Harpoon Harry's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Beachfront restaurant with floor-to-ceiling Gulf views; famous monster burger and seafood buckets.",
+      "notes": "",
+      "tags": [
+        "beachfront",
+        "gulf-view",
+        "big-burger",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Harpoon+Harry%27s+Panama+City+Beach+FL",
+      "cuisine": "Seafood/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "38127066-cab2-4fff-9ee7-75e0749c0b93",
+      "name": "Sharky's Beachfront Restaurant",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Long-running beachfront restaurant with a pirate-ship playground and great sunsets.",
+      "notes": "",
+      "tags": [
+        "beachfront",
+        "family",
+        "sunset",
+        "playground"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sharky%27s+Beachfront+Restaurant+Panama+City+Beach+FL",
+      "cuisine": "Seafood/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "df6a511a-56d0-4f94-ad38-5a2e06cc2b98",
+      "name": "Capt. Anderson's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Grand Lagoon marina institution serving Gulf seafood since the 1960s.",
+      "notes": "",
+      "tags": [
+        "marina",
+        "classic",
+        "seafood",
+        "special-occasion"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Capt.+Anderson%27s+Panama+City+Beach+FL",
+      "cuisine": "Seafood",
+      "priceTier": 3,
+      "favoriteDishes": []
+    },
+    {
+      "id": "1d605420-d7f2-4ad4-8e92-5eaa45d3e8c9",
+      "name": "Bayou Bill's Crab House",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Casual crab house with a broad Gulf seafood menu.",
+      "notes": "",
+      "tags": [
+        "crab",
+        "casual",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bayou+Bill%27s+Crab+House+Panama+City+Beach+FL",
+      "cuisine": "Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "e946ac4e-af99-455a-ba78-73df41606e20",
+      "name": "Off the Hook",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Laid-back Grand Lagoon spot with water views and fresh seafood.",
+      "notes": "",
+      "tags": [
+        "grand-lagoon",
+        "waterfront",
+        "casual",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Off+the+Hook+Panama+City+Beach+FL",
+      "cuisine": "Seafood",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "02431fdb-f361-4c67-968b-b4191e903f9b",
+      "name": "Finn's Island Style Grub",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Island-style tacos, burritos, and bowls with a loyal local following.",
+      "notes": "",
+      "tags": [
+        "island",
+        "tacos",
+        "bowls",
+        "casual",
+        "local-favorite"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Finn%27s+Island+Style+Grub+Panama+City+Beach+FL",
+      "cuisine": "Hawaiian/Island",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "6e79750a-fcca-465b-a59e-0179bc203df7",
+      "name": "Patches Pub & Grill",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "East-end neighborhood hole-in-the-wall with loaded burgers, wings, and daily specials.",
+      "notes": "",
+      "tags": [
+        "burgers",
+        "wings",
+        "dive",
+        "local-favorite"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Patches+Pub+%26+Grill+Panama+City+Beach+FL",
+      "cuisine": "American/Pub",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "2dc3c186-b51d-44fa-b3cc-795456b2ff44",
+      "name": "Christo's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Local pick for wings and catching the game.",
+      "notes": "",
+      "tags": [
+        "wings",
+        "sports-bar",
+        "casual"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Christo%27s+Panama+City+Beach+FL",
+      "cuisine": "American/Pub",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "b8521241-b5c0-443e-94d9-31b9fbae8c1c",
+      "name": "Salty Sue's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Locally owned west-end spot best known for barbecue.",
+      "notes": "",
+      "tags": [
+        "bbq",
+        "west-end",
+        "casual"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salty+Sue%27s+Panama+City+Beach+FL",
+      "cuisine": "BBQ",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "b4130bca-383d-437f-a783-06d2be83e443",
+      "name": "Bayou on the Beach",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Gulf-side Louisiana cooking serving Cajun-Creole favorites since 1999.",
+      "notes": "",
+      "tags": [
+        "cajun",
+        "gulf-view",
+        "since-1999"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bayou+on+the+Beach+Panama+City+Beach+FL",
+      "cuisine": "Cajun/Creole",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "6be247e0-64f6-4128-820e-3b72c009ca18",
+      "name": "Dat Cajun Place",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Cajun spot for crawfish etouffee and oysters shucked by a national champion.",
+      "notes": "",
+      "tags": [
+        "cajun",
+        "crawfish",
+        "oysters"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dat+Cajun+Place+Panama+City+Beach+FL",
+      "cuisine": "Cajun",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "36f6da8f-deaa-478c-a2ef-3f5b03cf706a",
+      "name": "Big Easy",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "New Orleans-inspired restaurant on the east end with authentic Creole dishes.",
+      "notes": "",
+      "tags": [
+        "new-orleans",
+        "cajun",
+        "creole"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Big+Easy+Panama+City+Beach+FL",
+      "cuisine": "Cajun/Creole",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "ee78d791-2e63-4f92-a8b7-74d3df82cfa3",
+      "name": "Liza's Kitchen",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Funky from-scratch cafe across from the beach; gourmet sandwiches, breakfast, weekend brunch.",
+      "notes": "",
+      "tags": [
+        "breakfast",
+        "brunch",
+        "homemade",
+        "sandwiches",
+        "coffee"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Liza%27s+Kitchen+Panama+City+Beach+FL",
+      "cuisine": "Cafe/Sandwiches",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "92c39bd3-7667-4476-92c7-df9bd02d862f",
+      "name": "Finn's Barista Bar & Snack Shack",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Health-minded coffee and smoothie bar with vegan and gluten-free options.",
+      "notes": "",
+      "tags": [
+        "coffee",
+        "smoothies",
+        "healthy",
+        "avocado-toast"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Finn%27s+Barista+Bar+%26+Snack+Shack+Panama+City+Beach+FL",
+      "cuisine": "Cafe/Health",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "09733a79-430b-41e5-aec8-39b113c4b892",
+      "name": "Thomas Donut & Snack Shop",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Iconic west-end donut shop open since 1971; lines form early.",
+      "notes": "",
+      "tags": [
+        "donuts",
+        "breakfast",
+        "iconic",
+        "since-1971"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Thomas+Donut+%26+Snack+Shop+Panama+City+Beach+FL",
+      "cuisine": "Bakery/Donuts",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "b5571668-6c9d-47a1-8c22-c8dd3ba3a12b",
+      "name": "Two Davids",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "New Orleans transplants serving authentic snoballs and Big Easy treats.",
+      "notes": "",
+      "tags": [
+        "snoballs",
+        "new-orleans",
+        "dessert"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Two+Davids+Panama+City+Beach+FL",
+      "cuisine": "Dessert",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "33e5be81-57b3-46e1-86b5-e657910c0e14",
+      "name": "Sunnyside Grill",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Family-run spot for traditional eggs, omelets, and pancakes.",
+      "notes": "",
+      "tags": [
+        "breakfast",
+        "diner",
+        "classic"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sunnyside+Grill+Panama+City+Beach+FL",
+      "cuisine": "Breakfast/Diner",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "2b3f48f9-d805-47a1-b76e-3f8d2cd06e8a",
+      "name": "Taylor's Breakfast & Lunch",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Locally owned Thomas Drive brunch spot with creative pancakes and skillet hashes.",
+      "notes": "",
+      "tags": [
+        "breakfast",
+        "pancakes",
+        "local-favorite"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taylor%27s+Breakfast+%26+Lunch+Panama+City+Beach+FL",
+      "cuisine": "Breakfast/Brunch",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "40122989-6901-4aab-a8bf-58b56f3d4523",
+      "name": "Andy's Flour Power Cafe & Bakery",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Local-favorite cafe and bakery with eggs-benedict spins and specialty coffee.",
+      "notes": "",
+      "tags": [
+        "brunch",
+        "bakery",
+        "local-favorite",
+        "coffee"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Andy%27s+Flour+Power+Cafe+%26+Bakery+Panama+City+Beach+FL",
+      "cuisine": "Breakfast/Bakery",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "8ac6cee5-21c6-4d73-b217-c981875fe577",
+      "name": "The Pancakery",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Gourmet pancake house (a Destin transplant) with creative fluffy stacks.",
+      "notes": "",
+      "tags": [
+        "pancakes",
+        "brunch",
+        "breakfast"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Pancakery+Panama+City+Beach+FL",
+      "cuisine": "Breakfast",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "909a1f43-78ef-4dc2-8324-988172c1db64",
+      "name": "Lotus Cafe and Juice Bar",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Health-focused vegetarian cafe and juice bar set around a tranquil zen garden.",
+      "notes": "",
+      "tags": [
+        "vegetarian",
+        "juice",
+        "healthy",
+        "zen-garden"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lotus+Cafe+and+Juice+Bar+Panama+City+Beach+FL",
+      "cuisine": "Vegetarian/Health",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "901da67a-feaa-4375-8660-bf5a682024f5",
+      "name": "The Pour",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Nonprofit specialty coffee shop near the beach whose profits fund community causes.",
+      "notes": "",
+      "tags": [
+        "coffee",
+        "nonprofit",
+        "lattes"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Pour+Panama+City+Beach+FL",
+      "cuisine": "Coffee",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "3c5e3245-03d1-4f12-98ad-b68a42ff245b",
+      "name": "Sunrise Cafe & Bakery",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Homey cafe blending American breakfast with Eastern European specialties and good coffee.",
+      "notes": "",
+      "tags": [
+        "breakfast",
+        "eclectic",
+        "bakery"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sunrise+Cafe+%26+Bakery+Panama+City+Beach+FL",
+      "cuisine": "Breakfast",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "80789d2c-6edd-4cfc-be14-4419860d3ee1",
+      "name": "C-Level",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Family-owned local hotspot with a bottomless mimosa bar and creative brunch.",
+      "notes": "",
+      "tags": [
+        "brunch",
+        "mimosas",
+        "family-owned"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=C-Level+Panama+City+Beach+FL",
+      "cuisine": "Brunch/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "2da0ff25-5955-4ca2-a0a2-14918d208824",
+      "name": "Fatty Patty's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Casual spot for big burgers (and a 3-pound challenge) plus hand-breaded tenders.",
+      "notes": "",
+      "tags": [
+        "burgers",
+        "fried-chicken",
+        "casual"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fatty+Patty%27s+Panama+City+Beach+FL",
+      "cuisine": "Burgers/American",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "f59d5c59-f98c-402f-8393-db204bc220ec",
+      "name": "Another Broken Egg Cafe",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upscale Southern-inspired brunch cafe near Middle Beach Road.",
+      "notes": "",
+      "tags": [
+        "brunch",
+        "eggs-benedict"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Another+Broken+Egg+Cafe+Panama+City+Beach+FL",
+      "cuisine": "Brunch",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "63cbbb6d-c7ca-4e45-a9b5-10a090086ddf",
+      "name": "McGuire's Irish Pub",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Irish pub with hearty fare, live music, and dueling pianos midweek.",
+      "notes": "",
+      "tags": [
+        "pub",
+        "brunch",
+        "live-music"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=McGuire%27s+Irish+Pub+Panama+City+Beach+FL",
+      "cuisine": "Irish/Pub",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "778f7aa9-9610-4e03-9b4b-47e28feaa73f",
+      "name": "Margaritaville",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Island-themed restaurant at Pier Park with Gulf views and live music.",
+      "notes": "",
+      "tags": [
+        "pier-park",
+        "gulf-view",
+        "family",
+        "island"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Margaritaville+Panama+City+Beach+FL",
+      "cuisine": "American/Island",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "e47b2890-0a27-4b17-af7f-78333de555d6",
+      "name": "Coconut Charlie's",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upscale-casual coastal concept with craft cocktails and daily happy hour.",
+      "notes": "",
+      "tags": [
+        "happy-hour",
+        "cocktails",
+        "coastal"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Coconut+Charlie%27s+Panama+City+Beach+FL",
+      "cuisine": "American/Coastal",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "09611ce3-6d18-4e5d-bc94-59cad5ba8412",
+      "name": "Saltwater Grill",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upscale seafood-and-steak room built around a 25,000-gallon aquarium.",
+      "notes": "",
+      "tags": [
+        "special-occasion",
+        "aquarium",
+        "sushi",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Saltwater+Grill+Panama+City+Beach+FL",
+      "cuisine": "Seafood/Steak/Sushi",
+      "priceTier": 3,
+      "favoriteDishes": []
+    },
+    {
+      "id": "369fd785-fd81-4a73-bd7b-814e98959e6d",
+      "name": "Firefly",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Award-winning 'casual fine dining' for seafood, broiler steaks, wild game, and sushi.",
+      "notes": "",
+      "tags": [
+        "special-occasion",
+        "romantic",
+        "sushi",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Firefly+Panama+City+Beach+FL",
+      "cuisine": "Seafood/Steak/Sushi",
+      "priceTier": 3,
+      "favoriteDishes": []
+    },
+    {
+      "id": "176e25d2-98c2-44f0-88d3-511d7fcfc2ef",
+      "name": "The Grand Marlin",
+      "category": "restaurant",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upscale Grand Lagoon seafood house with a shuck-to-order oyster bar and daily menus.",
+      "notes": "",
+      "tags": [
+        "special-occasion",
+        "grand-lagoon",
+        "oyster-bar",
+        "waterfront"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Grand+Marlin+Panama+City+Beach+FL",
+      "cuisine": "Seafood/Oysters",
+      "priceTier": 3,
+      "favoriteDishes": []
+    },
+    {
+      "id": "8d59c344-c3ed-4b10-acdc-9e4d69167f41",
+      "name": "Uncle Ernie's Bayfront Grill",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "St. Andrews bayfront favorite with a rooftop martini bar voted a top Bay County sunset spot.",
+      "notes": "",
+      "tags": [
+        "st-andrews",
+        "bay-view",
+        "sunset",
+        "rooftop-bar",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Uncle+Ernie%27s+Bayfront+Grill+Panama+City+FL",
+      "cuisine": "Seafood/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "825b13b5-4029-433d-bbe8-04e4a73f0d51",
+      "name": "Hunt's Oyster Bar",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Quintessential St. Andrews oyster bar near the marina, known for salty Gulf oysters.",
+      "notes": "",
+      "tags": [
+        "st-andrews",
+        "oysters",
+        "local-institution",
+        "seafood"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hunt%27s+Oyster+Bar+Panama+City+FL",
+      "cuisine": "Seafood/Oysters",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "872d09c0-1d83-42f6-a187-ffab807e10e7",
+      "name": "Bayou Joe's Marina & Grill",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Over-the-water restaurant on Massalina Bayou; arrive by car or boat for coastal classics.",
+      "notes": "",
+      "tags": [
+        "massalina-bayou",
+        "over-water",
+        "casual"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bayou+Joe%27s+Marina+%26+Grill+Panama+City+FL",
+      "cuisine": "American/Coastal",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "0906f446-b9be-456d-ad2d-61dbefa09a3e",
+      "name": "Little Village",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "St. Andrews deck spot for shareable plates, fish tacos, and live music.",
+      "notes": "",
+      "tags": [
+        "st-andrews",
+        "deck",
+        "live-music",
+        "fish-tacos"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Little+Village+Panama+City+FL",
+      "cuisine": "Tapas/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "b986cd2e-588d-4361-b3df-cc9d39abd63e",
+      "name": "Los Antojitos",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Locally beloved St. Andrews Mexican restaurant known for fish tacos and steaks.",
+      "notes": "",
+      "tags": [
+        "mexican",
+        "fish-tacos",
+        "st-andrews"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Los+Antojitos+Panama+City+FL",
+      "cuisine": "Mexican",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "23acbbb4-730d-4a09-9bc0-beab9c489030",
+      "name": "Slice House",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Downtown pizza joint with house-made dough and big, loaded slices.",
+      "notes": "",
+      "tags": [
+        "pizza",
+        "downtown"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Slice+House+Panama+City+FL",
+      "cuisine": "Pizza",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "fca4368f-374b-4f60-a8a2-d2f4f1f9e9f1",
+      "name": "The Grocery Kitchen and Taproom",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "St. Andrews restaurant and taproom across from the waterfront market; mimosas and craft beer.",
+      "notes": "",
+      "tags": [
+        "st-andrews",
+        "brunch",
+        "taproom"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Grocery+Kitchen+and+Taproom+Panama+City+FL",
+      "cuisine": "American/Bar",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "697ba969-7750-40bd-803a-8f91948a3c42",
+      "name": "Amavida Coffee",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Organic, fair-trade coffee roaster with a cozy St. Andrews cafe.",
+      "notes": "",
+      "tags": [
+        "coffee",
+        "st-andrews",
+        "organic"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Amavida+Coffee+Panama+City+FL",
+      "cuisine": "Coffee",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "cf1b0d0c-c556-4b33-8eb5-6fa37b18138e",
+      "name": "House of Bourbon",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Downtown favorite for bourbon, live music, comedy, and line dancing.",
+      "notes": "",
+      "tags": [
+        "downtown",
+        "live-music",
+        "bourbon",
+        "bar"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=House+of+Bourbon+Panama+City+FL",
+      "cuisine": "Bar/American",
+      "priceTier": 2,
+      "favoriteDishes": []
+    },
+    {
+      "id": "e06fdfe9-6f9d-4f4e-b0d3-bcd662b2ae04",
+      "name": "Salty Hobo Burger Co.",
+      "category": "restaurant",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Downtown Panama City burger and craft-beer hangout.",
+      "notes": "",
+      "tags": [
+        "downtown",
+        "burgers",
+        "craft-beer"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salty+Hobo+Burger+Co.+Panama+City+FL",
+      "cuisine": "Burgers",
+      "priceTier": 1,
+      "favoriteDishes": []
+    },
+    {
+      "id": "406f97d8-684b-4786-8c4f-74c1d594d1da",
+      "name": "St. Andrews State Park",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "1,200-acre park with a calm jetty pool, snorkeling, trails, camping, and the Shell Island shuttle.",
+      "notes": "",
+      "tags": [
+        "state-park",
+        "jetty",
+        "snorkeling",
+        "camping",
+        "sunset"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.+Andrews+State+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "ce8d3d2c-c33f-477f-b40d-f3c84fd1b24e",
+      "name": "Shell Island",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Undeveloped 7-mile barrier island reachable only by boat; pristine shelling and snorkeling.",
+      "notes": "",
+      "tags": [
+        "barrier-island",
+        "shelling",
+        "boat-access",
+        "snorkeling",
+        "quiet"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shell+Island+Panama+City+Beach+FL"
+    },
+    {
+      "id": "e677610c-066a-4aa3-b0f7-0c2600e476ab",
+      "name": "Camp Helen State Park",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Quiet west-end park where Lake Powell meets the Gulf; dunes, birding, and a historic lodge.",
+      "notes": "",
+      "tags": [
+        "state-park",
+        "coastal-dune-lake",
+        "quiet",
+        "historic",
+        "kayaking"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Camp+Helen+State+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "5e5bb6c7-7932-43cc-a5c9-ea589419ca4e",
+      "name": "Rick Seltzer Park",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Smaller east-end public beach access with parking and a calmer vibe.",
+      "notes": "",
+      "tags": [
+        "beach-access",
+        "quiet",
+        "parking"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rick+Seltzer+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "9b0065f2-e134-4e3d-ab4e-805a3ba71e3b",
+      "name": "Russell-Fields Pier (City Pier)",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "1,500-ft city pier across from Pier Park; fishing, strolls, and sunset photos.",
+      "notes": "",
+      "tags": [
+        "pier",
+        "fishing",
+        "sunset",
+        "pier-park"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Russell-Fields+Pier+%28City+Pier%29+Panama+City+Beach+FL"
+    },
+    {
+      "id": "3558f304-15f1-4562-b43b-55e70f8a9c9d",
+      "name": "M.B. Miller County Pier",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "County fishing pier on the east end with long Gulf views.",
+      "notes": "",
+      "tags": [
+        "pier",
+        "fishing",
+        "gulf-view"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=M.B.+Miller+County+Pier+Panama+City+Beach+FL"
+    },
+    {
+      "id": "71804ef5-b261-4181-92fd-6a27d63809ad",
+      "name": "Dog Beach",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Pet-friendly stretch of sand near Russell-Fields Pier for dogs and their owners.",
+      "notes": "",
+      "tags": [
+        "dog-friendly",
+        "beach-access"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dog+Beach+Panama+City+Beach+FL"
+    },
+    {
+      "id": "a244c613-e613-4ce8-9fa6-b53860cefcde",
+      "name": "Carillon Beach",
+      "category": "beach",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Serene, planned beachfront community on the far west end near Inlet Beach.",
+      "notes": "",
+      "tags": [
+        "quiet",
+        "beach-access",
+        "west-end"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Carillon+Beach+Panama+City+Beach+FL"
+    },
+    {
+      "id": "b48d0fcd-c575-48e0-bb77-ee61a628fc14",
+      "name": "Oaks by the Bay Park",
+      "category": "beach",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "St. Andrews bayside park with the historic 'Sentry Oak,' picnic spots, and sunset views.",
+      "notes": "",
+      "tags": [
+        "bayside",
+        "sunset",
+        "picnic",
+        "historic-tree"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Oaks+by+the+Bay+Park+Panama+City+FL"
+    },
+    {
+      "id": "77e3be40-b7ed-4109-a3fe-9b8cb933b6a8",
+      "name": "Calhoun Beach Park",
+      "category": "beach",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Bayside Panama City beach with a Mobi-Mat for easy, rolling beach access.",
+      "notes": "",
+      "tags": [
+        "bayside",
+        "accessible",
+        "mobi-mat"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Calhoun+Beach+Park+Panama+City+FL"
+    },
+    {
+      "id": "cb224636-5d30-440e-b4e9-2426f5284d1b",
+      "name": "Pier Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Open-air center with 120+ shops, restaurants, the SkyWheel, and seasonal events.",
+      "notes": "",
+      "tags": [
+        "shopping",
+        "dining",
+        "entertainment"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pier+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "ef9eb335-b7e3-472b-a738-b9333a5a5115",
+      "name": "SkyWheel at Pier Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "~200-ft observation wheel with climate-controlled gondolas and panoramic Gulf views.",
+      "notes": "",
+      "tags": [
+        "observation-wheel",
+        "views",
+        "sunset",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=SkyWheel+at+Pier+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "effaae0a-cef9-4cb4-89fa-bbb15181bdcf",
+      "name": "Gulf World Marine Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Marine park with dolphin and sea-lion shows, penguins, sharks, and stingray encounters.",
+      "notes": "",
+      "tags": [
+        "marine-park",
+        "dolphins",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gulf+World+Marine+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "6f683e8b-c78e-4ae9-8ac9-44d99a1a72c9",
+      "name": "ZooWorld Zoological Conservatory",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Conservation zoo with 260+ animals; feed giraffes, hold a sloth, walk the aviary.",
+      "notes": "",
+      "tags": [
+        "zoo",
+        "animals",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=ZooWorld+Zoological+Conservatory+Panama+City+Beach+FL"
+    },
+    {
+      "id": "d22421c1-04ce-44f9-bcee-0bc07a833638",
+      "name": "Shipwreck Island Waterpark",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Seasonal waterpark with slides, a lazy river, and a wave pool.",
+      "notes": "",
+      "tags": [
+        "waterpark",
+        "family",
+        "seasonal"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shipwreck+Island+Waterpark+Panama+City+Beach+FL"
+    },
+    {
+      "id": "7d8175e1-584f-4220-afa4-337c3d08f371",
+      "name": "Conservation Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "2,900-acre preserve with 24+ miles of trails and boardwalks through cypress wetlands.",
+      "notes": "",
+      "tags": [
+        "hiking",
+        "biking",
+        "boardwalks",
+        "birding",
+        "nature"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Conservation+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "f75807f6-93a8-4f47-9598-526e9d5e2281",
+      "name": "Topgolf",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "74-bay climate-controlled golf entertainment venue next to Pier Park.",
+      "notes": "",
+      "tags": [
+        "golf",
+        "entertainment",
+        "food"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Topgolf+Panama+City+Beach+FL"
+    },
+    {
+      "id": "4952d68f-9aa5-4401-b53a-3c62101398c2",
+      "name": "Coconut Creek Family Fun Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Two tropical mini-golf courses plus the Gran Maze pirate-ship puzzle.",
+      "notes": "",
+      "tags": [
+        "mini-golf",
+        "maze",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Coconut+Creek+Family+Fun+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "3fbe5238-783f-47c2-9ddd-1febae956442",
+      "name": "Cobra Adventure Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Go-karts, mini-golf, and thrill rides including a Max Flight simulator.",
+      "notes": "",
+      "tags": [
+        "go-karts",
+        "mini-golf",
+        "rides",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cobra+Adventure+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "781c4c38-3c31-48c2-9022-16d4d548282d",
+      "name": "Race City",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Go-kart tracks and mini-golf on the strip.",
+      "notes": "",
+      "tags": [
+        "go-karts",
+        "mini-golf",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Race+City+Panama+City+Beach+FL"
+    },
+    {
+      "id": "809a041f-e2d6-45e7-b431-3d0e6bd957d7",
+      "name": "Swampy Jack's Wongo Adventure",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Heavily themed family amusement park with go-karts, mini-golf, and rides.",
+      "notes": "",
+      "tags": [
+        "amusement",
+        "go-karts",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Swampy+Jack%27s+Wongo+Adventure+Panama+City+Beach+FL"
+    },
+    {
+      "id": "b6841747-8bd3-4cdc-aa02-05e9eed335d8",
+      "name": "Ripley's Believe It or Not!",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Indoor oddities museum with bizarre artifacts and interactive exhibits.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "oddities",
+        "indoor",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ripley%27s+Believe+It+or+Not%21+Panama+City+Beach+FL"
+    },
+    {
+      "id": "f9d237cc-5932-4090-841d-174228bfcb52",
+      "name": "WonderWorks",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upside-down 'amusement park for the mind' with 100+ hands-on exhibits.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "interactive",
+        "indoor",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=WonderWorks+Panama+City+Beach+FL"
+    },
+    {
+      "id": "8d5abbc0-ef9b-42bb-92c8-d03c7c51455c",
+      "name": "Emerald Coast Mirror Maze & Laser Craze",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Glow-in-the-dark mirror maze and a laser-tag arena at Pier Park.",
+      "notes": "",
+      "tags": [
+        "maze",
+        "laser-tag",
+        "pier-park",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Emerald+Coast+Mirror+Maze+%26+Laser+Craze+Panama+City+Beach+FL"
+    },
+    {
+      "id": "ae2660c9-05d4-4814-8af4-7cdccaf23141",
+      "name": "Man in the Sea Museum",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Small museum dedicated to the history of diving and undersea exploration.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "diving-history"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Man+in+the+Sea+Museum+Panama+City+Beach+FL"
+    },
+    {
+      "id": "b5a098a5-ecad-417b-94e7-ea1863f15e94",
+      "name": "Pirates Voyage Dinner & Show",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Dolly Parton dinner theater with pirate stunts, acrobatics, and a four-course meal.",
+      "notes": "",
+      "tags": [
+        "dinner-show",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pirates+Voyage+Dinner+%26+Show+Panama+City+Beach+FL"
+    },
+    {
+      "id": "85f65658-f33e-4bf6-80f3-9129d34d29dd",
+      "name": "Frank Brown Park",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "200+ acre park with sports fields, a dog park, aquatic center, and the Gulf Coast Jam.",
+      "notes": "",
+      "tags": [
+        "park",
+        "sports",
+        "dog-park",
+        "concerts"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Frank+Brown+Park+Panama+City+Beach+FL"
+    },
+    {
+      "id": "88d6252c-51d1-40c6-9c39-9184325fb478",
+      "name": "Aaron Bessant Park Amphitheater",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Pier Park amphitheater hosting the Seabreeze Jazz Festival and summer concerts.",
+      "notes": "",
+      "tags": [
+        "amphitheater",
+        "concerts",
+        "park"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Aaron+Bessant+Park+Amphitheater+Panama+City+Beach+FL"
+    },
+    {
+      "id": "e4c35280-904e-4d41-a171-6610d0829fe1",
+      "name": "Gayle's Trails",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Network of paved walking and biking trails threading through Panama City Beach.",
+      "notes": "",
+      "tags": [
+        "biking",
+        "walking",
+        "trails"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gayle%27s+Trails+Panama+City+Beach+FL"
+    },
+    {
+      "id": "0d2775b1-e392-4b9b-b547-e1bc2beb2399",
+      "name": "Duplin Winery",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Pier Park tasting room for the Southern muscadine winery.",
+      "notes": "",
+      "tags": [
+        "winery",
+        "tasting",
+        "pier-park"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Duplin+Winery+Panama+City+Beach+FL"
+    },
+    {
+      "id": "d47c1254-19e1-4d60-924a-0ea16699fdcd",
+      "name": "Rock'it Lanes",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Bowling, arcade games, and laser tag — a solid rainy-day option.",
+      "notes": "",
+      "tags": [
+        "bowling",
+        "arcade",
+        "indoor",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rock%27it+Lanes+Panama+City+Beach+FL"
+    },
+    {
+      "id": "d855accb-ee54-4eb4-9ec2-74b17b0b8292",
+      "name": "Sea Dragon Pirate Cruise",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Family pirate-themed cruise on Grand Lagoon with activities and dolphin spotting.",
+      "notes": "",
+      "tags": [
+        "boat-tour",
+        "family",
+        "grand-lagoon"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sea+Dragon+Pirate+Cruise+Panama+City+Beach+FL"
+    },
+    {
+      "id": "f8b01248-c559-4bb6-a4ef-7c2e1ba28d91",
+      "name": "Sea Screamer",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "High-speed sightseeing trip billed as the world's largest speedboat.",
+      "notes": "",
+      "tags": [
+        "boat-tour",
+        "speedboat",
+        "dolphins"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sea+Screamer+Panama+City+Beach+FL"
+    },
+    {
+      "id": "fc77e94b-494d-4e6e-94ce-a986997467e3",
+      "name": "Island Time Sailing",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "50-ft catamaran for Shell Island snorkel trips and sunset/dolphin sails.",
+      "notes": "",
+      "tags": [
+        "sailing",
+        "catamaran",
+        "sunset",
+        "dolphins"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Island+Time+Sailing+Panama+City+Beach+FL"
+    },
+    {
+      "id": "f4c7f387-4a78-44e8-b4f5-f9613a64b00d",
+      "name": "Shell Island Shuttle",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Ferry from St. Andrews State Park to Shell Island, plus snorkel and dolphin tours.",
+      "notes": "",
+      "tags": [
+        "ferry",
+        "shell-island",
+        "snorkeling"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shell+Island+Shuttle+Panama+City+Beach+FL"
+    },
+    {
+      "id": "739dd337-21de-4288-98a6-227425c21d7c",
+      "name": "Dolphin & Snorkel Tours (Bay Point)",
+      "category": "activity",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Small-group dolphin and snorkel tours from Bay Point, close to Shell Island.",
+      "notes": "",
+      "tags": [
+        "dolphins",
+        "snorkel",
+        "small-group"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dolphin+%26+Snorkel+Tours+%28Bay+Point%29+Panama+City+Beach+FL"
+    },
+    {
+      "id": "70ae2edd-0508-4462-a669-70f9a5fb90db",
+      "name": "Kayak PCB",
+      "category": "activity",
+      "area": "surrounding",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Guided kayak tours through the Choctawhatchee River and connecting swamps.",
+      "notes": "",
+      "tags": [
+        "kayak",
+        "river",
+        "wildlife"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kayak+PCB+Panama+City+Beach+FL"
+    },
+    {
+      "id": "7c896c2a-ca25-43e3-9612-c5ea0d67e964",
+      "name": "Gator Country / Airboat Adventures",
+      "category": "activity",
+      "area": "surrounding",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Airboat rides across West Bay Creek marshes to spot alligators and birds.",
+      "notes": "",
+      "tags": [
+        "airboat",
+        "gators",
+        "wildlife"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gator+Country+%2F+Airboat+Adventures+Panama+City+Beach+FL"
+    },
+    {
+      "id": "d577438b-899d-4771-8c9b-d2b891d87401",
+      "name": "Science & Discovery Center of NW Florida",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Hands-on science museum in Panama City with exhibits and a nature trail.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "science",
+        "family",
+        "indoor"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Science+%26+Discovery+Center+of+NW+Florida+Panama+City+FL"
+    },
+    {
+      "id": "0918f46c-50eb-421e-82b8-73fcd081575f",
+      "name": "Panama City Center for the Arts",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Downtown arts center with rotating exhibits and classes.",
+      "notes": "",
+      "tags": [
+        "arts",
+        "gallery",
+        "downtown"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panama+City+Center+for+the+Arts+Panama+City+FL"
+    },
+    {
+      "id": "ea685c05-161d-4e82-8196-1c113dddb680",
+      "name": "Panama City Mural Trail",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Self-guided trail of colorful murals through downtown and St. Andrews.",
+      "notes": "",
+      "tags": [
+        "art",
+        "murals",
+        "walking",
+        "free"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panama+City+Mural+Trail+Panama+City+FL"
+    },
+    {
+      "id": "0b4795fd-05b7-4af5-8bcd-c4fd56bad362",
+      "name": "Historic St. Andrews Walking Tour",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Free guided (Fridays) or self-guided audio tour through the historic St. Andrews village.",
+      "notes": "",
+      "tags": [
+        "history",
+        "walking",
+        "free"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Historic+St.+Andrews+Walking+Tour+Panama+City+FL"
+    },
+    {
+      "id": "8a87d044-2c75-4fdf-ab90-0a9d6bd9448f",
+      "name": "Panama City Publishing Company Museum",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Restored letterpress print shop and visitor center in St. Andrews.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "history",
+        "free",
+        "st-andrews"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panama+City+Publishing+Company+Museum+Panama+City+FL"
+    },
+    {
+      "id": "48d6fe8b-0fa0-4b93-b42b-bb75b43e44fc",
+      "name": "Bay County History Museum",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Local history museum in downtown Panama City.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "history",
+        "downtown"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bay+County+History+Museum+Panama+City+FL"
+    },
+    {
+      "id": "568a67ec-f905-4d3e-830e-e9d28d8d7fd1",
+      "name": "Floriopolis",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Artist co-op and creative hub in Historic St. Andrews.",
+      "notes": "",
+      "tags": [
+        "art",
+        "gallery",
+        "st-andrews"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Floriopolis+Panama+City+FL"
+    },
+    {
+      "id": "1fb52824-26d9-42dc-a442-93c37a56ce3b",
+      "name": "Native Spirit Museum and Gallery",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "St. Andrews gallery of authentic Native American art and artifacts.",
+      "notes": "",
+      "tags": [
+        "museum",
+        "native-american",
+        "st-andrews"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Native+Spirit+Museum+and+Gallery+Panama+City+FL"
+    },
+    {
+      "id": "8f9c9ab1-9633-4f42-80e6-05fc38bfe36e",
+      "name": "Panama City Hot Glass Studio",
+      "category": "activity",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Hands-on glass-blowing sessions and demonstrations.",
+      "notes": "",
+      "tags": [
+        "art",
+        "glassblowing",
+        "class"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panama+City+Hot+Glass+Studio+Panama+City+FL"
+    },
+    {
+      "id": "1b83e144-7657-4f43-811a-209113e25eb4",
+      "name": "St. Andrews Waterfront Farmers Market",
+      "category": "market",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Saturday-morning bayfront market at Oaks by the Bay (Beck Ave) with produce, bread, and crafts.",
+      "notes": "",
+      "tags": [
+        "farmers-market",
+        "saturday",
+        "waterfront",
+        "local-favorite"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.+Andrews+Waterfront+Farmers+Market+Panama+City+FL"
+    },
+    {
+      "id": "02946181-38e0-409e-bd69-d5ea36e72b05",
+      "name": "Panama City Farmers Market (McKenzie Park)",
+      "category": "market",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Saturday market in downtown's McKenzie Park with produce, food trucks, and live music.",
+      "notes": "",
+      "tags": [
+        "farmers-market",
+        "saturday",
+        "downtown"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panama+City+Farmers+Market+%28McKenzie+Park%29+Panama+City+FL"
+    },
+    {
+      "id": "2e5cc0ca-399d-433e-b469-1b5180578262",
+      "name": "Grand Lagoon Waterfront Market",
+      "category": "market",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Sunday market at Pirate's Cove Marina on Thomas Drive.",
+      "notes": "",
+      "tags": [
+        "market",
+        "sunday",
+        "waterfront"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grand+Lagoon+Waterfront+Market+Panama+City+Beach+FL"
+    },
+    {
+      "id": "cd7fe15d-684c-4d0e-8952-ef03cdb07574",
+      "name": "Market Square at SweetBay",
+      "category": "market",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Sunday pop-up community market in the SweetBay neighborhood.",
+      "notes": "",
+      "tags": [
+        "market",
+        "sunday",
+        "community"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Market+Square+at+SweetBay+Panama+City+FL"
+    },
+    {
+      "id": "77916772-7b80-43a0-9bd8-3b4a0e8d11de",
+      "name": "Glenwood Marketplace",
+      "category": "market",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Neighborhood market in historic Glenwood focused on fresh food and local businesses.",
+      "notes": "",
+      "tags": [
+        "market",
+        "community"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Glenwood+Marketplace+Panama+City+FL"
+    },
+    {
+      "id": "e7172ee3-654e-44be-95d4-fc92ba65ab17",
+      "name": "Anderson's Seafood Market",
+      "category": "market",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Marina seafood market at Capt. Anderson's for fresh shellfish and fillets to cook at home.",
+      "notes": "",
+      "tags": [
+        "seafood-market",
+        "fresh-fish",
+        "marina"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Anderson%27s+Seafood+Market+Panama+City+Beach+FL"
+    },
+    {
+      "id": "e18069f7-1abc-4f1f-9343-0e2d4e7493db",
+      "name": "Local Steamer Seafood Market",
+      "category": "market",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Seafood market and casual eatery for fresh local catch.",
+      "notes": "",
+      "tags": [
+        "seafood-market",
+        "fresh-fish"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Local+Steamer+Seafood+Market+Panama+City+Beach+FL"
+    },
+    {
+      "id": "8e5ca2d8-87f6-4b94-bca5-33df130a865c",
+      "name": "Modica Market (Seaside)",
+      "category": "market",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Iconic Seaside gourmet grocer and deli — a 30A day-trip staple.",
+      "notes": "",
+      "tags": [
+        "gourmet-grocer",
+        "seaside",
+        "30a"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Modica+Market+%28Seaside%29+Seaside+FL"
+    },
+    {
+      "id": "96c44f9d-9b02-4f2f-90b6-0e415f0c96d2",
+      "name": "St. Andrews State Park Jetties",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Where the Gulf meets the bay — jetties and beaches with sunset views in both directions.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "gulf",
+        "bay",
+        "photography"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.+Andrews+State+Park+Jetties+Panama+City+Beach+FL"
+    },
+    {
+      "id": "f1e5838f-7a5e-49a7-a413-4e1c82d845e1",
+      "name": "Russell-Fields Pier at sunset",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Long city pier with unobstructed Gulf sunsets; set up just east to frame the pier in your shot.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "pier",
+        "photography"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Russell-Fields+Pier+at+sunset+Panama+City+Beach+FL"
+    },
+    {
+      "id": "0d919e2b-0cf9-43f2-a2c8-ff36bf24691b",
+      "name": "Uncle Ernie's Rooftop Martini Bar",
+      "category": "sunset",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Rooftop martini bar over the St. Andrews marina — a perennial 'best sunset' winner.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "rooftop",
+        "st-andrews",
+        "cocktails"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Uncle+Ernie%27s+Rooftop+Martini+Bar+Panama+City+FL"
+    },
+    {
+      "id": "29bf0fb8-a01b-4fdd-b773-95fe9a9aa64c",
+      "name": "Schooners at sunset",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Beachfront bar that's a classic spot to toast the sunset with live music.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "beach-bar",
+        "live-music"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Schooners+at+sunset+Panama+City+Beach+FL"
+    },
+    {
+      "id": "6640432e-14ee-46ac-aa21-4e967ca142d0",
+      "name": "Runaway Island Sunset Deck",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Multi-level decks built for unobstructed Gulf sunsets.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "deck",
+        "gulf-view"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Runaway+Island+Sunset+Deck+Panama+City+Beach+FL"
+    },
+    {
+      "id": "37d458a2-3fd7-445e-857a-b3a494f005fb",
+      "name": "SkyWheel at golden hour",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Catch the sunset ~200 ft up in a climate-controlled gondola.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "views",
+        "pier-park"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=SkyWheel+at+golden+hour+Panama+City+Beach+FL"
+    },
+    {
+      "id": "7799ea98-4b48-4115-a040-c8137da2c0f7",
+      "name": "Conservation Park Boardwalk",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Quiet boardwalk where the sun dips behind cypress and wetlands.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "nature",
+        "quiet"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Conservation+Park+Boardwalk+Panama+City+Beach+FL"
+    },
+    {
+      "id": "4b46700f-5361-4c85-bbc3-74e14813b399",
+      "name": "Oaks by the Bay Park (sunset)",
+      "category": "sunset",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Bayside park with broad western views over St. Andrew Bay.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "bayside"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Oaks+by+the+Bay+Park+%28sunset%29+Panama+City+FL"
+    },
+    {
+      "id": "cc98553e-a906-4226-8893-eff954167073",
+      "name": "Sharky's sunset deck",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Big family-friendly beachfront deck facing the Gulf.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "beachfront",
+        "family"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sharky%27s+sunset+deck+Panama+City+Beach+FL"
+    },
+    {
+      "id": "da544abc-48aa-46eb-b0c7-b4d9d6eab8d4",
+      "name": "Sunset Dolphin Cruise",
+      "category": "sunset",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Evening cruise toward The Pass for sunset color and dolphin sightings.",
+      "notes": "",
+      "tags": [
+        "sunset",
+        "cruise",
+        "dolphins"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sunset+Dolphin+Cruise+Panama+City+Beach+FL"
+    },
+    {
+      "id": "cf82d21a-c3ba-4e6f-97d8-ac91922d88eb",
+      "name": "Seaside (30A)",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Truman Show beach town on 30A: pastel cottages, Modica Market, Airstream food trucks.",
+      "notes": "",
+      "tags": [
+        "30a",
+        "beach-town",
+        "shopping",
+        "~45min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seaside+%2830A%29+Seaside+FL",
+      "recommendations": [
+        {
+          "name": "Modica Market",
+          "kind": "food",
+          "blurb": "Seaside's Truman Show landmark grocery and deli, famous for fresh-built sandwiches, fried chicken, chicken salad, and pastries.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Modica%20Market%2C%20Seaside%20FL"
+        },
+        {
+          "name": "Great Southern Cafe",
+          "kind": "food",
+          "blurb": "Chef Jim Shirley's Central Square cafe is home of the legendary Grits a Ya Ya: blackened shrimp over smoked-gouda grits.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Great%20Southern%20Cafe%2C%20Seaside%20FL"
+        },
+        {
+          "name": "Airstream Row Food Trucks",
+          "kind": "food",
+          "blurb": "Cluster of vintage silver Airstreams in the town square serving tacos, made-to-order crepes, BBQ, and shaved ice.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Airstream%20Row%20Food%20Trucks%2C%20Seaside%20FL"
+        },
+        {
+          "name": "Seaside Beach and pavilions",
+          "kind": "activity",
+          "blurb": "Sugar-white sand and turquoise Gulf water reached via iconic white wooden pavilions; chairs, umbrellas, kayaks, and paddleboards to rent.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seaside%20Beach%2C%20Seaside%20FL"
+        },
+        {
+          "name": "Sundog Books and Central Square Records",
+          "kind": "activity",
+          "blurb": "Beloved 30-year independent bookstore with an upstairs vinyl shop spinning records and serving Jittery Joe's coffee.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sundog%20Books%2C%20Seaside%20FL"
+        },
+        {
+          "name": "Timpoochee Trail bike ride",
+          "kind": "activity",
+          "blurb": "Rent a cruiser and pedal the paved 18-mile path linking Seaside to WaterColor and Grayton Beach along scenic 30A.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Timpoochee%20Trail%2C%20Seaside%20FL"
+        }
+      ]
+    },
+    {
+      "id": "87829e4c-3f2c-4d08-b3f8-641950203e42",
+      "name": "Grayton Beach State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Quiet 30A state park with a top-rated beach and a rare coastal dune lake.",
+      "notes": "",
+      "tags": [
+        "30a",
+        "beach",
+        "dune-lake",
+        "~40min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grayton+Beach+State+Park+Santa+Rosa+Beach+FL",
+      "recommendations": [
+        {
+          "name": "The Red Bar",
+          "kind": "food",
+          "blurb": "Bohemian Grayton Beach icon rebuilt after a 2019 fire, serving Gulf seafood with live acoustic music nightly.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Red%20Bar%2C%20Grayton%20Beach%20FL"
+        },
+        {
+          "name": "Black Bear Bread Co.",
+          "kind": "food",
+          "blurb": "Neighborhood bakery-cafe in Grayton Beach for crusty sourdough, smoked-salmon toast, pastries and Stumptown coffee.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Black%20Bear%20Bread%20Co%2C%20Grayton%20Beach%20FL"
+        },
+        {
+          "name": "Chiringo",
+          "kind": "food",
+          "blurb": "Laid-back Grayton Beach spot with tacos, burgers, bowls and colorful cocktails on a breezy rooftop deck.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Chiringo%2C%20Grayton%20Beach%20FL"
+        },
+        {
+          "name": "Western Lake",
+          "kind": "activity",
+          "blurb": "Rare 100-acre coastal dune lake you can paddle by kayak or NuCanoe rented at the ranger station.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Western%20Lake%20Grayton%20Beach%20State%20Park%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Grayton Beach Nature Trail",
+          "kind": "activity",
+          "blurb": "One-mile loop winding through dunes, salt marsh and pine flatwoods, with a longer 4.5-mile hike/bike option.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grayton%20Beach%20Nature%20Trail%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Grayton Beach (the beach)",
+          "kind": "activity",
+          "blurb": "Mile of sugar-white, repeatedly top-ranked sand for swimming, sunbathing and surf fishing where the dune lake meets the Gulf.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grayton%20Beach%20State%20Park%20Beach%2C%20Santa%20Rosa%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "09e788b0-b418-4626-8a84-6a59aba393ce",
+      "name": "Rosemary Beach (30A)",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Cobblestoned, European-style 30A town; bikes, boutiques, and The Pearl hotel.",
+      "notes": "",
+      "tags": [
+        "30a",
+        "beach-town",
+        "~45min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rosemary+Beach+%2830A%29+Rosemary+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Restaurant Paradis",
+          "kind": "food",
+          "blurb": "Intimate Barrett Square fine-dining spot since 2009, known for fresh Gulf seafood, prime steaks, and a deep wine list; reservations recommended.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Paradis%2C%20Rosemary%20Beach%20FL"
+        },
+        {
+          "name": "Amavida Coffee Roasters",
+          "kind": "food",
+          "blurb": "Local roaster on Barrett Square pouring ethically sourced espresso and cold brew in a beloved European-style cafe, open from 6:30am.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Amavida%20Coffee%20Roasters%2C%20Rosemary%20Beach%20FL"
+        },
+        {
+          "name": "Havana Beach Bar & Grill",
+          "kind": "food",
+          "blurb": "Hemingway-inspired Cuban dining at The Pearl hotel, with handcrafted cocktails, lively brunch, and frequent live music.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Havana%20Beach%20Bar%20%26%20Grill%2C%20Rosemary%20Beach%20FL"
+        },
+        {
+          "name": "Bamboo Bicycle Company",
+          "kind": "activity",
+          "blurb": "Rent beach cruisers to explore Rosemary's cobblestone streets and the paved 19-mile Timpoochee Trail tracing the 30A coast.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bamboo%20Bicycle%20Company%2C%20Rosemary%20Beach%20FL"
+        },
+        {
+          "name": "Rosemary Beach Town Center (Barrett Square)",
+          "kind": "activity",
+          "blurb": "Walkable European-style town center packed with boutiques, art galleries, a bookstore, and a Sunday-morning artisan farmers market.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Rosemary%20Beach%20Town%20Center%2C%20Rosemary%20Beach%20FL"
+        },
+        {
+          "name": "The Pearl Hotel Rooftop",
+          "kind": "activity",
+          "blurb": "Climb to the rooftop bar at Rosemary's iconic Pearl hotel for sunset cocktails and panoramic Gulf views.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Pearl%20Hotel%2C%20Rosemary%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "da85e3b3-3197-45b7-b229-4ddaca6b4e38",
+      "name": "Alys Beach (30A)",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Striking all-white 30A town with distinctive Bermuda-inspired architecture.",
+      "notes": "",
+      "tags": [
+        "30a",
+        "beach-town",
+        "architecture",
+        "~45min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alys+Beach+%2830A%29+Alys+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Fonville Press",
+          "kind": "food",
+          "blurb": "All-day cafe in the heart of town for brisket biscuits, acai bowls, espresso and an old-fashioned newsstand vibe.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fonville%20Press%2C%20Alys%20Beach%20FL"
+        },
+        {
+          "name": "George's at Alys Beach",
+          "kind": "food",
+          "blurb": "Casual rooftop spot known for fried oyster tacos and Senora Ann's fish tacos with Gulf views.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=George%27s%20at%20Alys%20Beach%2C%20Alys%20Beach%20FL"
+        },
+        {
+          "name": "Caliza Restaurant",
+          "kind": "food",
+          "blurb": "Romantic poolside dining with creative regional seafood and steaks, sunset cocktails; reservations and guest access recommended.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Caliza%20Restaurant%2C%20Alys%20Beach%20FL"
+        },
+        {
+          "name": "Alys Beach Architecture Walk",
+          "kind": "activity",
+          "blurb": "Stroll the all-white, Bermuda-inspired masonry courtyards and promenades; self-guided walks reveal hidden gardens and outdoor sculpture.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alys%20Beach%2C%20Alys%20Beach%20FL"
+        },
+        {
+          "name": "Alys Beach Nature Preserve & Lake Marilyn",
+          "kind": "activity",
+          "blurb": "An 1,800-foot elevated boardwalk through 20 acres of slash pine, cypress and wildflower meadows beside reflective Lake Marilyn.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alys%20Beach%20Nature%20Preserve%2C%20Alys%20Beach%20FL"
+        },
+        {
+          "name": "Alys Beach Amphitheatre",
+          "kind": "activity",
+          "blurb": "Whitewashed open-air venue hosting free live music, outdoor movie nights and seasonal festivals at the town's social heart.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alys%20Beach%20Amphitheatre%2C%20Alys%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "5710a04e-bbdf-465b-991b-9ed710a088fa",
+      "name": "WaterColor & Seagrove (30A)",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Laid-back neighboring 30A communities good for beach time and the bike path.",
+      "notes": "",
+      "tags": [
+        "30a",
+        "beach",
+        "biking",
+        "~40min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=WaterColor+%26+Seagrove+%2830A%29+Santa+Rosa+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Seagrove Village MarketCafe",
+          "kind": "food",
+          "blurb": "Beloved 1949 institution famous for its fried grouper sandwich, named one of Garden & Gun's must-eat dishes.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seagrove%20Village%20MarketCafe%2C%20Seagrove%20Beach%20FL"
+        },
+        {
+          "name": "Old Florida Fish House",
+          "kind": "food",
+          "blurb": "Fresh Gulf seafood and a shucked-to-order oyster bar overlooking Eastern Lake, with live music.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Old%20Florida%20Fish%20House%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Cafe Thirty-A",
+          "kind": "food",
+          "blurb": "Longtime 30A fine-dining favorite known for wood-fired oven dishes, fresh seafood, and an elegant porch setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Thirty-A%2C%20Seagrove%20Beach%20FL"
+        },
+        {
+          "name": "Timpoochee Trail (30A Bike Path)",
+          "kind": "activity",
+          "blurb": "Paved 18-mile coastal path linking WaterColor and Seagrove past dune lakes, beaches, and shops; rentals available.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Timpoochee%20Trail%2C%20Seagrove%20Beach%20FL"
+        },
+        {
+          "name": "Boathouse Paddle Club at WaterColor",
+          "kind": "activity",
+          "blurb": "Rent kayaks or paddleboards on calm, scenic Western Lake, a rare coastal dune lake feeding the Gulf.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Boathouse%20Paddle%20Club%20WaterColor%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Eastern Lake Beach Access",
+          "kind": "activity",
+          "blurb": "Quiet beach where the brackish coastal dune lake's outfall meets the Gulf; paddle the lake or swim the shore.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eastern%20Lake%20Beach%20Access%2C%20Seagrove%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "e5ce63f8-54e8-4119-95c7-99bf770d28e7",
+      "name": "Eden Gardens State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Antebellum Wesley mansion under moss-draped oaks; gardens and picnicking at Point Washington.",
+      "notes": "",
+      "tags": [
+        "historic",
+        "gardens",
+        "oaks",
+        "~40min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eden+Gardens+State+Park+Santa+Rosa+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Goatfeathers Seafood Restaurant & Market",
+          "kind": "food",
+          "blurb": "Local favorite in Santa Rosa Beach since 1988, casual gourmet seafood pulled straight from its own downstairs retail market.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Goatfeathers%20Seafood%20Restaurant%20and%20Market%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Black Bear Bread Co.",
+          "kind": "food",
+          "blurb": "Grayton Beach bakery-cafe known for naturally leavened breads, croissants and Stumptown coffee; busy but worth the wait.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Black%20Bear%20Bread%20Co%2C%20Grayton%20Beach%20FL"
+        },
+        {
+          "name": "Old Florida Fish House",
+          "kind": "food",
+          "blurb": "Waterfront spot on Eastern Lake in Seagrove Beach with butter-and-parmesan chargrilled oysters, sushi and live music at sunset.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Old%20Florida%20Fish%20House%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Wesley House guided tour, Eden Gardens State Park",
+          "kind": "activity",
+          "blurb": "Tour the antebellum mansion under moss-draped oaks Thursday-Monday, 10am-3pm; $4 adults, $2 children.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Wesley%20House%20Eden%20Gardens%20State%20Park%2C%20Point%20Washington%20FL"
+        },
+        {
+          "name": "Point Washington State Forest trails",
+          "kind": "activity",
+          "blurb": "Miles of hiking and off-road biking trails through pine flatwoods home to gopher tortoises and red-cockaded woodpeckers.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Point%20Washington%20State%20Forest%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Grayton Beach State Park",
+          "kind": "activity",
+          "blurb": "Award-winning sugar-white beach with interpretive trails along rare Western Lake coastal dune lake, ideal for swimming and kayaking.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grayton%20Beach%20State%20Park%2C%20Santa%20Rosa%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "e284767a-f462-4810-bff6-615adbf85526",
+      "name": "Topsail Hill Preserve State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Tall-dune preserve with pristine quartz-sand beaches and coastal dune lakes.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "dunes",
+        "dune-lakes",
+        "~45min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Topsail+Hill+Preserve+State+Park+Santa+Rosa+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Stinky's Fish Camp",
+          "kind": "food",
+          "blurb": "Camp-style fish house on a coastal dune lake in Dune Allen Beach, famous for its raw bar and six-style oyster log.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Stinky%27s%20Fish%20Camp%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "The Red Bar",
+          "kind": "food",
+          "blurb": "Iconic Grayton Beach institution (since 1995, rebuilt after a fire) with bohemian decor, Gulf comfort food, and live music nightly.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Red%20Bar%2C%20Grayton%20Beach%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Black Bear Bread Co.",
+          "kind": "food",
+          "blurb": "Beloved Grayton Beach bakery-cafe where you smell fresh loaves at the door; go for croissant breakfast sandwiches and pastries.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Black%20Bear%20Bread%20Co.%2C%20Grayton%20Beach%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Topsail Hill Preserve State Park Beach",
+          "kind": "activity",
+          "blurb": "Ride the free tram over 25-foot dunes to 3.2 miles of pristine, uncrowded quartz-sand beach on emerald Gulf water.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Topsail%20Hill%20Preserve%20State%20Park%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Campbell Lake (kayaking)",
+          "kind": "activity",
+          "blurb": "Paddle a rare coastal dune lake ringed by maritime forest using on-site kayak rentals, a phenomenon found in only a few places on Earth.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Campbell%20Lake%2C%20Topsail%20Hill%20Preserve%20State%20Park%2C%20Santa%20Rosa%20Beach%20FL"
+        },
+        {
+          "name": "Topsail Hill Preserve Trails",
+          "kind": "activity",
+          "blurb": "Over 10 miles of walking and biking trails wind through longleaf pines, oak forest, and wetlands teeming with wildlife and birds.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Topsail%20Hill%20Preserve%20State%20Park%20trails%2C%20Santa%20Rosa%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "2a279afb-c77d-46e9-a75b-5cae39584b91",
+      "name": "Destin",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Upscale beach town with HarborWalk Village, fishing charters, and emerald water.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "harbor",
+        "fishing",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Destin+Destin+FL",
+      "recommendations": [
+        {
+          "name": "Dewey Destin's Harborside",
+          "kind": "food",
+          "blurb": "Family-run harborside shack since the 1980s with daily blackboard fresh catch fried, grilled or blackened and a famous key lime pie.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dewey%20Destin%27s%20Harborside%2C%20Destin%20FL"
+        },
+        {
+          "name": "Harbor Docks",
+          "kind": "food",
+          "blurb": "Unpretentious local institution since 1979 with its own seafood market, ultra-fresh sushi, and morning crab cake breakfasts.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Harbor%20Docks%2C%20Destin%20FL"
+        },
+        {
+          "name": "The Back Porch Seafood & Oyster House",
+          "kind": "food",
+          "blurb": "Beachfront classic since 1974 known for chargrilled amberjack and loaded seafood nachos with toes-in-the-sand Gulf views.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Back%20Porch%20Seafood%20%26%20Oyster%20House%2C%20Destin%20FL"
+        },
+        {
+          "name": "Henderson Beach State Park",
+          "kind": "activity",
+          "blurb": "Sugar-white dunes and emerald water with a 3/4-mile boardwalk nature trail through Destin's last coastal scrub community.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Henderson%20Beach%20State%20Park%2C%20Destin%20FL"
+        },
+        {
+          "name": "Norriego Point",
+          "kind": "activity",
+          "blurb": "Sandy spit at the end of Holiday Isle with calm jetty-protected water ideal for swimming, snorkeling, and harbor-mouth boat watching.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Norriego%20Point%2C%20Destin%20FL"
+        },
+        {
+          "name": "HarborWalk Village",
+          "kind": "activity",
+          "blurb": "Waterfront boardwalk hub for fishing charters, dolphin cruises, sunset strolls, live events, and weekly fireworks over the harbor.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=HarborWalk%20Village%2C%20Destin%20FL"
+        }
+      ]
+    },
+    {
+      "id": "98311e93-4c20-4547-8f33-01a5b484c6e8",
+      "name": "Henderson Beach State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Pristine state-park beach in Destin with dunes and a nature trail.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "dunes",
+        "destin",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Henderson+Beach+State+Park+Destin+FL",
+      "recommendations": [
+        {
+          "name": "Camille's at Crystal Beach",
+          "kind": "food",
+          "blurb": "Easygoing Crystal Beach spot beside the park serving locally sourced seafood, sushi, and Destin-roasted coffee in a quaint beachfront inn.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Camille%27s%20at%20Crystal%20Beach%2C%20Destin%20FL"
+        },
+        {
+          "name": "Donut Hole Bakery Cafe",
+          "kind": "food",
+          "blurb": "Beloved Destin breakfast institution famous for fresh donuts, biscuits and sausage gravy, and a standout key lime pie.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Donut%20Hole%20Bakery%20Cafe%2C%20Destin%20FL"
+        },
+        {
+          "name": "Harbor Docks",
+          "kind": "food",
+          "blurb": "Local seafood gem on Destin Harbor sourcing from its own wholesale fish market right beneath the restaurant.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Harbor%20Docks%2C%20Destin%20FL"
+        },
+        {
+          "name": "Henderson Beach Nature Trail",
+          "kind": "activity",
+          "blurb": "Three-quarter-mile pet-friendly boardwalk loop through coastal scrub and dunes nearly 30 feet tall, with frequent wildlife sightings.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Henderson%20Beach%20State%20Park%20Nature%20Trail%2C%20Destin%20FL"
+        },
+        {
+          "name": "Crab Island",
+          "kind": "activity",
+          "blurb": "Submerged turquoise sandbar north of the harbor with knee-deep water, floating tiki boats, and paddleboard rentals reached by boat.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Crab%20Island%2C%20Destin%20FL"
+        },
+        {
+          "name": "Destin Harbor Boardwalk (HarborWalk Village)",
+          "kind": "activity",
+          "blurb": "Waterfront boardwalk where you watch fishing boats unload fresh catch amid shops, live music, and harbor-view eateries.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=HarborWalk%20Village%2C%20Destin%20FL"
+        }
+      ]
+    },
+    {
+      "id": "d7faa0ee-578a-4c12-be7d-f2911cac49d1",
+      "name": "Silver Sands Premium Outlets",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Large outlet mall near Destin/Miramar Beach.",
+      "notes": "",
+      "tags": [
+        "shopping",
+        "outlets",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Silver+Sands+Premium+Outlets+Miramar+Beach+FL",
+      "recommendations": [
+        {
+          "name": "Big Bad Breakfast",
+          "kind": "food",
+          "blurb": "James Beard chef John Currence's 100% scratch kitchen at the outlets, with house-cured meats, fresh biscuits, and locally roasted coffee.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Big%20Bad%20Breakfast%2C%20Miramar%20Beach%20FL"
+        },
+        {
+          "name": "The Donut Hole Bakery Cafe",
+          "kind": "food",
+          "blurb": "Old-school Destin tradition famed for fresh-made donuts, key lime pie, and hearty Southern breakfasts; arrive early to beat the summer line.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Donut%20Hole%20Bakery%20Cafe%2C%20Destin%20FL"
+        },
+        {
+          "name": "Pompano Joe's Seafood House",
+          "kind": "food",
+          "blurb": "Beachfront since 1995 with Caribbean-style seafood like coconut shrimp and Grouper Guadalupe, plus a walk-up bar right on the sand.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pompano%20Joe%27s%2C%20Miramar%20Beach%20FL"
+        },
+        {
+          "name": "Grand Boulevard at Sandestin",
+          "kind": "activity",
+          "blurb": "Open-air shopping and dining town center with Anthropologie, Lilly Pulitzer, a 10-screen cinema, and outdoor concerts and art walks.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grand%20Boulevard%20at%20Sandestin%2C%20Miramar%20Beach%20FL"
+        },
+        {
+          "name": "Miramar Beach (Scenic Gulf Drive public access)",
+          "kind": "activity",
+          "blurb": "Sugar-white Gulf sand and emerald water minutes from the outlets, ideal for paddleboarding the shallow sandbar and shell-hunting at sunrise.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Miramar%20Beach%20Scenic%20Gulf%20Drive%20public%20beach%20access%2C%20Miramar%20Beach%20FL"
+        },
+        {
+          "name": "Grayton Beach State Park",
+          "kind": "activity",
+          "blurb": "Award-winning natural beach east on 30A with dune trails and a coastal dune lake for kayaking, a short scenic drive from the outlets.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Grayton%20Beach%20State%20Park%2C%20Santa%20Rosa%20Beach%20FL"
+        }
+      ]
+    },
+    {
+      "id": "401f361e-9717-46b7-b3bf-0c885147d07d",
+      "name": "Big Kahuna's Water & Adventure Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Destin water-and-adventure park with slides and mini-golf.",
+      "notes": "",
+      "tags": [
+        "waterpark",
+        "family",
+        "destin",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Big+Kahuna%27s+Water+%26+Adventure+Park+Destin+FL",
+      "recommendations": [
+        {
+          "name": "Dewey Destin's Harborside",
+          "kind": "food",
+          "blurb": "Family-owned, no-frills waterfront seafood shack overlooking Crab Island, beloved by locals for fresh fried oysters and chargrilled oysters.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dewey%20Destin%27s%20Harborside%2C%20Destin%20FL"
+        },
+        {
+          "name": "The Donut Hole Bakery Cafe",
+          "kind": "food",
+          "blurb": "Destin institution on Highway 98 famous for housemade donuts, hearty all-day breakfast, and legendary key lime pie.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Donut%20Hole%20Bakery%20Cafe%2C%20Destin%20FL"
+        },
+        {
+          "name": "Boshamps Seafood & Oyster House",
+          "kind": "food",
+          "blurb": "Southern-inspired harborfront spot with panoramic Destin harbor views, fresh chargrilled oysters, seafood platters, and craft cocktails.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Boshamps%20Seafood%20%26%20Oyster%20House%2C%20Destin%20FL"
+        },
+        {
+          "name": "Crab Island",
+          "kind": "activity",
+          "blurb": "Iconic shallow sandbar where boats raft up to float in emerald water alongside floating food vendors; reachable by pontoon rental.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Crab%20Island%2C%20Destin%20FL"
+        },
+        {
+          "name": "Henderson Beach State Park",
+          "kind": "activity",
+          "blurb": "Mile of pristine white sand and emerald water with a scenic dune-and-scrub nature trail; day-use reservation required.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Henderson%20Beach%20State%20Park%2C%20Destin%20FL"
+        },
+        {
+          "name": "HarborWalk Village",
+          "kind": "activity",
+          "blurb": "Waterfront boardwalk with dolphin cruises, charter fishing fleet, ziplining, live music, and weekly fireworks in the World's Luckiest Fishing Village.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=HarborWalk%20Village%2C%20Destin%20FL"
+        }
+      ]
+    },
+    {
+      "id": "da69716e-5958-44e6-b22e-f8a7060da446",
+      "name": "Econfina Creek",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Spring-fed creek with crystal water, limestone banks, and rope swings — prime paddling.",
+      "notes": "",
+      "tags": [
+        "kayak",
+        "springs",
+        "clear-water",
+        "~40min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Econfina+Creek+Youngstown+FL",
+      "recommendations": [
+        {
+          "name": "Econfina Creek Canoe Rentals",
+          "kind": "activity",
+          "blurb": "Family-run Youngstown livery (40+ years) renting kayaks and canoes for the 7-mile spring-fed float with shuttle pickup.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Econfina%20Creek%20Canoe%20Rentals%2C%20Youngstown%20FL"
+        },
+        {
+          "name": "Gainer Springs Group",
+          "kind": "activity",
+          "blurb": "First-magnitude springs pumping 114 million gallons daily into the creek, the most dazzling clear-water stretch, reachable only by paddle.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gainer%20Springs%2C%20Youngstown%20FL"
+        },
+        {
+          "name": "Williford Spring Recreation Area",
+          "kind": "activity",
+          "blurb": "Hand-railed steps lead into a brilliant blue swimming spring with picnic grills, boardwalks and underwater caves for snorkelers.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Williford%20Spring%20Recreation%20Area%2C%20Youngstown%20FL"
+        },
+        {
+          "name": "Hunt's Oyster Bar & Seafood",
+          "kind": "food",
+          "blurb": "St. Andrews institution since 1966 in Panama City, serving ice-cold local oysters from Tarpon Dock with a down-home vibe.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hunt%27s%20Oyster%20Bar%2C%20Panama%20City%20FL"
+        },
+        {
+          "name": "FINNS Island Style Grub",
+          "kind": "food",
+          "blurb": "Casual St. Andrews spot in Panama City famous for fresh-to-order fish tacos and Ahi tuna in a pet-friendly outdoor setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=FINNS%20Island%20Style%20Grub%2C%20Panama%20City%20FL"
+        },
+        {
+          "name": "Tom's Hot Dogs",
+          "kind": "food",
+          "blurb": "Downtown Panama City lunch counter open since 1981, repeat Best-of-Bay winner for hot dogs and burgers with fresh ingredients.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tom%27s%20Hot%20Dogs%2C%20Panama%20City%20FL"
+        }
+      ]
+    },
+    {
+      "id": "d10c5c82-02fe-4278-880b-d5fe12d5670e",
+      "name": "Vortex Spring",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Ponce de Leon spring with a primitive waterpark, scuba diving, and 70F water.",
+      "notes": "",
+      "tags": [
+        "spring",
+        "snorkel",
+        "dive",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vortex+Spring+Ponce+de+Leon+FL",
+      "recommendations": [
+        {
+          "name": "Ed's Restaurant",
+          "kind": "food",
+          "blurb": "DeFuniak Springs mom-and-pop open 50+ years, famous for its half-pound Pub Burger and homemade milkshakes.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ed%27s%20Restaurant%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Cafe Nola",
+          "kind": "food",
+          "blurb": "Inside historic Hotel DeFuniak, serving Caribbean and New Orleans Creole plates plus an adjacent Bourbon Street cigar lounge.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Nola%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Fannin's Family Restaurant",
+          "kind": "food",
+          "blurb": "DeFuniak Springs Southern-cooking spot known for country-fried steak, pork chops, and a generous seafood sampler.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fannin%27s%20Family%20Restaurant%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Vortex Spring Adventures",
+          "kind": "activity",
+          "blurb": "Gin-clear 68F spring with high dives, rope swings, ten slides, a treehouse slide, and PADI cave-diving training.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vortex%20Spring%20Adventures%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Morrison Springs County Park",
+          "kind": "activity",
+          "blurb": "Cypress-ringed 250-foot spring pool with diving platforms and a 300-foot cavern, a top northwest-Florida dive site near Ponce de Leon.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Morrison%20Springs%20County%20Park%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Lake DeFuniak Historic District (Circle Drive)",
+          "kind": "activity",
+          "blurb": "Stroll a 1-mile path around a near-perfect spring-fed lake lined with nearly 200 Victorian homes and 1885 Chautauqua buildings.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake%20DeFuniak%20Circle%20Drive%2C%20DeFuniak%20Springs%20FL"
+        }
+      ]
+    },
+    {
+      "id": "a07e1b45-1ac7-4f20-9fba-121855fcee6f",
+      "name": "Morrison Springs",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "County-park spring with clear water and boardwalks, popular for swimming and diving.",
+      "notes": "",
+      "tags": [
+        "spring",
+        "swim",
+        "dive",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Morrison+Springs+Ponce+de+Leon+FL",
+      "recommendations": [
+        {
+          "name": "Panhandle Organics Cafe",
+          "kind": "food",
+          "blurb": "Yellow-building cafe in Ponce de Leon (closest town) praised for smash burgers, hand-cut fries, and locally sourced Panhandle ingredients.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Panhandle%20Organics%20Cafe%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Cafe Nola Defuniak",
+          "kind": "food",
+          "blurb": "Inside the historic Hotel DeFuniak, Louisiana-native Chef Ernie cooks authentic gumbo, etouffee, jambalaya and blackened redfish.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Nola%2C%20400%20E%20Nelson%20Ave%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Nick's Seafood Restaurant",
+          "kind": "food",
+          "blurb": "On Choctawhatchee Bay in Freeport since 1963, serving ultra-fresh local seafood with sunset water views.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Nick%27s%20Seafood%20Restaurant%2C%20Freeport%20FL"
+        },
+        {
+          "name": "Ponce de Leon Springs State Park",
+          "kind": "activity",
+          "blurb": "Chalky-blue 68-degree spring gushing 14 million gallons daily, with swimming and the Spring Run Nature Trail into hardwood forest.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponce%20de%20Leon%20Springs%20State%20Park%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Vortex Spring Adventures",
+          "kind": "activity",
+          "blurb": "One of Florida's largest dive resorts, 28 million gallons of clear 68-degree water with open-water swimming and cavern diving.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vortex%20Spring%20Adventures%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Holmes Creek Paddling Trail",
+          "kind": "activity",
+          "blurb": "Remote 16-mile blackwater creek with a dozen launches and 15-plus springs, ideal for kayaking right near Morrison Springs.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Holmes%20Creek%20Canoe%20Trail%2C%20Vernon%20FL"
+        }
+      ]
+    },
+    {
+      "id": "dda4722b-dd3b-456f-b30a-2e0998dfacf5",
+      "name": "Ponce de Leon Springs State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Cool, year-round swimming hole with nature trails.",
+      "notes": "",
+      "tags": [
+        "spring",
+        "swim",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponce+de+Leon+Springs+State+Park+Ponce+de+Leon+FL",
+      "recommendations": [
+        {
+          "name": "Ponce de Leon Springs Swimming Hole",
+          "kind": "activity",
+          "blurb": "Crystal-clear 68-degree spring boils up 14 million gallons daily into a stair-and-ramp swimming hole popular for snorkeling.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponce%20de%20Leon%20Springs%20State%20Park%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Spring Run and Sandy Creek Nature Trails",
+          "kind": "activity",
+          "blurb": "Two shady self-guided loops wind past bald cypress and karst features along the spring run and tea-colored Sandy Creek.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ponce%20de%20Leon%20Springs%20State%20Park%20Nature%20Trails%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Lake DeFuniak Circle Drive Walk",
+          "kind": "activity",
+          "blurb": "Stroll the paved path around a near-perfectly round spring-fed lake past nearly 200 Victorian homes in DeFuniak Springs.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake%20DeFuniak%20Circle%20Drive%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Cafe Nola",
+          "kind": "food",
+          "blurb": "Louisiana-native Chef Ernie cooks family-recipe gumbo, blackened redfish, and beignets in downtown DeFuniak Springs, about 15 minutes from the park.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Nola%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Ed's Restaurant",
+          "kind": "food",
+          "blurb": "Longtime DeFuniak Springs diner famous for its handmade Pub Burger, fried chicken, and milkshakes; the nearest town to the park.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ed%27s%20Restaurant%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Chautauqua Vineyards & Winery",
+          "kind": "food",
+          "blurb": "Award-winning DeFuniak Springs winery pouring estate muscadine, blueberry, and barrel-aged port wines with complimentary tastings since 1989.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Chautauqua%20Vineyards%20and%20Winery%2C%20DeFuniak%20Springs%20FL"
+        }
+      ]
+    },
+    {
+      "id": "213119e7-bf34-4c53-847d-8a3146d2d09f",
+      "name": "Cypress Springs (Holmes Creek)",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Vivid blue spring on Holmes Creek, best reached by paddle.",
+      "notes": "",
+      "tags": [
+        "spring",
+        "kayak",
+        "snorkel",
+        "~45min"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cypress+Springs+%28Holmes+Creek%29+Vernon+FL",
+      "recommendations": [
+        {
+          "name": "Holmes Creek Pizza & Pasta Co.",
+          "kind": "food",
+          "blurb": "Family-owned spot on Vernon's Main St (nearest town) for hand-tossed pizza and hearty Italian after a day on the water.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Holmes%20Creek%20Pizza%20%26%20Pasta%20Co.%2C%20Vernon%20FL"
+        },
+        {
+          "name": "Effie's Table",
+          "kind": "food",
+          "blurb": "Cozy Southern bistro in Vernon (nearest town) serving fresh salads, wraps, and a wide variety of teas.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Effie%27s%20Table%2C%20Vernon%20FL"
+        },
+        {
+          "name": "M & W Smokehouse Barbecue",
+          "kind": "food",
+          "blurb": "Local barbecue smokehouse in nearby Bonifay turning out slow-smoked meats and Southern sides.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=M%20%26%20W%20Smokehouse%20Barbecue%2C%20Bonifay%20FL"
+        },
+        {
+          "name": "Cypress Springs Kayak & Canoe Rentals (Holmes Creek)",
+          "kind": "activity",
+          "blurb": "Outfitter shuttles you upstream then you paddle Holmes Creek down to the vivid 68-degree blue spring, accessible only by water.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cypress%20Springs%20Kayak%20and%20Canoe%20Rentals%2C%20Vernon%20FL"
+        },
+        {
+          "name": "Morrison Springs",
+          "kind": "activity",
+          "blurb": "Crystal-clear second-magnitude spring rimmed by old-growth cypress, with a swimming area, boardwalk, and popular cavern dive access.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Morrison%20Springs%2C%20Ponce%20de%20Leon%20FL"
+        },
+        {
+          "name": "Vortex Spring Adventures",
+          "kind": "activity",
+          "blurb": "Spring-fed swim park near Ponce de Leon with water slides, rope swing, zip line, and a famed underwater cave for divers.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Vortex%20Spring%20Adventures%2C%20Ponce%20de%20Leon%20FL"
+        }
+      ]
+    },
+    {
+      "id": "127cf1cb-bae2-4548-a53c-770f434d1656",
+      "name": "Florida Caverns State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Florida's only public cave tour, with limestone formations and the Blue Hole Spring swimming hole.",
+      "notes": "",
+      "tags": [
+        "caves",
+        "tour",
+        "blue-hole",
+        "~1.5hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Florida+Caverns+State+Park+Marianna+FL",
+      "recommendations": [
+        {
+          "name": "Spears' Cafe",
+          "kind": "food",
+          "blurb": "Family-run lunch spot in nearby Marianna known for made-to-order burgers, unlimited homemade fries, and walls signed by customers.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Spears%27%20Cafe%2C%20Marianna%20FL"
+        },
+        {
+          "name": "The Waffle Iron of Marianna",
+          "kind": "food",
+          "blurb": "Beloved Marianna breakfast-and-brunch cafe serving all-day waffles and hearty plates with friendly small-town service, a perfect pre-cave-tour stop.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Waffle%20Iron%20of%20Marianna%2C%20Marianna%20FL"
+        },
+        {
+          "name": "Bistro Palms",
+          "kind": "food",
+          "blurb": "Family-owned Marianna staple that's a go-to for relaxed dinners and date nights, one of the few sit-down evening options in town.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bistro%20Palms%2C%20Marianna%20FL"
+        },
+        {
+          "name": "Florida Caverns Cave Tour",
+          "kind": "activity",
+          "blurb": "Florida's only public show cave: a ranger-led 45-minute walk past stalactites, stalagmites, and limestone formations; tours often sell out weekends.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Florida%20Caverns%20State%20Park%20Visitor%20Center%2C%20Marianna%20FL"
+        },
+        {
+          "name": "Blue Hole Spring",
+          "kind": "activity",
+          "blurb": "Cold, clear 35-foot-deep spring swimming hole feeding the Chipola River, with a floating dock; ideal for cooling off in summer.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Blue%20Hole%20Spring%2C%20Florida%20Caverns%20State%20Park%2C%20Marianna%20FL"
+        },
+        {
+          "name": "Falling Waters State Park",
+          "kind": "activity",
+          "blurb": "Home to Florida's tallest waterfall, a 73-foot drop into a cylindrical sinkhole, about 30 minutes south near Chipley.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Falling%20Waters%20State%20Park%2C%20Chipley%20FL"
+        }
+      ]
+    },
+    {
+      "id": "477cb104-db34-4d76-849d-f42cca8eb293",
+      "name": "Falling Waters State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Site of Florida's tallest waterfall, dropping into a deep sinkhole.",
+      "notes": "",
+      "tags": [
+        "waterfall",
+        "sinkhole",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Falling+Waters+State+Park+Chipley+FL",
+      "recommendations": [
+        {
+          "name": "Crescent City Cafe",
+          "kind": "food",
+          "blurb": "Beloved Chipley hole-in-the-wall serving Cajun gouda shrimp and grits, shrimp gumbo, and smoked wings with Southern hospitality.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Crescent%20City%20Cafe%2C%20Chipley%20FL"
+        },
+        {
+          "name": "Outrigger's Seafood and Grill",
+          "kind": "food",
+          "blurb": "The go-to seafood spot in Chipley, known for fried shrimp, scallops, and generous portions in a recently renovated dining room.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Outrigger%27s%20Seafood%20and%20Grill%2C%20Chipley%20FL"
+        },
+        {
+          "name": "Javier's Mexican Grill",
+          "kind": "food",
+          "blurb": "Casual Chipley favorite praised for its birria tacos, fresh chips, and authentic homestyle Mexican plates.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Javier%27s%20Mexican%20Grill%2C%20Chipley%20FL"
+        },
+        {
+          "name": "Sinkhole Trail and Falling Waters Sink",
+          "kind": "activity",
+          "blurb": "Boardwalk leads to Florida's tallest waterfall, dropping 73 feet into a 100-foot-deep cylindrical sinkhole whose water vanishes underground.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Falling%20Waters%20State%20Park%2C%20Chipley%20FL"
+        },
+        {
+          "name": "Falling Waters Lake swimming beach",
+          "kind": "activity",
+          "blurb": "Sand-bottom, stream-fed two-acre pond with a roped swimming area, butterfly garden, and shaded picnic pavilions right in the park.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Falling%20Waters%20Lake%2C%20Chipley%20FL"
+        },
+        {
+          "name": "Florida Caverns State Park cave tours",
+          "kind": "activity",
+          "blurb": "Florida's only public dry-cave tours, 30 minutes away in Marianna, showcasing stalactites, soda straws, and flowstone formations.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Florida%20Caverns%20State%20Park%2C%20Marianna%20FL"
+        }
+      ]
+    },
+    {
+      "id": "9a9d9004-26fc-4ea8-a3b9-b4cc7fdefbfe",
+      "name": "Wakulla Springs State Park",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "One of the world's largest, deepest springs; glass-bottom and jungle riverboat tours.",
+      "notes": "",
+      "tags": [
+        "spring",
+        "riverboat",
+        "wildlife",
+        "~2hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Wakulla+Springs+State+Park+Wakulla+Springs+FL",
+      "recommendations": [
+        {
+          "name": "Posey's Steam Room & Oyster Bar",
+          "kind": "food",
+          "blurb": "Family-run since 1986 in Panacea, this no-frills dive serves steamed crab claws, smoked mullet dip, and raw Gulf oysters.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Posey%27s%20Steam%20Room%20%26%20Oyster%20Bar%2C%20Panacea%20FL"
+        },
+        {
+          "name": "Myra Jean's Restaurant",
+          "kind": "food",
+          "blurb": "Quirky Crawfordville diner with a model train running the ceiling, famed for the county's best pizza and all-day breakfast.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Myra%20Jean%27s%20Restaurant%2C%20Crawfordville%20FL"
+        },
+        {
+          "name": "Cooter Stew Cafe",
+          "kind": "food",
+          "blurb": "Riverside St. Marks favorite known for hefty burgers like the Chunkaburger and crispy hand-cut fries, with scenic outdoor seating.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cooter%20Stew%20Cafe%2C%20Saint%20Marks%20FL"
+        },
+        {
+          "name": "Wakulla Springs Jungle Cruise Riverboat Tour",
+          "kind": "activity",
+          "blurb": "A $8 45-minute loop among bald cypress, wading birds, alligators and manatees; reserve ahead, runs nearly daily.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Wakulla%20Springs%20Jungle%20Cruise%20Boat%20Tour%2C%20Wakulla%20Springs%20FL"
+        },
+        {
+          "name": "The Lodge at Wakulla Springs",
+          "kind": "activity",
+          "blurb": "Edward Ball's unchanged 1937 lodge boasts a 70-foot marble bar, Art Deco elevator, and Tarzan film history.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Lodge%20at%20Wakulla%20Springs%2C%20Wakulla%20Springs%20FL"
+        },
+        {
+          "name": "St. Marks National Wildlife Refuge",
+          "kind": "activity",
+          "blurb": "Sprawling refuge with the 1831 lighthouse, top winter birding, fall monarch migration, and the Cathedral of Palms trail.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.%20Marks%20National%20Wildlife%20Refuge%2C%20St.%20Marks%20FL"
+        }
+      ]
+    },
+    {
+      "id": "f07b102b-0b21-47ea-85dc-cd6fc09bcc4d",
+      "name": "DeFuniak Springs",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Charming inland town circling a near-round lake, with Victorian homes and Chautauqua Vineyards.",
+      "notes": "",
+      "tags": [
+        "historic",
+        "victorian",
+        "winery",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=DeFuniak+Springs+DeFuniak+Springs+FL",
+      "recommendations": [
+        {
+          "name": "Iron & Grape Italian Kitchen",
+          "kind": "food",
+          "blurb": "Downtown scratch kitchen where Chef Todd Misener turns out cast-iron pasta, smoked-fish appetizers, and an extensive wine list.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Iron%20%26%20Grape%20Italian%20Kitchen%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Perla Baking Co.",
+          "kind": "food",
+          "blurb": "DeFuniak's farm-to-table bakery-cafe on historic Baldwin Avenue, serving house-made breads, pastries, and Amavida organic coffee daily.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Perla%20Baking%20Co.%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Cafe Nola",
+          "kind": "food",
+          "blurb": "Cajun-Creole spot beloved for seafood gumbo, beignets, and blackened redfish in generous, well-priced portions.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Nola%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Lake DeFuniak Walking Path",
+          "kind": "activity",
+          "blurb": "Stroll the circular path around one of only two near-perfectly-round spring-fed lakes on earth, ringed by Victorian homes.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake%20DeFuniak%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Walton-DeFuniak Library",
+          "kind": "activity",
+          "blurb": "Florida's oldest continuously operating library, founded 1886, with antique armor and a charming lakeside Victorian setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Walton-DeFuniak%20Library%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Chautauqua Vineyards and Winery",
+          "kind": "activity",
+          "blurb": "Muscadine winery offering free tastings and tours of locally made Carlos white and Noble red wines.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Chautauqua%20Vineyards%20and%20Winery%2C%20DeFuniak%20Springs%20FL"
+        },
+        {
+          "name": "Chautauqua Hall of Brotherhood",
+          "kind": "activity",
+          "blurb": "Neoclassical 1909 hall with grand columns, the surviving centerpiece of the historic Florida Chautauqua Assembly grounds.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Chautauqua%20Hall%20of%20Brotherhood%2C%20DeFuniak%20Springs%20FL"
+        }
+      ]
+    },
+    {
+      "id": "261044f4-8116-44c0-bf53-cb51cd34ae9c",
+      "name": "Apalachicola",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Old-Florida 'Forgotten Coast' town famous for oysters, antiques, and the Maritime Museum.",
+      "notes": "",
+      "tags": [
+        "historic-town",
+        "oysters",
+        "antiques",
+        "~1.5hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Apalachicola+Apalachicola+FL",
+      "recommendations": [
+        {
+          "name": "Up the Creek Raw Bar",
+          "kind": "food",
+          "blurb": "Casual second-floor raw bar with the best Apalachicola River views, fresh local oysters, gumbo, and grilled mahi tacos.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Up%20the%20Creek%20Raw%20Bar%2C%20Apalachicola%20FL"
+        },
+        {
+          "name": "The Owl Cafe",
+          "kind": "food",
+          "blurb": "Longtime upscale spot for blackened grouper, crab cakes, and a legendary weekend brunch in a historic downtown setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Owl%20Cafe%2C%20Apalachicola%20FL"
+        },
+        {
+          "name": "Apalachicola Chocolate & Coffee Company",
+          "kind": "food",
+          "blurb": "Downtown shop with house-made chocolates, gelato, fresh-roasted coffee, and homemade pastries, pies, and cannolis.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Apalachicola%20Chocolate%20%26%20Coffee%20Company%2C%20Apalachicola%20FL"
+        },
+        {
+          "name": "Apalachicola Maritime Museum",
+          "kind": "activity",
+          "blurb": "Riverfront museum offering eco-tours, sunset sails aboard restored schooner Jean Mary, and exhibits on the region's maritime heritage.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Apalachicola%20Maritime%20Museum%2C%20Apalachicola%20FL"
+        },
+        {
+          "name": "The Tin Shed Nautical & Antiques",
+          "kind": "activity",
+          "blurb": "Rambling antique shop packed with nautical memorabilia, vintage maps, and coastal curiosities curated by storytelling owners.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Tin%20Shed%20Nautical%20%26%20Antiques%2C%20Apalachicola%20FL"
+        },
+        {
+          "name": "Orman House Historic State Park",
+          "kind": "activity",
+          "blurb": "Restored 1838 antebellum cotton-merchant home with period furnishings and gardens overlooking the Apalachicola River.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Orman%20House%20Historic%20State%20Park%2C%20Apalachicola%20FL"
+        }
+      ]
+    },
+    {
+      "id": "c4b3f990-2724-48a5-95c0-ed432deaa243",
+      "name": "St. George Island",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Barrier island with a wide, uncrowded state-park beach.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "state-park",
+        "quiet",
+        "~2hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.+George+Island+St.+George+Island+FL",
+      "recommendations": [
+        {
+          "name": "Paddy's Raw Bar",
+          "kind": "food",
+          "blurb": "Open-air island raw bar serving local Apalachicola Bay oysters and shrimp, with trivia nights, live music, and cold beer.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Paddy%27s%20Raw%20Bar%2C%20St.%20George%20Island%20FL"
+        },
+        {
+          "name": "Blue Parrot Oceanfront Cafe",
+          "kind": "food",
+          "blurb": "Beachfront landmark with a deck over the sand, fresh Gulf seafood baskets, and tropical drinks at sunset.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Blue%20Parrot%20Oceanfront%20Cafe%2C%20St.%20George%20Island%20FL"
+        },
+        {
+          "name": "Lynn's Quality Oysters",
+          "kind": "food",
+          "blurb": "Worth the short drive to Eastpoint for some of the bay's freshest oysters served raw, steamed, or baked.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lynn%27s%20Quality%20Oysters%2C%20Eastpoint%20FL"
+        },
+        {
+          "name": "Dr. Julian G. Bruce St. George Island State Park",
+          "kind": "activity",
+          "blurb": "Nine miles of undeveloped white-sand Gulf beach with dunes, marshes, shelling, and barely-there crowds.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dr.%20Julian%20G.%20Bruce%20St.%20George%20Island%20State%20Park%2C%20St.%20George%20Island%20FL"
+        },
+        {
+          "name": "Cape St. George Lighthouse",
+          "kind": "activity",
+          "blurb": "Climb 92 spiral steps up the restored 1852 tower for 360-degree views over the Gulf and Apalachicola Bay.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cape%20St.%20George%20Lighthouse%2C%20St.%20George%20Island%20FL"
+        },
+        {
+          "name": "Island Espresso",
+          "kind": "food",
+          "blurb": "Newer island coffee shop with cinnamon rolls, apple fritters, and croissants from local bakeries, plus outdoor seating.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Island%20Espresso%2C%20St.%20George%20Island%20FL"
+        },
+        {
+          "name": "St. George Island bike paths",
+          "kind": "activity",
+          "blurb": "Pedal the island's paved trails through dunes and pine, prime for spotting shorebirds, dolphins, and sea turtle nests.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.%20George%20Island%20bike%20path%2C%20St.%20George%20Island%20FL"
+        }
+      ]
+    },
+    {
+      "id": "efc5b60b-1dc9-4f93-a45a-f9a9f1e9bccc",
+      "name": "Port St. Joe",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Quiet Forgotten Coast town with beaches, seafood, and Cape San Blas nearby.",
+      "notes": "",
+      "tags": [
+        "coastal-town",
+        "seafood",
+        "~1hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Port+St.+Joe+Port+St.+Joe+FL",
+      "recommendations": [
+        {
+          "name": "Indian Pass Raw Bar",
+          "kind": "food",
+          "blurb": "Honor-system oyster shack on County Road 30A: grab a tally sheet, pour your own beer, and eat baked Apalachicola oysters.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Indian%20Pass%20Raw%20Bar%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Krazyfish Grille",
+          "kind": "food",
+          "blurb": "Owned by a commercial fisherman, serving locally caught fish, a sushi bar, tropical cocktails, and live music downtown.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Krazyfish%20Grille%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Joe Mama's Wood Fired Kitchen",
+          "kind": "food",
+          "blurb": "Local favorite for wood-fired pizzas built on fresh, locally sourced ingredients in a relaxed downtown setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Joe%20Mama%27s%20Wood%20Fired%20Kitchen%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "T.H. Stone Memorial St. Joseph Peninsula State Park",
+          "kind": "activity",
+          "blurb": "Ten miles of pristine white-sand beach, tall dunes, and the eight-mile Loggerhead Trail on a wild barrier peninsula.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=T.H.%20Stone%20Memorial%20St.%20Joseph%20Peninsula%20State%20Park%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Cape San Blas Lighthouse",
+          "kind": "activity",
+          "blurb": "Climb 131 steps up the relocated 1880s tower for panoramic views over town and St. Joseph Bay.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cape%20San%20Blas%20Lighthouse%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Salinas Park Bayside",
+          "kind": "activity",
+          "blurb": "Quiet Cape San Blas park with a scenic boardwalk over the dunes and calm shallow bay water for kids.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Salinas%20Park%20Bayside%2C%20Cape%20San%20Blas%2C%20Port%20St.%20Joe%20FL"
+        }
+      ]
+    },
+    {
+      "id": "8c570391-663c-44e1-9747-8ea1abc38998",
+      "name": "Cape San Blas",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Secluded peninsula with dune-backed Gulf and bay beaches.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "remote",
+        "dunes",
+        "~1.25hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cape+San+Blas+Cape+San+Blas+FL",
+      "recommendations": [
+        {
+          "name": "Indian Pass Raw Bar",
+          "kind": "food",
+          "blurb": "Legendary no-frills oyster shack where you mark your own clipboard order and grab beer from the cooler; raw and baked oysters reign.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Indian%20Pass%20Raw%20Bar%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Skully's Low Country Boil",
+          "kind": "food",
+          "blurb": "Rustic shack once ranked Yelp's best seafood in Florida, doing shrimp boil and gumbo at picnic tables with classic rock playing.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Skully%27s%20Low%20Country%20Boil%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "LongBill's Local Restaurant",
+          "kind": "food",
+          "blurb": "Popular Cape spot built on fresh Gulf seafood, plus standout wood-fired pizza and tacos in a casual local setting.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=LongBill%27s%20Local%20Restaurant%2C%20Cape%20San%20Blas%20FL"
+        },
+        {
+          "name": "T.H. Stone Memorial St. Joseph Peninsula State Park",
+          "kind": "activity",
+          "blurb": "Ten miles of pristine dune-backed beaches plus the 8-mile Loggerhead Trail, top-tier birding, and turtle nesting from May to October.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=T.H.%20Stone%20Memorial%20St.%20Joseph%20Peninsula%20State%20Park%2C%20Port%20St.%20Joe%20FL"
+        },
+        {
+          "name": "Scalloping in St. Joseph Bay",
+          "kind": "activity",
+          "blurb": "Wade or snorkel the shallow seagrass beds to scoop bay scallops by hand in summer; Scallop Cove rents the gear.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=St.%20Joseph%20Bay%20Scalloping%2C%20Cape%20San%20Blas%20FL"
+        },
+        {
+          "name": "Cape San Blas Lighthouse",
+          "kind": "activity",
+          "blurb": "Climb 131 spiral steps of this relocated 1880s lighthouse for 360-degree bay and Gulf views, with keeper's-quarters museum below.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cape%20San%20Blas%20Lighthouse%2C%20Port%20St.%20Joe%20FL"
+        }
+      ]
+    },
+    {
+      "id": "433bdb57-c9f8-4335-94c8-c0b0655ebf02",
+      "name": "Tallahassee",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "State capital with museums, historic sites, and university energy.",
+      "notes": "",
+      "tags": [
+        "capital",
+        "history",
+        "museums",
+        "~1.75hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tallahassee+Tallahassee+FL",
+      "recommendations": [
+        {
+          "name": "Backwoods Crossing",
+          "kind": "food",
+          "blurb": "Farm-to-table Southern cooking from its own four-acre farmette, with a famous Nutella creme brulee and rotating weekly specials.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Backwoods%20Crossing%2C%20Tallahassee%20FL"
+        },
+        {
+          "name": "Lofty Pursuits",
+          "kind": "food",
+          "blurb": "Classic soda fountain inside a toy store where you watch Victorian hard candy hand-pulled, plus 40 ice cream flavors and brunch.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lofty%20Pursuits%2C%20Tallahassee%20FL"
+        },
+        {
+          "name": "Canopy Road Cafe",
+          "kind": "food",
+          "blurb": "Beloved local breakfast spot known for banana nut bread pancakes and hearty Southern morning fare, open early daily until mid-afternoon.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Canopy%20Road%20Cafe%2C%20Tallahassee%20FL"
+        },
+        {
+          "name": "Tallahassee Museum",
+          "kind": "activity",
+          "blurb": "52-acre site blending an 1880s Big Bend Farm, native wildlife, a birds-of-prey aviary, and the Treemendous zipline canopy course.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tallahassee%20Museum%2C%20Tallahassee%20FL"
+        },
+        {
+          "name": "Alfred B. Maclay Gardens State Park",
+          "kind": "activity",
+          "blurb": "Ornamental gardens famed for spring azaleas and camellias, with a reflecting pool, lakeside nature trails, and shaded picnic pavilions.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Alfred%20B.%20Maclay%20Gardens%20State%20Park%2C%20Tallahassee%20FL"
+        },
+        {
+          "name": "Mission San Luis",
+          "kind": "activity",
+          "blurb": "Reconstructed 1600s Apalachee-Spanish capital with costumed interpreters, a towering council house, Franciscan church, and active archaeology.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mission%20San%20Luis%2C%20Tallahassee%20FL"
+        }
+      ]
+    },
+    {
+      "id": "2231220b-7590-4a91-93a7-dd95efebb25f",
+      "name": "Pensacola",
+      "category": "excursion",
+      "area": "excursion",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Historic Gulf city with the National Naval Aviation Museum and white-sand beaches.",
+      "notes": "",
+      "tags": [
+        "history",
+        "naval-aviation",
+        "beaches",
+        "~2hr"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pensacola+Pensacola+FL",
+      "recommendations": [
+        {
+          "name": "Joe Patti's Seafood",
+          "kind": "food",
+          "blurb": "Sprawling family-run seafood market and local institution where you pick fresh Gulf shrimp, oysters, and snapper straight off the docks.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Joe%20Patti%27s%20Seafood%2C%20Pensacola%20FL"
+        },
+        {
+          "name": "Pearl & Horn",
+          "kind": "food",
+          "blurb": "Downtown oyster bar named to USA Today's 2025 Restaurants of the Year, known for broiled oysters and inventive coastal plates.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pearl%20%26%20Horn%2C%20Pensacola%20FL"
+        },
+        {
+          "name": "The Dog House Deli",
+          "kind": "food",
+          "blurb": "Cash-only downtown walk-up dive of over 50 years, famous for its 'Debris' po'boy and loaded hot dogs.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=The%20Dog%20House%20Deli%2C%20Pensacola%20FL"
+        },
+        {
+          "name": "National Naval Aviation Museum",
+          "kind": "activity",
+          "blurb": "Free museum on NAS Pensacola with 150+ preserved aircraft and the Blue Angels' home base flight demonstrations.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=National%20Naval%20Aviation%20Museum%2C%20Pensacola%20FL"
+        },
+        {
+          "name": "Fort Pickens, Gulf Islands National Seashore",
+          "kind": "activity",
+          "blurb": "Civil War-era brick fort with arches and tunnels to explore, fronting miles of unspoiled white-sand seashore and clear Gulf water.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fort%20Pickens%2C%20Pensacola%20Beach%20FL"
+        },
+        {
+          "name": "Pensacola Lighthouse and Maritime Museum",
+          "kind": "activity",
+          "blurb": "Climb 177 steps up the historic 1859 lighthouse for sweeping views of Pensacola Pass and the bay.",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pensacola%20Lighthouse%20and%20Maritime%20Museum%2C%20Pensacola%20FL"
+        }
+      ]
+    },
+    {
+      "id": "bf8c2fff-be58-4249-a142-b8a057a98dc5",
+      "name": "Get a Bay County library card",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Bring a photo ID and proof of address to a Northwest Regional Library System branch (e.g., the Bay County Public Library) for a free card.",
+      "notes": "",
+      "tags": [
+        "library",
+        "errand"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Get+a+Bay+County+library+card+Panama+City+FL"
+    },
+    {
+      "id": "476d8641-d82c-4138-b9db-cde3bb3ec79e",
+      "name": "Get a Florida driver's license",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "New residents have ~30 days to convert to a FL license at the Bay County Tax Collector; bring identity, SSN, and two proofs of address (REAL ID).",
+      "notes": "",
+      "tags": [
+        "dmv",
+        "deadline",
+        "errand"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Get+a+Florida+driver%27s+license+Bay+County+Tax+Collector+Panama+City+FL"
+    },
+    {
+      "id": "66707c74-c1cc-405c-9696-8ae8e1d38c79",
+      "name": "Register & title your vehicle(s)",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Title and register with the Bay County Tax Collector after establishing residency; bring the title, proof of FL insurance, and ID.",
+      "notes": "",
+      "tags": [
+        "dmv",
+        "car",
+        "deadline"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Register+%26+title+your+vehicle%28s%29+Bay+County+Tax+Collector+Panama+City+FL"
+    },
+    {
+      "id": "71ebef61-1120-4291-b16e-28fff32d97ad",
+      "name": "Switch to Florida auto insurance",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Move to a Florida policy (minimum PIP + PDL) before registering your vehicle.",
+      "notes": "",
+      "tags": [
+        "insurance",
+        "car"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "e9a68f0b-dafd-4539-ac11-5190df39bc21",
+      "name": "Register to vote in Bay County",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Register at RegisterToVoteFlorida.gov or at the library/tax collector; deadline is 29 days before any election.",
+      "notes": "",
+      "tags": [
+        "voting",
+        "civic",
+        "deadline"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "2314efc7-5e7e-4ab4-b68a-1c4838509c1b",
+      "name": "Set up electricity",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Open a Florida Power & Light account for your new address.",
+      "notes": "",
+      "tags": [
+        "utilities",
+        "home"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "67912410-4c47-4528-94a1-320b6b79e9ea",
+      "name": "Set up water/sewer & trash",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Arrange water/sewer and trash/recycling pickup through your city or the county.",
+      "notes": "",
+      "tags": [
+        "utilities",
+        "home"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "9bb4fbe4-49e5-431f-b6d5-118bc8fbdc2c",
+      "name": "Set up internet",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Compare local internet providers and schedule installation.",
+      "notes": "",
+      "tags": [
+        "utilities",
+        "home"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "f700f3ae-e885-4129-8e38-ff41db7ae0e3",
+      "name": "Forward your mail (USPS)",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "File a change of address at usps.com so mail forwards to the new place.",
+      "notes": "",
+      "tags": [
+        "moving",
+        "errand"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "fc87389d-745e-420d-bf7b-0ad953c9b0a3",
+      "name": "Find a primary care doctor",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Pick an in-network primary care physician and transfer your records.",
+      "notes": "",
+      "tags": [
+        "health"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "05f83637-ea98-4b2b-b88c-cdb6d1c64723",
+      "name": "Find a dentist",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Establish care with a local dentist.",
+      "notes": "",
+      "tags": [
+        "health"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "d2faea4e-9237-44a4-99b2-6673f80cff07",
+      "name": "Find a vet & update pet info",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Choose a vet, transfer records, and update pet tags/microchip with the new address.",
+      "notes": "",
+      "tags": [
+        "pets",
+        "health"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "81af1364-815e-478e-94bd-2150871262b4",
+      "name": "Sign up for PCB beach flag alerts",
+      "category": "task",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Subscribe to PCB beach-flag warning texts so you always know the day's water conditions.",
+      "notes": "",
+      "tags": [
+        "beach",
+        "safety"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "aaf7cee5-0a1d-4c63-a4c2-1fb199e8f67b",
+      "name": "Sign up for Bay County emergency alerts",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Enroll in the county's AlertBay emergency notification system for storm and emergency alerts.",
+      "notes": "",
+      "tags": [
+        "safety",
+        "weather"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "5c831e2a-b0e4-4828-84f8-384870cde514",
+      "name": "Build a hurricane kit & plan",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Assemble water, supplies, and documents and learn your evacuation zone before hurricane season.",
+      "notes": "",
+      "tags": [
+        "safety",
+        "weather",
+        "prep"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "329eb6db-b9b1-4a32-b89f-9315c8199aac",
+      "name": "Get a Florida State Parks annual pass",
+      "category": "task",
+      "area": "pcb",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "If you'll visit St. Andrews/Camp Helen often, an annual entrance pass pays for itself fast.",
+      "notes": "",
+      "tags": [
+        "parks",
+        "outdoors"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "02b5a844-1350-47af-9d5b-5255ed612801",
+      "name": "File Homestead Exemption (if you buy)",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "If you own and occupy your home by Jan 1, file with the Bay County Property Appraiser by March 1 for the tax exemption.",
+      "notes": "",
+      "tags": [
+        "home",
+        "taxes",
+        "deadline"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    },
+    {
+      "id": "1cfe2874-b4d0-4dcf-9d2d-46ec9bf25a7d",
+      "name": "Update address on accounts & IDs",
+      "category": "task",
+      "area": "panama-city",
+      "status": "want",
+      "rating": null,
+      "favorite": false,
+      "description": "Update banks, subscriptions, employer, and online accounts with the new address.",
+      "notes": "",
+      "tags": [
+        "moving",
+        "admin"
+      ],
+      "createdAt": "2026-06-21T17:43:51+00:00",
+      "updatedAt": "2026-06-21T17:43:51+00:00"
+    }
+  ]
+}
