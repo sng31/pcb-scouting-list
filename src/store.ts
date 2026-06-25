@@ -29,6 +29,8 @@ interface CoastalState {
   setRating: (id: string, rating: Rating) => void
   toggleFavorite: (id: string) => void
   syncFromSeed: () => SyncResult
+  importData: (data: { version: number; items: Item[]; seededAt?: string }) => void
+  resetToSeed: () => void
 
   // internal
   _seed: () => void
@@ -121,6 +123,16 @@ export const useStore = create<CoastalState>()(
               : it,
           ),
         })),
+
+      importData: (data) =>
+        set({
+          version: data.version ?? SCHEMA_VERSION,
+          items: data.items,
+          seededAt: data.seededAt ?? now(),
+          lastSyncedAt: now(),
+        }),
+
+      resetToSeed: () => get()._seed(),
 
       // "Check for new places": pull the latest bundled seed into the store
       // WITHOUT clobbering the user's own data. Adds places that aren't here yet
