@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Home, Compass, Heart, ListChecks, Settings } from 'lucide-react'
+import { Home, Compass, Heart, Settings } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 interface Tab {
@@ -12,7 +12,6 @@ const TABS: Tab[] = [
   { to: '/', label: 'Home', Icon: Home },
   { to: '/browse', label: 'Browse', Icon: Compass },
   { to: '/favorites', label: 'Favorites', Icon: Heart },
-  { to: '/checklist', label: 'Checklist', Icon: ListChecks },
   { to: '/settings', label: 'Settings', Icon: Settings },
 ]
 

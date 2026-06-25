@@ -89,7 +89,7 @@ interface AppData {
 
 ## 4. Screens & Navigation
 
-Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Checklist · Settings**
+Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Settings**
 
 1. **Home / Dashboard**
    - Soft coastal hero (wave motif, app name).
@@ -118,11 +118,7 @@ Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Checklist
 4. **Favorites**
    - Cross-category view of everything `favorite: true`, grouped by category, sorted by rating.
 
-5. **Settling-in Checklist**
-   - `category: 'task'` items rendered as a simple checklist (e.g., library card, DMV/driver's license, voter registration, beach parking pass, trash/recycling setup, find a dentist/vet, etc.).
-   - Tap to toggle done; optional notes per task.
-
-6. **Settings / Data**
+5. **Settings / Data**
    - **Export data** → downloads `pcb-scouting-list-backup.json`.
    - **Import data** → upload a backup. **Replaces** all current data behind a confirmation dialog (the "restore from backup" model). Merge-by-id is a documented future option.
    - Theme note / about.
@@ -178,8 +174,6 @@ Real places across these buckets, to be researched and compiled into the seed da
 - **Weekend excursions** — 30A & Seaside, Destin, Grayton Beach, Apalachicola, springs (Econfina, Vortex, Morrison), Florida Caverns, Wakulla, etc.
 - **Markets** — St. Andrews Waterfront & downtown farmers markets, seafood markets, neighborhood markets.
 - **Sunset Spots** — west-facing beaches, piers, rooftop bars, boardwalks, sunset cruises.
-- **Settling-in checklist** — Bay County library card, FL driver's license/registration (Bay County Tax Collector), voter registration, utilities/trash, beach-flag alerts, hurricane prep, etc.
-
 *(Seed dataset generated → `seed.json`, conforming to the §3 schema. Casual dining is weighted heavily; a few special-occasion restaurants are flagged with a `special-occasion` tag.)*
 
 ---
@@ -190,7 +184,7 @@ Real places across these buckets, to be researched and compiled into the seed da
 Scaffold Vite + React + TS + Tailwind + PWA. Implement design tokens, `Item` model, Zustand store with `localStorage` persistence, Home, Browse (one category), Item detail/edit with add/status/rating/notes/favorite.
 
 **Phase 2 — Full breadth**
-All categories, Favorites view, search/filter/sort, Settling-in checklist, tags, restaurant dish lists, map links.
+All categories, Favorites view, search/filter/sort, tags, restaurant dish lists, map links.
 
 **Phase 3 — Polish & data safety**
 Export/import JSON, seed-data load on first run, empty states, animations, offline verification, deploy to Vercel/Netlify + verify add-to-home-screen install.

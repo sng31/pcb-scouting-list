@@ -24,7 +24,7 @@ export default function Settings() {
       <section className="mt-5 rounded-[var(--radius-card)] bg-surface p-4 shadow-[var(--shadow-coastal-sm)]">
         <h2 className="text-sm font-semibold text-muted">Your list</h2>
         <div className="mt-2 grid grid-cols-3 gap-2 text-center">
-          <Mini label="Places" value={items.length} />
+          <Mini label="Places" value={items.filter((it) => it.category !== 'task').length} />
           <Mini label="Been" value={counts.been} />
           <Mini label="Favorites" value={counts.favorites} />
         </div>

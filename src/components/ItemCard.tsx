@@ -6,8 +6,6 @@ import StatusPill from './StatusPill'
 import StarRating from './StarRating'
 import FavoriteButton from './FavoriteButton'
 
-// Browse / list card: name, area chip, status pill, star rating, favorite.
-// The whole card links to the detail screen; the heart toggles in place.
 export default function ItemCard({ item }: { item: Item }) {
   const toggleFavorite = useStore((s) => s.toggleFavorite)
 
@@ -35,6 +33,22 @@ export default function ItemCard({ item }: { item: Item }) {
         <AreaChip area={item.area} />
         {item.rating != null && <StarRating value={item.rating} size={15} className="ml-auto" />}
       </div>
+
+      {item.tags.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {item.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-[var(--radius-pill)] bg-seafoam/12 px-2.5 py-0.5 text-xs font-semibold text-seafoam"
+            >
+              {tag}
+            </span>
+          ))}
+          {item.tags.length > 4 && (
+            <span className="text-xs text-muted">+{item.tags.length - 4}</span>
+          )}
+        </div>
+      )}
     </Link>
   )
 }

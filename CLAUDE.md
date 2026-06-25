@@ -100,7 +100,7 @@ Centralized as CSS variables, mirrored into the Tailwind theme.
 
 ## Navigation
 
-Bottom tab bar: **Home · Browse · Favorites · Checklist · Settings**
+Bottom tab bar: **Home · Browse · Favorites · Settings**
 
 ## Build Phases
 
@@ -110,7 +110,7 @@ Scaffold Vite + React + TS + Tailwind + PWA. Design tokens, `Item` model, Zustan
 with add / status toggle / star rating / notes / favorite.
 
 **Phase 2 — Full breadth**
-All categories, Favorites view, search/filter/sort, Settling-in checklist, tags,
+All categories, Favorites view, search/filter/sort, tags,
 restaurant dish lists, map links.
 
 **Phase 3 — Polish & data safety**
