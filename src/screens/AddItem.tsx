@@ -87,10 +87,8 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
 // ── Mapping helpers ──────────────────────────────────────────────────
 
 function coordsToArea(lat: number, lng: number): Area {
-  const near = lat > 29.9 && lat < 30.5 && lng > -86.2 && lng < -85.3
-  if (!near) return 'excursion'
-  if (lat < 30.2 && lng < -85.68) return 'pcb'
-  if (lat < 30.3 && lng >= -85.68) return 'panama-city'
+  if (lat < 30.2 && lng < -85.68 && lng > -86.2) return 'pcb'
+  if (lat < 30.3 && lng >= -85.68 && lng < -85.3) return 'panama-city'
   return 'surrounding'
 }
 

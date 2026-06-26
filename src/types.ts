@@ -10,7 +10,7 @@ export type Category =
   | 'sunset'
   | 'task'
 
-export type Area = 'pcb' | 'panama-city' | 'surrounding' | 'excursion'
+export type Area = 'pcb' | 'panama-city' | 'surrounding'
 
 export type Status = 'want' | 'been' // tasks reuse this as todo/done
 
@@ -99,10 +99,9 @@ export const AREA_LABEL: Record<Area, string> = {
   pcb: 'PCB',
   'panama-city': 'Panama City',
   surrounding: 'Surrounding',
-  excursion: 'Excursion',
 }
 
-export const AREAS: Area[] = ['pcb', 'panama-city', 'surrounding', 'excursion']
+export const AREAS: Area[] = ['pcb', 'panama-city', 'surrounding']
 
 // status label varies for tasks (todo/done) vs places (want/been)
 export function statusLabel(status: Status, category: Category): string {
