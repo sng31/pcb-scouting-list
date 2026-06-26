@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft, Wand2 } from 'lucide-react'
 import { useStore } from '../store'
 import {
   CATEGORIES,
@@ -9,6 +9,55 @@ import {
   AREA_LABEL,
 } from '../types'
 import type { Area, Category } from '../types'
+
+// ── Maps URL parser ──────────────────────────────────────────────────
+// Extracts place name and guesses area from standard Google / Apple Maps URLs.
+// Short links (maps.app.goo.gl) can't be expanded client-side — returns nothing.
+
+interface ParsedPlace {
+  name?: string
+  area?: Area
+}
+
+function parseMapsUrl(raw: string): ParsedPlace {
+  try {
+    const url = new URL(raw.trim())
+    const host = url.hostname.replace('www.', '')
+    let name: string | undefined
+    let lat: number | undefined
+    let lng: number | undefined
+
+    if (host === 'google.com' && url.pathname.includes('/maps')) {
+      const placeMatch = url.pathname.match(/\/(?:place|search)\/([^/@]+)/)
+      if (placeMatch) name = decodeURIComponent(placeMatch[1].replace(/\+/g, ' '))
+      if (!name) name = url.searchParams.get('q') ?? undefined
+      const coordMatch = raw.match(/@(-?\d+\.?\d*),(-?\d+\.?\d*)/)
+      if (coordMatch) { lat = parseFloat(coordMatch[1]); lng = parseFloat(coordMatch[2]) }
+    } else if (host === 'maps.google.com') {
+      name = url.searchParams.get('q') ?? undefined
+      if (name?.match(/^-?\d+\.?\d*,-?\d+\.?\d*$/)) name = undefined
+    } else if (host === 'maps.apple.com') {
+      name = url.searchParams.get('q') ?? undefined
+      const ll = url.searchParams.get('ll')
+      if (ll) { const [a, b] = ll.split(','); lat = parseFloat(a); lng = parseFloat(b) }
+    }
+
+    const area = lat != null && lng != null ? coordsToArea(lat, lng) : undefined
+    return { name, area }
+  } catch {
+    return {}
+  }
+}
+
+function coordsToArea(lat: number, lng: number): Area {
+  const inBayCounty = lat > 29.9 && lat < 30.5 && lng > -86.2 && lng < -85.3
+  if (!inBayCounty) return 'excursion'
+  if (lat < 30.2 && lng < -85.7) return 'pcb'
+  if (lat < 30.3 && lng > -85.75) return 'panama-city'
+  return 'surrounding'
+}
+
+// ────────────────────────────────────────────────────────────────────
 
 export default function AddItem() {
   const navigate = useNavigate()
@@ -24,8 +73,20 @@ export default function AddItem() {
   const [area, setArea] = useState<Area>('pcb')
   const [description, setDescription] = useState('')
   const [mapUrl, setMapUrl] = useState('')
+  const [autoFilled, setAutoFilled] = useState(false)
 
   const canSave = name.trim().length > 0
+
+  function handleMapUrlChange(raw: string) {
+    setMapUrl(raw)
+    setAutoFilled(false)
+    if (!raw.trim()) return
+    const parsed = parseMapsUrl(raw.trim())
+    let filled = false
+    if (parsed.name && !name.trim()) { setName(parsed.name); filled = true }
+    if (parsed.area) { setArea(parsed.area); filled = true }
+    if (filled) setAutoFilled(true)
+  }
 
   function save() {
     if (!canSave) return
@@ -52,9 +113,35 @@ export default function AddItem() {
       <h1 className="text-2xl text-ink">Add a place</h1>
 
       <div className="mt-5 space-y-5">
+
+        {/* Maps link first — can auto-fill name + area */}
+        <div>
+          <label className="mb-1.5 block text-sm font-semibold text-muted">
+            Maps link (optional)
+          </label>
+          <input
+            value={mapUrl}
+            onChange={(e) => handleMapUrlChange(e.target.value)}
+            type="url"
+            inputMode="url"
+            placeholder="Paste a Google or Apple Maps link…"
+            className="w-full rounded-[var(--radius-card)] border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+          />
+          {autoFilled && (
+            <p className="mt-1.5 flex items-center gap-1 text-xs font-semibold text-seafoam">
+              <Wand2 size={12} strokeWidth={2.2} /> Name and area filled from the link
+            </p>
+          )}
+          {mapUrl.trim() && !autoFilled && !parseMapsUrl(mapUrl).name && (
+            <p className="mt-1.5 text-xs text-muted">
+              Short links can't be read — fill in the name below.
+            </p>
+          )}
+        </div>
+
         <Field label="Name">
           <input
-            autoFocus
+            autoFocus={!mapUrl}
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Sunset Grille"
@@ -89,17 +176,6 @@ export default function AddItem() {
             rows={3}
             placeholder="A short blurb about this place"
             className="w-full resize-none rounded-[var(--radius-card)] border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
-          />
-        </Field>
-
-        <Field label="Maps link (optional)">
-          <input
-            value={mapUrl}
-            onChange={(e) => setMapUrl(e.target.value)}
-            type="url"
-            inputMode="url"
-            placeholder="Paste a Google or Apple Maps link"
-            className="w-full rounded-[var(--radius-card)] border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
           />
         </Field>
 

@@ -76,7 +76,11 @@ export default function Browse() {
   const raw = selectByCategory(items, active)
   const list = applyFilters(raw, search, areaFilter, statusFilter, sort)
 
-  const hasFilters = search || areaFilter !== 'all' || statusFilter !== 'all'
+  // Only show area filter when items in this category span more than one area
+  const availableAreas = [...new Set(raw.map((it) => it.area))]
+  const showAreaFilter = availableAreas.length > 1
+
+  const hasFilters = search || (showAreaFilter && areaFilter !== 'all') || statusFilter !== 'all'
 
   function clearFilters() {
     setSearch('')
@@ -111,6 +115,7 @@ export default function Browse() {
                 onClick={() => {
                   setParams({ cat }, { replace: true })
                   clearFilters()
+                  setAreaFilter('all')
                 }}
                 className={`flex shrink-0 items-center gap-1.5 rounded-[var(--radius-pill)] px-3.5 py-2 text-sm font-semibold transition-colors ${
                   selected
@@ -153,25 +158,26 @@ export default function Browse() {
       {/* filter bar */}
       <div className="border-b border-line px-5 pb-3 pt-2">
         <div className="-mx-5 flex items-center gap-2 overflow-x-auto px-5 pb-0.5">
-          {/* area chips */}
-          {([['all', 'All'] as const, ...AREAS.map((a) => [a, AREA_LABEL[a]] as const)]).map(
-            ([val, label]) => (
-              <button
-                key={val}
-                type="button"
-                onClick={() => setAreaFilter(val as AreaFilter)}
-                className={`shrink-0 rounded-[var(--radius-pill)] px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  areaFilter === val
-                    ? 'bg-sky/40 text-ink'
-                    : 'bg-surface text-muted'
-                }`}
-              >
-                {label}
-              </button>
-            ),
+          {/* area chips — hidden when category only has one area */}
+          {showAreaFilter && (
+            <>
+              {([['all', 'All'] as const, ...AREAS.map((a) => [a, AREA_LABEL[a]] as const)]).map(
+                ([val, label]) => (
+                  <button
+                    key={val}
+                    type="button"
+                    onClick={() => setAreaFilter(val as AreaFilter)}
+                    className={`shrink-0 rounded-[var(--radius-pill)] px-3 py-1.5 text-xs font-semibold transition-colors ${
+                      areaFilter === val ? 'bg-sky/40 text-ink' : 'bg-surface text-muted'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ),
+              )}
+              <div className="mx-1 h-4 w-px shrink-0 bg-line" />
+            </>
           )}
-
-          <div className="mx-1 h-4 w-px shrink-0 bg-line" />
 
           {/* status filter */}
           {(['all', 'want', 'been'] as const).map((s) => {
