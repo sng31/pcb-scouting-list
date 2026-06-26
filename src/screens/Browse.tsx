@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Plus, Search, X } from 'lucide-react'
 import { useStore, selectByCategory } from '../store'
-import { CATEGORIES, CATEGORY_LABEL, AREAS, AREA_LABEL } from '../types'
+import { CATEGORIES, CATEGORY_LABEL, AREA_LABEL } from '../types'
 import type { Area, Category, Item, Status } from '../types'
 import { CATEGORY_META } from '../components/categoryMeta'
 import ItemCard from '../components/ItemCard'
@@ -161,8 +161,9 @@ export default function Browse() {
           {/* area chips — hidden when category only has one area */}
           {showAreaFilter && (
             <>
-              {([['all', 'All'] as const, ...AREAS.map((a) => [a, AREA_LABEL[a]] as const)]).map(
-                ([val, label]) => (
+              {(['all' as const, ...availableAreas]).map((val) => {
+                const label = val === 'all' ? 'All' : AREA_LABEL[val]
+                return (
                   <button
                     key={val}
                     type="button"
@@ -173,8 +174,8 @@ export default function Browse() {
                   >
                     {label}
                   </button>
-                ),
-              )}
+                )
+              })}
               <div className="mx-1 h-4 w-px shrink-0 bg-line" />
             </>
           )}
