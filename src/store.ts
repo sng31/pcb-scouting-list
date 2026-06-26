@@ -4,7 +4,7 @@ import type { Area, Category, Item, Rating, Status } from './types'
 import seedData from './data/seed.json'
 
 const STORAGE_KEY = 'pcb-scouting-list'
-const SCHEMA_VERSION = 1
+const SCHEMA_VERSION = 2
 
 const now = () => new Date().toISOString()
 const today = () => new Date().toISOString().slice(0, 10) // YYYY-MM-DD
@@ -188,6 +188,17 @@ export const useStore = create<CoastalState>()(
     {
       name: STORAGE_KEY,
       version: SCHEMA_VERSION,
+      migrate: (persisted: unknown, fromVersion: number) => {
+        const state = persisted as { items: Item[]; version: number; seededAt?: string; lastSyncedAt?: string }
+        if (fromVersion < 2) {
+          state.items = (state.items ?? []).map((item) =>
+            (item.area as string) === 'excursion'
+              ? { ...item, area: 'surrounding' as Area }
+              : item,
+          )
+        }
+        return state
+      },
       partialize: (s) => ({
         version: s.version,
         items: s.items,
