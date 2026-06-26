@@ -21,11 +21,20 @@ export default function ItemDetail() {
 
   const [name, setName] = useState(item?.name ?? '')
   const [notes, setNotes] = useState(item?.notes ?? '')
+  const nameRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     setName(item?.name ?? '')
     setNotes(item?.notes ?? '')
   }, [item?.id]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // auto-size the name textarea to its content
+  useEffect(() => {
+    const el = nameRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = el.scrollHeight + 'px'
+  }, [name])
 
   if (!item) {
     return (
@@ -98,11 +107,13 @@ export default function ItemDetail() {
             <Icon size={16} strokeWidth={2} />
             {CATEGORY_LABEL_SINGULAR[item.category]} · {AREA_LABEL[item.area]}
           </div>
-          <input
+          <textarea
+            ref={nameRef}
             value={name}
             onChange={(e) => setName(e.target.value)}
             onBlur={commitName}
-            className="mt-1 w-full bg-transparent font-display text-3xl text-ink outline-none"
+            rows={1}
+            className="mt-1 w-full resize-none overflow-hidden bg-transparent font-display text-3xl text-ink outline-none"
           />
         </div>
 
@@ -256,7 +267,7 @@ function TagsEditor({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit()}
           placeholder="Add a tag…"
-          className="flex-1 rounded-[var(--radius-card)] border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+          className="flex-1 rounded-[var(--radius-card)] border border-line bg-surface px-3 py-2.5 text-base text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
         />
         <button
           type="button"
@@ -321,7 +332,7 @@ function DishesEditor({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit()}
           placeholder="e.g. grilled grouper, key lime pie…"
-          className="flex-1 rounded-[var(--radius-card)] border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+          className="flex-1 rounded-[var(--radius-card)] border border-line bg-surface px-3 py-2.5 text-base text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
         />
         <button
           type="button"

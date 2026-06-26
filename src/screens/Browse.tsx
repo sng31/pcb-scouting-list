@@ -136,7 +136,7 @@ export default function Browse() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, tag…"
-            className="w-full rounded-[var(--radius-pill)] border border-line bg-surface py-2.5 pl-9 pr-9 text-sm text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+            className="w-full rounded-[var(--radius-pill)] border border-line bg-surface py-2.5 pl-9 pr-9 text-base text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
           />
           {search && (
             <button
