@@ -57,6 +57,10 @@ export interface NewItemDraft {
   status?: Status
   description?: string
   mapUrl?: string
+  website?: string
+  cuisine?: string
+  priceTier?: 1 | 2 | 3 | 4
+  tags?: string[]
 }
 
 export const useStore = create<CoastalState>()(
@@ -79,8 +83,11 @@ export const useStore = create<CoastalState>()(
           favorite: false,
           description: draft.description,
           mapUrl: draft.mapUrl,
+          website: draft.website,
+          cuisine: draft.cuisine,
+          priceTier: draft.priceTier,
           notes: '',
-          tags: [],
+          tags: draft.tags ?? [],
           createdAt: ts,
           updatedAt: ts,
         }

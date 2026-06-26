@@ -5,3 +5,4 @@ dev-dist/
 *.tsbuildinfo
 pcb-scouting-list-backup.json
 .DS_Store
+.env.local
