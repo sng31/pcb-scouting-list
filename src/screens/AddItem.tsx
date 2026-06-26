@@ -67,7 +67,10 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
   const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
     headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': fields },
   })
-  if (!res.ok) return null
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}))
+    throw new Error(err?.error?.message ?? `HTTP ${res.status}`)
+  }
   const p = await res.json()
 
   const types: string[] = p.types ?? []
@@ -251,6 +254,7 @@ export default function AddItem() {
     setQuery(s.text)
     setSelectedName(s.text)
     setLoadingDetails(true)
+    setSearchError('')
     try {
       const fields = await fetchPlaceDetails(s.placeId)
       if (!fields) { setName(s.text); return }
@@ -260,6 +264,11 @@ export default function AddItem() {
       if (fields.description) setDescription(fields.description)
       if (fields.mapUrl) setMapUrl(fields.mapUrl)
       if (fields.tags.length) setTags(fields.tags)
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error('[Places details]', msg)
+      setSearchError(msg)
+      setName(s.text)
     } finally {
       setLoadingDetails(false)
     }
