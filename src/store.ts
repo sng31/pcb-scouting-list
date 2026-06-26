@@ -56,6 +56,7 @@ export interface NewItemDraft {
   area: Area
   status?: Status
   description?: string
+  mapUrl?: string
 }
 
 export const useStore = create<CoastalState>()(
@@ -77,6 +78,7 @@ export const useStore = create<CoastalState>()(
           rating: null,
           favorite: false,
           description: draft.description,
+          mapUrl: draft.mapUrl,
           notes: '',
           tags: [],
           createdAt: ts,

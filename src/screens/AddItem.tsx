@@ -23,6 +23,7 @@ export default function AddItem() {
   const [category, setCategory] = useState<Category>(initialCat)
   const [area, setArea] = useState<Area>('pcb')
   const [description, setDescription] = useState('')
+  const [mapUrl, setMapUrl] = useState('')
 
   const canSave = name.trim().length > 0
 
@@ -33,6 +34,7 @@ export default function AddItem() {
       category,
       area,
       description: description.trim() || undefined,
+      mapUrl: mapUrl.trim() || undefined,
     })
     navigate(`/item/${item.id}`, { replace: true })
   }
@@ -87,6 +89,17 @@ export default function AddItem() {
             rows={3}
             placeholder="A short blurb about this place"
             className="w-full resize-none rounded-[var(--radius-card)] border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+          />
+        </Field>
+
+        <Field label="Maps link (optional)">
+          <input
+            value={mapUrl}
+            onChange={(e) => setMapUrl(e.target.value)}
+            type="url"
+            inputMode="url"
+            placeholder="Paste a Google or Apple Maps link"
+            className="w-full rounded-[var(--radius-card)] border border-line bg-surface px-4 py-3 text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
           />
         </Field>
 
