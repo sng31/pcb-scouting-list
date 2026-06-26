@@ -23,6 +23,8 @@ export default function ItemDetail() {
   const [notes, setNotes] = useState(item?.notes ?? '')
   const nameRef = useRef<HTMLTextAreaElement>(null)
 
+  useEffect(() => { window.scrollTo(0, 0) }, [id])
+
   useEffect(() => {
     setName(item?.name ?? '')
     setNotes(item?.notes ?? '')
