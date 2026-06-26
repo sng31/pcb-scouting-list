@@ -42,7 +42,10 @@ async function fetchSuggestions(query: string): Promise<Suggestion[]> {
       includedRegionCodes: ['us'],
     }),
   })
-  if (!res.ok) return []
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}))
+    throw new Error(err?.error?.message ?? `HTTP ${res.status}`)
+  }
   const data = await res.json()
   return (data.suggestions ?? []).map((s: Record<string, unknown>) => {
     const p = s.placePrediction as Record<string, unknown>
@@ -181,6 +184,7 @@ export default function AddItem() {
   const [searching, setSearching] = useState(false)
   const [loadingDetails, setLoadingDetails] = useState(false)
   const [selectedName, setSelectedName] = useState('')
+  const [searchError, setSearchError] = useState('')
   const searchTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const suggestionsRef = useRef<HTMLDivElement>(null)
 
@@ -211,8 +215,17 @@ export default function AddItem() {
     if (!q.trim()) { setSuggestions([]); return }
     searchTimer.current = setTimeout(async () => {
       setSearching(true)
-      try { setSuggestions(await fetchSuggestions(q)) }
-      finally { setSearching(false) }
+      setSearchError('')
+      try {
+        setSuggestions(await fetchSuggestions(q))
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err)
+        console.error('[Places autocomplete]', msg)
+        setSearchError(msg)
+        setSuggestions([])
+      } finally {
+        setSearching(false)
+      }
     }, 350)
   }
 
@@ -312,6 +325,11 @@ export default function AddItem() {
             )}
           </div>
 
+          {searchError && (
+            <p className="mt-1.5 text-xs font-semibold text-coral">
+              Search unavailable: {searchError}
+            </p>
+          )}
           {selectedName && !loadingDetails && (
             <p className="mt-1.5 flex items-center gap-1 text-xs font-semibold text-seafoam">
               <CheckCircle2 size={12} strokeWidth={2.5} /> Details filled from Google Places
