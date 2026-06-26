@@ -37,7 +37,7 @@ async function fetchSuggestions(query: string): Promise<Suggestion[]> {
     body: JSON.stringify({
       input: query,
       locationBias: {
-        circle: { center: { latitude: 30.165, longitude: -85.8 }, radius: 80000 },
+        circle: { center: { latitude: 30.165, longitude: -85.8 }, radius: 50000 },
       },
       includedRegionCodes: ['us'],
     }),
