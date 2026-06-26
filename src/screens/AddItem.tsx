@@ -62,6 +62,7 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
   const fields = [
     'displayName', 'formattedAddress', 'location', 'websiteUri',
     'types', 'primaryType', 'editorialSummary', 'googleMapsUri', 'priceLevel',
+    'reviews',
   ].join(',')
   const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
     headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': fields },
@@ -76,7 +77,7 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
 
   return {
     name: p.displayName?.text ?? '',
-    description: p.editorialSummary?.text ?? '',
+    description: descriptionFromPlace(p),
     mapUrl: p.googleMapsUri ?? '',
     website: p.websiteUri ?? '',
     area: lat != null && lng != null ? coordsToArea(lat, lng) : 'pcb',
@@ -88,6 +89,22 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
 }
 
 // ── Mapping helpers ──────────────────────────────────────────────────
+
+function descriptionFromPlace(p: Record<string, unknown>): string {
+  if (p.editorialSummary) {
+    const text = (p.editorialSummary as Record<string, string>).text
+    if (text) return text
+  }
+  const reviews = p.reviews as Array<Record<string, unknown>> | undefined
+  if (reviews?.length) {
+    const text = (reviews[0].text as Record<string, string> | undefined)?.text
+    if (text) {
+      const trimmed = text.replace(/\s+/g, ' ').trim()
+      return trimmed.length > 180 ? trimmed.slice(0, 180).trimEnd() + '…' : trimmed
+    }
+  }
+  return ''
+}
 
 function coordsToArea(lat: number, lng: number): Area {
   if (lat < 30.2 && lng < -85.68 && lng > -86.2) return 'pcb'
