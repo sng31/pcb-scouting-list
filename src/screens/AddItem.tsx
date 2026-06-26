@@ -61,8 +61,8 @@ async function fetchSuggestions(query: string): Promise<Suggestion[]> {
 async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
   const fields = [
     'displayName', 'formattedAddress', 'location', 'websiteUri',
-    'types', 'primaryType', 'editorialSummary', 'googleMapsUri', 'priceLevel',
-    'reviews',
+    'types', 'primaryType', 'editorialSummary', 'generativeSummary',
+    'googleMapsUri', 'priceLevel',
   ].join(',')
   const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
     headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': fields },
@@ -93,19 +93,16 @@ async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
 
 // ── Mapping helpers ──────────────────────────────────────────────────
 
+// Prefer Google Maps' AI-generated place summary; fall back to the
+// editorial blurb; otherwise leave blank (never raw reviews).
 function descriptionFromPlace(p: Record<string, unknown>): string {
-  if (p.editorialSummary) {
-    const text = (p.editorialSummary as Record<string, string>).text
-    if (text) return text
-  }
-  const reviews = p.reviews as Array<Record<string, unknown>> | undefined
-  if (reviews?.length) {
-    const text = (reviews[0].text as Record<string, string> | undefined)?.text
-    if (text) {
-      const trimmed = text.replace(/\s+/g, ' ').trim()
-      return trimmed.length > 180 ? trimmed.slice(0, 180).trimEnd() + '…' : trimmed
-    }
-  }
+  const gen = p.generativeSummary as Record<string, Record<string, string>> | undefined
+  const aiText = gen?.overview?.text ?? gen?.description?.text
+  if (aiText) return aiText.trim()
+
+  const editorial = (p.editorialSummary as Record<string, string> | undefined)?.text
+  if (editorial) return editorial.trim()
+
   return ''
 }
 
