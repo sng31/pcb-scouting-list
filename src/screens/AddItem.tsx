@@ -181,7 +181,7 @@ export default function AddItem() {
   const [searching, setSearching] = useState(false)
   const [loadingDetails, setLoadingDetails] = useState(false)
   const [selectedName, setSelectedName] = useState('')
-  const searchTimer = useRef<ReturnType<typeof setTimeout>>()
+  const searchTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const suggestionsRef = useRef<HTMLDivElement>(null)
 
   // form fields
