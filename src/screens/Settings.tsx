@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
-import { RefreshCw, Download, Upload, RotateCcw } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { RefreshCw, Download, Upload, RotateCcw, HardDrive, ShieldCheck, ShieldAlert } from 'lucide-react'
 import { useStore, selectCounts } from '../store'
 import type { SyncResult } from '../store'
 import type { Item } from '../types'
+import { getStorageStatus, requestPersistentStorage, type StorageStatus } from '../storage'
 
 export default function Settings() {
   const items = useStore((s) => s.items)
@@ -16,6 +17,16 @@ export default function Settings() {
   const [syncMsg, setSyncMsg] = useState<string | null>(null)
   const [importMsg, setImportMsg] = useState<{ text: string; ok: boolean } | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const [storage, setStorage] = useState<StorageStatus | null>(null)
+  useEffect(() => {
+    getStorageStatus().then(setStorage)
+  }, [])
+
+  async function makePermanent() {
+    await requestPersistentStorage()
+    setStorage(await getStorageStatus())
+  }
 
   function checkForNewPlaces() {
     const r: SyncResult = syncFromSeed()
@@ -93,6 +104,56 @@ export default function Settings() {
         )}
       </section>
 
+      {/* on-device storage */}
+      <section className="mt-6">
+        <h2 className="mb-3 text-xl text-ink">On-device storage</h2>
+        <div className="rounded-[var(--radius-card)] bg-surface p-4 shadow-[var(--shadow-coastal-sm)]">
+          <div className="flex items-center gap-3">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-card)] bg-sky/20">
+              <HardDrive size={20} strokeWidth={2} className="text-ink" />
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="font-semibold text-ink">Saved in this browser</div>
+              <p className="text-sm text-muted">
+                Your list lives on this device (IndexedDB). Export a backup to keep it safe.
+              </p>
+            </div>
+          </div>
+
+          {storage && (
+            <div className="mt-3 space-y-2 border-t border-line pt-3">
+              <div className="flex items-center gap-2">
+                {storage.persisted ? (
+                  <ShieldCheck size={16} className="shrink-0 text-seafoam" />
+                ) : (
+                  <ShieldAlert size={16} className="shrink-0 text-coral" />
+                )}
+                <span className="text-sm text-ink">
+                  {storage.persisted ? 'Permanent — protected from automatic cleanup' : 'Best-effort — could be cleared if storage runs low'}
+                </span>
+              </div>
+
+              {storage.usageBytes != null && (
+                <p className="text-xs text-muted">
+                  Using {formatBytes(storage.usageBytes)}
+                  {storage.quotaBytes ? ` of ~${formatBytes(storage.quotaBytes)} available` : ''}
+                </p>
+              )}
+
+              {!storage.persisted && (
+                <button
+                  type="button"
+                  onClick={makePermanent}
+                  className="mt-1 rounded-[var(--radius-pill)] bg-coral px-4 py-2 text-sm font-semibold text-surface transition-transform active:scale-95"
+                >
+                  Make storage permanent
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* keep it fresh */}
       <section className="mt-6">
         <h2 className="mb-3 text-xl text-ink">Keep it fresh</h2>
@@ -163,6 +224,18 @@ export default function Settings() {
       </p>
     </div>
   )
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`
+  const units = ['KB', 'MB', 'GB']
+  let val = bytes / 1024
+  let i = 0
+  while (val >= 1024 && i < units.length - 1) {
+    val /= 1024
+    i++
+  }
+  return `${val < 10 ? val.toFixed(1) : Math.round(val)} ${units[i]}`
 }
 
 function summarize({ added, enriched }: SyncResult): string {

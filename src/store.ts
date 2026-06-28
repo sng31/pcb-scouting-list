@@ -1,7 +1,8 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import type { Area, Category, Item, Rating, Status } from './types'
 import seedData from './data/seed.json'
+import { idbStorage } from './storage'
 
 const STORAGE_KEY = 'pcb-scouting-list'
 const SCHEMA_VERSION = 2
@@ -20,6 +21,10 @@ interface CoastalState {
   items: Item[]
   seededAt?: string
   lastSyncedAt?: string
+
+  // true once async (IndexedDB) hydration has finished; gates first render
+  hasHydrated: boolean
+  setHasHydrated: (v: boolean) => void
 
   // mutations
   addItem: (draft: NewItemDraft) => Item
@@ -70,6 +75,9 @@ export const useStore = create<CoastalState>()(
       items: [],
       seededAt: undefined,
       lastSyncedAt: undefined,
+
+      hasHydrated: false,
+      setHasHydrated: (v) => set({ hasHydrated: v }),
 
       addItem: (draft) => {
         const ts = now()
@@ -188,6 +196,7 @@ export const useStore = create<CoastalState>()(
     {
       name: STORAGE_KEY,
       version: SCHEMA_VERSION,
+      storage: createJSONStorage(() => idbStorage),
       migrate: (persisted: unknown, fromVersion: number) => {
         const state = persisted as { items: Item[]; version: number; seededAt?: string; lastSyncedAt?: string }
         if (fromVersion < 2) {
@@ -205,17 +214,19 @@ export const useStore = create<CoastalState>()(
         seededAt: s.seededAt,
         lastSyncedAt: s.lastSyncedAt,
       }),
+      // IndexedDB hydrates asynchronously, so the first-run seed (spec §3) can't
+      // run synchronously after create() like it did with localStorage — it must
+      // wait until the persisted data is in. If nothing was persisted, `seededAt`
+      // is still unset → this is a first run → load the bundled seed. After that
+      // the user's data is authoritative and the seed never overwrites it.
+      onRehydrateStorage: () => (state) => {
+        if (!state) return
+        if (!state.seededAt) state._seed()
+        state.setHasHydrated(true)
+      },
     },
   ),
 )
-
-// First-run seed (spec §3): localStorage rehydrates synchronously during
-// create(), so by here `seededAt` reflects any persisted data. If it's unset,
-// this is a first run — load the bundled seed. After that the user's data is
-// authoritative and the seed never overwrites it.
-if (!useStore.getState().seededAt) {
-  useStore.getState()._seed()
-}
 
 // ── Derived selectors (pure helpers over the items array) ────────────
 
