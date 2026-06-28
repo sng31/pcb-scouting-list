@@ -120,11 +120,17 @@ A small Worker (mirroring the Hunger Habit proxy) brokers the two Places calls t
 1. **CORS Origin check** — already in the Worker. But CORS is enforced only by browsers; a non-browser client (curl, a bot) can spoof the `Origin` header, so this alone stops nothing determined.
 2. **Shared app-token** — the app sends `X-App-Token`; the Worker checks it. This raises the bar past drive-by abuse of anyone who simply discovers the Worker URL.
 
-Be clear-eyed about layer 2: in a public PWA the token ships in the bundle (it travels via the non-secret `VITE_PROXY_TOKEN`), so a determined person *can* read it. It is **friction, not a wall** — its value is filtering out bots and scrapers, not defeating a motivated attacker. The token is held as a Worker *secret* on the server side so it can be rotated freely without redeploying Google credentials. **The real billing backstop remains the Google quota cap + budget alert** (below): even if every guard is bypassed, a hard daily quota means a leak can't produce a surprise bill. The guard reduces nuisance traffic; the quota cap bounds the worst case.
+Be clear-eyed about layer 2: in a public PWA the token ships in the bundle (it travels via the non-secret `VITE_PROXY_TOKEN`), so a determined person *can* read it. It is **friction, not a wall** — its value is filtering out bots and scrapers, not defeating a motivated attacker. The token is held as a Worker *secret* on the server side so it can be rotated freely without redeploying Google credentials.
+
+**The real billing backstop is the Worker's free-tier daily cap** (implemented in `proxy/src/index.js`). Google **removed** the ability to set a hard quota cap for Places API (New) — the Cloud Console "Edit quota" control is greyed out — so the cap lives in the Worker instead. Three layers bound the worst case:
+
+1. **Per-IP rate limiting** — Cloudflare Rate Limiting binding (`RATE_LIMITER`, 40 req/10s per IP) rejects bursts with a 429 before any Google call.
+2. **Response caching** — Cache API serves identical autocomplete/details lookups (1h / 24h TTL) without re-hitting Google.
+3. **Free-tier daily cap** — a KV-backed (`CAP_KV`) per-type, per-UTC-day counter 429s once a call type hits its cap (autocomplete 300/day, details 30/day). Caps are sized to stay inside Google's monthly free tier (per SKU: Essentials 10k / Pro 5k / Enterprise 1k). The Place Details field mask includes premium fields (`generativeSummary`, `editorialSummary`, `priceLevel`) so it's billed at the Enterprise tier → 30/day; dropping those fields would allow a higher cap. All three fail open if their binding is absent.
 
 **Google Cloud Console hardening (defense in depth, even though the key is server-side):**
 - Restrict the key to **only** the Places API (New).
-- Set a **quota cap** and a **billing budget alert** so a leak or a bug can never produce a surprise bill.
+- Set a **billing budget alert** — but note it only *notifies*; it does not cap spending. The Worker cap is what actually stops a runaway bill. (A hard quota cap is no longer settable for Places API New.)
 - A server-side (proxied) key uses **API + quota restrictions** rather than HTTP-referrer restrictions (referrer locks are for browser keys).
 
 **Client change:** `AddItem.tsx` stops importing `import.meta.env.VITE_GOOGLE_PLACES_KEY` and stops sending `X-Goog-Api-Key`. It calls the Worker URL instead, adding an `X-App-Token: ${import.meta.env.VITE_PROXY_TOKEN}` header on each request. The Worker URL and the app token are **not real secrets** — both can live in non-secret `VITE_PROXY_URL` / `VITE_PROXY_TOKEN` env vars (the token is a friction layer, not a credential; see the guard note above).
@@ -390,8 +396,9 @@ Add the `SyncProvider` interface and a Cloudflare D1 (or KV) backing via a Worke
 |---|---|
 | Cloudflare Workers static-assets hosting + `*.workers.dev` HTTPS subdomain | $0 |
 | Cloudflare Worker proxy (≤100k req/day) | $0 |
-| Cloudflare D1 / KV for optional sync (personal-scale) | $0 |
-| Google Places API | Free monthly credit; capped by quota + budget alert so it can't surprise-bill |
+| Cloudflare D1 / KV for optional sync + the `CAP_KV` spend-cap counter (personal-scale) | $0 |
+| Cloudflare Rate Limiting binding | $0 |
+| Google Places API | $0 — the Worker's free-tier daily cap (autocomplete 300/day, details 30/day) keeps usage inside Google's monthly free tier, so it can't surprise-bill |
 | Custom domain | **Not needed.** Optional only; the one thing that would ever cost money on any host |
 
 ---

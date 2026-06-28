@@ -128,15 +128,29 @@ directly to Google. The app POSTs `{type:'autocomplete'|'details', ...}` to the 
 attaches the key and field mask and returns normalized fields. `AddItem.tsx` must not import any
 `VITE_GOOGLE_*` key or send `X-Goog-Api-Key`.
 
-**Proxy access controls:**
+**Proxy access controls (defense in depth — see `proxy/src/index.js`):**
 - **App-token guard** — the Worker checks `X-App-Token` against its `PROXY_APP_TOKEN` secret and
   401s on mismatch. This is *friction, not a real secret*: `VITE_PROXY_TOKEN` ships in the public
-  bundle, so it only filters drive-by bots. The real billing backstop is the Google **quota cap +
-  budget alert** in Cloud Console.
+  bundle, so it only filters drive-by bots.
 - **CORS** — allows `*.pages.dev` and `*.<sub>.workers.dev` origins (the app is a Worker, so its
   origin is the `workers.dev` form), plus anything in the `ALLOWED_ORIGINS` var.
+- **Per-IP rate limiting** — Cloudflare Rate Limiting binding (`RATE_LIMITER`, 40 req/10s per IP)
+  rejects bursts with a 429 before any Google call. Fails open if the binding is absent.
+- **Response caching** — identical autocomplete/details lookups are served from the Cache API
+  (1h / 24h TTL), so repeats never re-hit Google.
+- **Free-tier daily cap** — a KV-backed (`CAP_KV`) per-type, per-UTC-day counter 429s once a call
+  type hits its cap (autocomplete 300/day, details 30/day). Caps are sized to stay inside Google's
+  monthly free tier (Essentials 10k / Pro 5k / Enterprise 1k per SKU). **This is the real billing
+  backstop** — Google's own quota cap is no longer settable for Places API (New) (the Cloud Console
+  "Edit quota" control is disabled), so the cap lives in the Worker instead. Fails open if `CAP_KV`
+  is absent. Cache hits don't count.
 - A free Worker has no fixed egress IP, so the Google key can't be IP-restricted; it's restricted to
-  **Places API (New)** only, with the quota cap as the hard limit.
+  **Places API (New)** only. A billing budget alert is advisory only (it notifies, it doesn't cap).
+
+> **Note on the details cap:** the Place Details field mask requests premium fields
+> (`generativeSummary`, `editorialSummary`, `priceLevel`), so the call is billed at the Enterprise
+> tier (1k/mo free → 30/day). Dropping those fields would move it to a cheaper SKU and allow a
+> higher cap.
 
 ## Build Phases
 

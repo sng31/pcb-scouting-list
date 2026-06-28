@@ -13,3 +13,27 @@ compatibility_date = "2025-06-01"
 # here once you know it, e.g.:
 # ALLOWED_ORIGINS = "https://pcb-scouting-list.pages.dev"
 ALLOWED_ORIGINS = ""
+
+# ── Per-IP rate limiting (free, no extra setup) ───────────────────────────────
+# Caps each client IP at `limit` requests per `period` seconds, per Cloudflare
+# location. Excess requests get a 429 before any Google call, so a scraper can't
+# run up your bill. `period` must be 10 or 60. `namespace_id` is just a unique
+# integer-as-string you pick per binding. Requires Wrangler v4.36.0+.
+# The Worker fails open if this is removed, so it's safe to tune or comment out.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+  [ratelimits.simple]
+  limit = 40
+  period = 10
+
+# ── Self-controlled daily spend cap (KV) ──────────────────────────────────────
+# Holds a per-day counter of Google-bound calls so the Worker can 429 once it hits
+# DAILY_CAP (set in src/index.js). This is YOUR hard ceiling, independent of
+# Google's quota limits. The Worker fails open without it, so it's safe to deploy
+# as-is; finish setup when ready in two steps:
+#   1) Create the namespace (free):   npx wrangler kv namespace create CAP_KV
+#   2) Paste the printed id below and UNCOMMENT these three lines:
+[[kv_namespaces]]
+binding = "CAP_KV"
+id = "0b302a9a7fd144db80ff9d8e2fb57415"

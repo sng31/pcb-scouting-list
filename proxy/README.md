@@ -68,9 +68,9 @@ Then give the app the same value as a **non-secret** var (next section).
 **Honest caveat:** this is *friction, not a wall.* In a public PWA the token ships inside the
 JavaScript bundle, so a determined person can read it from the network tab. Its job is to filter
 out drive-by bots and scrapers, not to defeat a motivated attacker. The thing that actually caps
-your exposure is the **Google quota cap** (last section) — even if the token leaks, a hard daily
-quota means nobody can run up a bill. If you skip `PROXY_APP_TOKEN`, the guard is simply disabled
-and the Worker falls back to CORS-only.
+your exposure is the **Worker's free-tier daily cap** (see "Spend controls" below) — even if the
+token leaks, the cap means nobody can push you into paid usage. If you skip `PROXY_APP_TOKEN`, the
+guard is simply disabled and the Worker falls back to CORS-only.
 
 ## Wire it into the app
 
@@ -110,16 +110,36 @@ and the Worker falls back to CORS-only.
    - Remove the `X-Goog-Api-Key` / `X-Goog-FieldMask` headers and the hard-coded Google URLs
      (the Worker owns the field mask and location bias now).
 
-## Harden the key in Google Cloud Console (the real billing backstop)
+## Spend controls (the real billing backstop)
 
-A free Worker has **no fixed egress IP**, so the key can't be IP-restricted (that needs paid
-Dedicated Egress IPs). The controls that actually matter here are therefore in Google Cloud:
-- Limit the key to the **Places API (New)** only.
-- Set a **quota cap** and a **billing budget alert** so a leak or bug can't run up a bill.
-- (Server-side keys use API + quota restrictions, not HTTP-referrer restrictions.)
+The Worker enforces three layers in front of Google so a leak or bot can't run up a bill:
 
-This is the layer that bounds your worst case: the CORS + app-token guards reduce nuisance
-traffic, but the quota cap is what guarantees no surprise bill even if both are bypassed.
+- **Per-IP rate limiting** (`RATE_LIMITER` binding, 40 req/10s) — rejects bursts with a 429 before
+  any Google call. Configure in `wrangler.toml`; fails open if absent.
+- **Response caching** (Cache API, no setup) — identical autocomplete/details lookups are served
+  from cache (1h / 24h) instead of re-hitting Google.
+- **Free-tier daily cap** (`CAP_KV` binding) — a per-type, per-UTC-day counter 429s once a call
+  type hits its cap (autocomplete 300/day, details 30/day). The caps are sized to stay inside
+  Google's monthly free tier, so the app never costs anything. Set it up once:
+  ```sh
+  npx wrangler kv namespace create CAP_KV
+  # paste the printed id into the [[kv_namespaces]] block in wrangler.toml, then:
+  npx wrangler deploy
+  ```
+  Verify it's counting (note `--remote` — kv commands default to local!):
+  ```sh
+  npx wrangler kv key list --namespace-id <your-id> --remote
+  ```
+
+**Why the cap lives in the Worker, not Google:** Google removed the ability to set a hard quota cap
+for Places API (New) — the Cloud Console "Edit quota" control is greyed out — so the Worker-side cap
+is what guarantees no surprise bill. Tune the caps (`DAILY_CAP`) in `src/index.js`.
+
+Also in Google Cloud:
+- Limit the key to the **Places API (New)** only (server-side keys use API/quota restrictions, not
+  HTTP-referrer restrictions; a free Worker has no fixed egress IP to restrict).
+- A **billing budget alert** is still worth setting, but note it only *notifies* — it does not cap
+  spending. The Worker cap is the thing that actually stops it.
 
 ## Local test (optional)
 
