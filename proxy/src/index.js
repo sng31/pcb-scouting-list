@@ -58,11 +58,18 @@ function allowedOrigins(env) {
   return [...DEFAULT_ALLOWED, ...fromEnv];
 }
 
+// Cloudflare-hosted app origins:
+//   *.pages.dev          → Pages (one label):           app.pages.dev
+//   *.<sub>.workers.dev  → Workers static assets (two): app.sub.workers.dev
+// The app is deployed as a Worker, so its origin is the workers.dev form. Both
+// are allowed; the X-App-Token guard is the real gate on who can use the proxy.
+const PAGES_ORIGIN = /^https:\/\/[a-z0-9-]+\.pages\.dev$/i;
+const WORKERS_ORIGIN = /^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev$/i;
+
 function corsHeaders(request, env) {
   const origin = request.headers.get('Origin') || '';
   const list = allowedOrigins(env);
-  // Allow exact matches, plus any *.pages.dev preview/prod origin.
-  const ok = list.includes(origin) || /^https:\/\/[a-z0-9-]+\.pages\.dev$/i.test(origin);
+  const ok = list.includes(origin) || PAGES_ORIGIN.test(origin) || WORKERS_ORIGIN.test(origin);
   return {
     'Access-Control-Allow-Origin': ok ? origin : list[0] || '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
