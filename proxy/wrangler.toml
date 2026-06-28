@@ -1,0 +1,15 @@
+name = "pcb-scouting-places"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# Non-secret vars only. SECRETS are set with `npx wrangler secret put <NAME>` and
+# never appear in this file:
+#   npx wrangler secret put GOOGLE_PLACES_KEY   (required — the Google key)
+#   npx wrangler secret put PROXY_APP_TOKEN     (optional — shared app-token guard)
+# Never put a secret here.
+[vars]
+# Comma-separated extra origins allowed to call this proxy (in addition to the
+# built-in localhost:5173 and any *.pages.dev origin). Set your production URL
+# here once you know it, e.g.:
+# ALLOWED_ORIGINS = "https://pcb-scouting-list.pages.dev"
+ALLOWED_ORIGINS = ""

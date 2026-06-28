@@ -5,9 +5,29 @@ import { useStore } from '../store'
 import { CATEGORIES, AREAS, CATEGORY_LABEL_SINGULAR, AREA_LABEL } from '../types'
 import type { Area, Category } from '../types'
 
-// ── Google Places API (New) ──────────────────────────────────────────
+// ── Google Places (via Cloudflare Worker proxy) ──────────────────────
+// The Google key never lives in the app. We POST to our Worker, which holds
+// the key as an encrypted secret and returns Google's raw Places JSON.
+// See proxy/ and the tech spec §4. VITE_PROXY_URL is NOT a secret.
 
-const API_KEY = import.meta.env.VITE_GOOGLE_PLACES_KEY as string
+const PROXY_URL = import.meta.env.VITE_PROXY_URL as string
+// Friction-only shared token (NOT a real secret — it ships in the bundle). Matches
+// the Worker's PROXY_APP_TOKEN. If unset, the header is omitted and the Worker
+// falls back to CORS-only. See proxy/src/index.js and tech spec §4.
+const PROXY_TOKEN = import.meta.env.VITE_PROXY_TOKEN as string | undefined
+
+function proxyHeaders(): Record<string, string> {
+  const h: Record<string, string> = { 'Content-Type': 'application/json' }
+  if (PROXY_TOKEN) h['X-App-Token'] = PROXY_TOKEN
+  return h
+}
+
+function proxyError(err: unknown, status: number): string {
+  const e = err as { error?: { message?: string } | string } | undefined
+  if (e && typeof e.error === 'object') return e.error.message ?? `HTTP ${status}`
+  if (e && typeof e.error === 'string') return e.error
+  return `HTTP ${status}`
+}
 
 interface Suggestion {
   placeId: string
@@ -28,23 +48,14 @@ interface PlaceFields {
 }
 
 async function fetchSuggestions(query: string): Promise<Suggestion[]> {
-  const res = await fetch('https://places.googleapis.com/v1/places:autocomplete', {
+  const res = await fetch(PROXY_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Goog-Api-Key': API_KEY,
-    },
-    body: JSON.stringify({
-      input: query,
-      locationBias: {
-        circle: { center: { latitude: 30.165, longitude: -85.8 }, radius: 50000 },
-      },
-      includedRegionCodes: ['us'],
-    }),
+    headers: proxyHeaders(),
+    body: JSON.stringify({ type: 'autocomplete', input: query }),
   })
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
-    throw new Error(err?.error?.message ?? `HTTP ${res.status}`)
+    throw new Error(proxyError(err, res.status))
   }
   const data = await res.json()
   return (data.suggestions ?? []).map((s: Record<string, unknown>) => {
@@ -59,17 +70,15 @@ async function fetchSuggestions(query: string): Promise<Suggestion[]> {
 }
 
 async function fetchPlaceDetails(placeId: string): Promise<PlaceFields | null> {
-  const fields = [
-    'displayName', 'formattedAddress', 'location', 'websiteUri',
-    'types', 'primaryType', 'editorialSummary', 'generativeSummary',
-    'googleMapsUri', 'priceLevel',
-  ].join(',')
-  const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
-    headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': fields },
+  // The Worker owns the field mask now (kept in sync in proxy/src/index.js).
+  const res = await fetch(PROXY_URL, {
+    method: 'POST',
+    headers: proxyHeaders(),
+    body: JSON.stringify({ type: 'details', placeId }),
   })
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
-    throw new Error(err?.error?.message ?? `HTTP ${res.status}`)
+    throw new Error(proxyError(err, res.status))
   }
   const p = await res.json()
 

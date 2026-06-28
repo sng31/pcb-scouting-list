@@ -1,0 +1,14 @@
+{
+  "name": "pcb-scouting-places-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker that proxies the Add screen's Google Places calls, keeping the API key off the device.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret": "wrangler secret put GOOGLE_PLACES_KEY"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

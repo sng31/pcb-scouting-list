@@ -1,18 +1,36 @@
 # PCB Scouting List — Technical Specification
 
-A personal, phone-friendly web app for settling into and exploring Panama City Beach, Panama City, and the surrounding Gulf coast. Track places and tasks, mark them *want to try → been there*, rate them, take notes (including standout dishes), and favorite the best of them. Local-only data, soft coastal aesthetic.
+A personal, phone-friendly web app for settling into and exploring Panama City Beach, Panama City, and the surrounding Gulf coast. Track places and tasks, mark them *want to try → been there*, rate them, take notes (including standout dishes), and favorite the best of them. Local-first data, soft coastal aesthetic.
 
 **Project type:** Personal-use PWA (not commercial)
 **Build tool:** Claude Code (two-terminal workflow)
-**Status:** Spec drafted, entering scaffold
+**Status:** Re-planning after a hosting/key-exposure snag — migrating off GitHub Pages to an all-Cloudflare stack before resuming feature work.
+
+---
+
+## 0. Why this spec was revised (read first)
+
+The first deployment exposed a Google API key. The root cause is worth stating plainly because it shapes the whole architecture going forward:
+
+- The app calls the **Google Places web service** directly from the browser (`AddItem.tsx` sends `X-Goog-Api-Key`). The key was supplied through Vite's `import.meta.env.VITE_GOOGLE_PLACES_KEY`, which **inlines the value into the built JavaScript bundle**. So the key shipped, in plain text, inside the public JS served by GitHub Pages — readable by anyone who opened the site.
+- The GitHub Actions workflow fed the key from `secrets.VITE_GOOGLE_PLACES_KEY`. This did **not** protect it: a "secret" used by client-side code is baked into the bundle at build time and becomes public anyway. **GitHub secrets and key "encryption" cannot hide a key that the browser itself uses.**
+
+Two correct fixes exist, and this spec adopts both where each applies:
+
+1. **For a browser-only Maps key** (e.g. displaying a map): you cannot hide it, and you don't need to — you *restrict* it (HTTP-referrer + API restrictions + a usage cap) so a leaked copy is useless off your domain.
+2. **For a server-side web service** (Places Autocomplete / Place Details, Geocoding — what this app actually uses): the key must never reach the browser. It lives in a **Cloudflare Worker proxy**, stored as an encrypted Wrangler secret. The app calls the Worker; the Worker calls Google. This is the same proven pattern already running in the Hunger Habit project.
+
+Because the app's Google usage is the *web service* kind, the **Worker-proxy path is the primary fix**.
 
 ---
 
 ## 1. Goals & Principles
 
 - **Phone-first.** Designed for a phone screen, installable to the home screen, works offline.
-- **Local & free.** All data lives in the browser (`localStorage`). No backend, no accounts, no bills.
-- **Durable despite local-only.** JSON export/import so data is never trapped or unrecoverably lost.
+- **Free, no dedicated server.** Hosted on Cloudflare's free tier. No bills, no machine of mine acting as a server, no keeping a laptop running.
+- **Usable on the go.** Deployed to a public HTTPS URL (a free `*.pages.dev` subdomain), not a local-network-only dev server.
+- **Secrets stay secret.** No API key is ever shipped in client code. Keys live only in the Worker as encrypted secrets.
+- **Local-first, durable data.** Data is instant and offline off the device, with JSON export/import as a guaranteed backup and an **optional** Cloudflare-backed cloud sync so a browser-cache clear or a second device doesn't lose or fragment data.
 - **Low-friction logging.** Marking *been*, tapping a rating, jotting a note should each take one or two taps.
 - **Calm coastal feel.** Soft sand-and-seafoam palette, rounded cards, gentle shadows. Pleasant to open daily.
 - **Seeded, not empty.** Launches pre-filled with real area places so it's useful on day one.
@@ -26,18 +44,96 @@ A personal, phone-friendly web app for settling into and exploring Panama City B
 | Framework | **React 18 + TypeScript** | Type-safe data model; great Claude Code support |
 | Build/dev | **Vite** | Fast dev server + hot reload; trivial static build |
 | Routing | **React Router** | Simple client-side routes |
-| State + persistence | **Zustand** + `persist` middleware | Tiny store that auto-syncs to `localStorage` — exactly this use case |
+| App state | **Zustand** | Tiny store driving the UI |
+| Local persistence | **IndexedDB** (via `idb-keyval` or `zustand` persist with an IndexedDB adapter) | More durable and roomier than `localStorage`; survives more than `localStorage` does and is the right base for offline-first |
+| Durable storage request | `navigator.storage.persist()` | Asks the browser to mark storage as persistent so it isn't silently evicted under pressure |
 | Styling | **Tailwind CSS v4** + CSS-variable design tokens | Fast to build; palette centralized and themeable |
 | Icons | **lucide-react** | Clean, consistent line icons |
 | IDs | `crypto.randomUUID()` | Built-in, no dependency |
 | PWA | **vite-plugin-pwa** | Manifest, service worker, offline cache, add-to-home-screen |
-| Hosting | **Vercel** or **Netlify** (free) | Free HTTPS (required for PWA install); auto-deploy from GitHub |
+| **Hosting** | **Cloudflare Pages** (free) | Free HTTPS + free `*.pages.dev` subdomain (required for PWA install); auto-deploy from GitHub; no custom domain needed |
+| **API proxy** | **Cloudflare Worker** (free) | Holds the Google key server-side; the only component that ever sees it |
+| **Optional cloud sync** | **Cloudflare D1** (SQL) or **Workers KV** (key-value) | Same account as hosting; free tier; lets data survive a cache clear and sync across devices when enabled |
 
 No charts, no analytics libraries, no notifications — kept deliberately lean.
 
+**Why all-Cloudflare (vs. Vercel/Netlify):** every layer above the static site — proxy, optional database, optional file storage — lives in one free account with one mental model (Wrangler, Workers, Pages). The Worker-proxy pattern and `wrangler secret put` workflow are already proven in the Hunger Habit project, so both apps share one platform and one set of habits. Cloudflare's free tier is generous (Pages: unlimited static requests; Workers: 100k requests/day; D1 and KV both have free allowances that dwarf personal use). **Nothing here requires a paid plan or a purchased domain** — the only thing that ever costs money on any host is an *optional* custom domain name, which this project does not need.
+
 ---
 
-## 3. Data Model
+## 3. Architecture
+
+```
+                         Cloudflare (one free account)
+                ┌───────────────────────────────────────────────┐
+   Phone        │                                               │
+ ┌────────┐     │   ┌──────────────┐        ┌────────────────┐   │      ┌──────────────────┐
+ │  PWA   │──1──┼──►│ Pages        │        │ Worker (proxy) │──┼──3──►│ Google Places API │
+ │ (React)│     │   │ static app + │        │ holds GOOGLE_  │   │      │ (web service)     │
+ │        │◄─2──┼───│ service      │        │ PLACES_KEY as  │◄─┼──────└──────────────────┘
+ │        │     │   │ worker       │        │ encrypted      │   │
+ │        │──4──┼──────────────────────────►│ secret         │   │
+ └────────┘     │   └──────────────┘        └────────────────┘   │
+   │   ▲        │                            │ optional 5         │
+   │   │ local-first (IndexedDB)             ▼                    │
+   │   └────────┼──────────────────  ┌────────────────┐          │
+   └────────────┼─ optional sync ───►│ D1 / KV (data) │          │
+                │                     └────────────────┘          │
+                └───────────────────────────────────────────────┘
+```
+
+1. Phone loads the static PWA from **Pages** over HTTPS.
+2. App shell is cached by the service worker → works offline.
+3. When the user searches/adds a place, the app calls the **Worker**, which attaches the Google key (never in the browser) and calls Google Places.
+4. The Worker returns only the fields the app needs.
+5. *(Optional, when sync is enabled)* the app mirrors its data to **D1/KV** through a Worker route so it survives cache clears and syncs across devices.
+
+The Google key exists in exactly one place: the Worker's encrypted secrets. It is never in source, never in the bundle, never on the phone.
+
+---
+
+## 4. API Proxy — Google Places via Cloudflare Worker
+
+A small Worker (mirroring the Hunger Habit proxy) brokers the two Places calls the app makes today.
+
+**Request contract (app → Worker):**
+
+```jsonc
+// Autocomplete suggestions while typing
+{ "type": "autocomplete", "input": "wicked wheel", "lat": 30.18, "lng": -85.80 }
+
+// Full details for a chosen place
+{ "type": "details", "placeId": "ChIJ..." }
+```
+
+**Response:** only the normalized fields the Add screen fills in (name, address, location, mapUrl, website, a short editorial summary, etc.) — never the raw key or unneeded data.
+
+**Worker responsibilities:**
+- Hold `GOOGLE_PLACES_KEY` as a Wrangler secret: `npx wrangler secret put GOOGLE_PLACES_KEY`.
+- Call the Places API (New) endpoints with `X-Goog-Api-Key` + a tight `X-Goog-FieldMask` (move the field mask from the client into the Worker).
+- Restrict CORS to the app's own origin(s): the `*.pages.dev` URL plus `http://localhost:5173` for dev. (Don't leave `Access-Control-Allow-Origin: *` in production.)
+- **App-token guard:** require an `X-App-Token` header matching a `PROXY_APP_TOKEN` secret; reject mismatches with `401` before any work is done. (No-op if the secret is unset.)
+- Optional: a tiny in-Worker rate-limit / daily counter as a backstop against runaway usage.
+
+**Why a token guard at all (and its honest limits).** A standard free-tier Cloudflare Worker has no fixed egress IP, so the Google key *cannot* be IP-restricted — that option only exists on paid Dedicated Egress IPs. The next-best server-side control is to gate the Worker itself. Two layers do that:
+
+1. **CORS Origin check** — already in the Worker. But CORS is enforced only by browsers; a non-browser client (curl, a bot) can spoof the `Origin` header, so this alone stops nothing determined.
+2. **Shared app-token** — the app sends `X-App-Token`; the Worker checks it. This raises the bar past drive-by abuse of anyone who simply discovers the Worker URL.
+
+Be clear-eyed about layer 2: in a public PWA the token ships in the bundle (it travels via the non-secret `VITE_PROXY_TOKEN`), so a determined person *can* read it. It is **friction, not a wall** — its value is filtering out bots and scrapers, not defeating a motivated attacker. The token is held as a Worker *secret* on the server side so it can be rotated freely without redeploying Google credentials. **The real billing backstop remains the Google quota cap + budget alert** (below): even if every guard is bypassed, a hard daily quota means a leak can't produce a surprise bill. The guard reduces nuisance traffic; the quota cap bounds the worst case.
+
+**Google Cloud Console hardening (defense in depth, even though the key is server-side):**
+- Restrict the key to **only** the Places API (New).
+- Set a **quota cap** and a **billing budget alert** so a leak or a bug can never produce a surprise bill.
+- A server-side (proxied) key uses **API + quota restrictions** rather than HTTP-referrer restrictions (referrer locks are for browser keys).
+
+**Client change:** `AddItem.tsx` stops importing `import.meta.env.VITE_GOOGLE_PLACES_KEY` and stops sending `X-Goog-Api-Key`. It calls the Worker URL instead, adding an `X-App-Token: ${import.meta.env.VITE_PROXY_TOKEN}` header on each request. The Worker URL and the app token are **not real secrets** — both can live in non-secret `VITE_PROXY_URL` / `VITE_PROXY_TOKEN` env vars (the token is a friction layer, not a credential; see the guard note above).
+
+---
+
+## 5. Data Model & Storage
+
+### 5.1 Item model (unchanged)
 
 A single unified `Item` type covers every category, which keeps Favorites, search, and filtering simple. Category-specific fields are optional.
 
@@ -80,14 +176,40 @@ interface AppData {
   version: number;                     // for future migrations
   items: Item[];
   seededAt?: string;                   // set after first-run seed load
+  // sync metadata (only populated when cloud sync is enabled)
+  deviceId?: string;                   // random per-device id
+  lastSyncedAt?: string;               // ISO timestamp of last successful sync
 }
 ```
 
 **Seeding rule:** on launch, if the persisted store is empty (no `seededAt`), hydrate `items` from the bundled seed dataset and stamp `seededAt`. After that, the user's data is authoritative and the seed never overwrites it.
 
+### 5.2 Storage strategy — local-first, durable, sync-ready
+
+The old plan ("everything in `localStorage`") had two weaknesses the user flagged: a **browser cache clear can wipe it**, and it's **single-device**. The revised strategy keeps the speed and offline of local storage while closing both gaps.
+
+**Tier 1 — Local-first (always on):**
+- Persist to **IndexedDB**, not `localStorage`. IndexedDB is roomier and is the proper foundation for offline-first apps. The store still hydrates instantly and works with no signal.
+- On first load, call `navigator.storage.persist()` to request **persistent** storage. Granted persistent storage is not evicted under storage pressure and is much harder to lose to a routine "clear cache." Surface the result in Settings ("Storage: Persistent ✓ / Best-effort").
+- Encourage **installing to the home screen** — installed PWAs get stronger storage durability (especially on iOS, where an installed app's data is far less likely to be evicted than a tab's).
+
+**Tier 2 — Export / Import JSON (always available, the guaranteed backup):**
+- Manual **Export** → `pcb-scouting-list-backup.json`.
+- **Import** → restore from a backup (replace-all behind a confirm; merge-by-id is a documented future option).
+- Optional gentle reminder to export periodically until cloud sync is enabled.
+
+**Tier 3 — Optional Cloudflare cloud sync (opt-in, designed in from the start):**
+- A Settings toggle enables sync to **Cloudflare D1** (relational, the better long-term choice) or **Workers KV** (simplest key-value blob) through a Worker route.
+- Purpose: survive a cache clear on the primary device and **sync across devices**.
+- **Scalability note (a stated goal):** the data layer is written behind a small `SyncProvider` interface — `pull()`, `push()`, `merge()` — so the same abstraction can back future apps, and so swapping KV↔D1, or adding accounts later, doesn't mean a rewrite. The Hunger Habit app can adopt the identical provider.
+- **Conflict handling (v1):** single user, so last-write-wins per item using `updatedAt`, with the JSON export as the safety net. A field-level merge is a future option.
+- **Auth (v1):** since it's personal, the simplest acceptable gate is a single secret sync token stored as a Worker secret and entered once in Settings. Full user accounts (Cloudflare Access, or D1 + a login) are a documented later upgrade — the `SyncProvider` interface leaves room for it.
+
+> Sync is **optional and off by default** to honor "no accounts, no bills" out of the box, while the architecture leaves the door open exactly as requested for "data later or in other apps."
+
 ---
 
-## 4. Screens & Navigation
+## 6. Screens & Navigation
 
 Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Settings**
 
@@ -103,7 +225,7 @@ Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Settings*
    - Filters: status (want/been/all), area, minimum rating, favorites-only.
    - Sort: name, rating, date added, date visited.
    - Cards show name, area chip, star rating, favorite star, status pill. Tap → detail.
-   - Floating **+ Add** button.
+   - Floating **+ Add** button (place search goes through the Worker proxy).
 
 3. **Item Detail / Edit**
    - View + edit every field in place.
@@ -119,14 +241,17 @@ Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Settings*
    - Cross-category view of everything `favorite: true`, grouped by category, sorted by rating.
 
 5. **Settings / Data**
+   - **Storage status** — shows whether persistent storage was granted; button to re-request.
    - **Export data** → downloads `pcb-scouting-list-backup.json`.
-   - **Import data** → upload a backup. **Replaces** all current data behind a confirmation dialog (the "restore from backup" model). Merge-by-id is a documented future option.
+   - **Import data** → upload a backup. **Replaces** all current data behind a confirmation dialog.
+   - **Cloud sync (optional)** — toggle on/off, enter sync token, "Sync now", show `lastSyncedAt`.
+   - **Proxy URL** — the Worker endpoint (non-secret), pre-filled for the deployed app.
    - Theme note / about.
    - **Reset to seed** (with confirm).
 
 ---
 
-## 5. Core Features
+## 7. Core Features
 
 - **Status tracking** — want-to-try vs. been (todo/done for tasks).
 - **Ratings** — 1–5 stars, tap to set/clear.
@@ -134,13 +259,15 @@ Bottom tab bar (app-like on a phone): **Home · Browse · Favorites · Settings*
 - **Favorites** — cross-category flag + dedicated view.
 - **Tags** — free-form, used in search and as filter chips.
 - **Search / filter / sort** — within Browse.
+- **Place search & autofill** — via the Cloudflare Worker proxy (no key in the browser).
 - **Map links** — deep-link to Maps from any place.
-- **Export / Import JSON** — the backup mechanism that makes local-only safe.
+- **Export / Import JSON** — the guaranteed backup mechanism.
+- **Optional cloud sync** — survive cache clears + multi-device, opt-in.
 - **Offline** — service worker caches the app shell; fully usable without signal.
 
 ---
 
-## 6. Design — Soft Coastal Theme
+## 8. Design — Soft Coastal Theme
 
 Centralize as CSS variables (and mirror into the Tailwind theme).
 
@@ -164,9 +291,9 @@ Centralize as CSS variables (and mirror into the Tailwind theme).
 
 ---
 
-## 7. Content Scope (for seeding)
+## 9. Content Scope (for seeding)
 
-Real places across these buckets, to be researched and compiled into the seed dataset:
+Real places across these buckets, compiled into the seed dataset:
 
 - **Restaurants** — PCB + Panama City; seafood, Gulf-view spots, breakfast/brunch, local favorites, casual + nicer options.
 - **Beaches & beach access** — named PCB beaches, St. Andrews State Park, Shell Island, Camp Helen, etc.
@@ -174,34 +301,89 @@ Real places across these buckets, to be researched and compiled into the seed da
 - **Weekend excursions** — 30A & Seaside, Destin, Grayton Beach, Apalachicola, springs (Econfina, Vortex, Morrison), Florida Caverns, Wakulla, etc.
 - **Markets** — St. Andrews Waterfront & downtown farmers markets, seafood markets, neighborhood markets.
 - **Sunset Spots** — west-facing beaches, piers, rooftop bars, boardwalks, sunset cruises.
-*(Seed dataset generated → `seed.json`, conforming to the §3 schema. Casual dining is weighted heavily; a few special-occasion restaurants are flagged with a `special-occasion` tag.)*
+
+*(Seed dataset lives in `seed.json`, conforming to the §5.1 schema. Casual dining is weighted heavily; a few special-occasion restaurants are flagged with a `special-occasion` tag.)*
 
 ---
 
-## 8. Build Phases
+## 10. Cleanup & Migration off GitHub Pages
 
-**Phase 1 — Foundation**
-Scaffold Vite + React + TS + Tailwind + PWA. Implement design tokens, `Item` model, Zustand store with `localStorage` persistence, Home, Browse (one category), Item detail/edit with add/status/rating/notes/favorite.
+This is the un-do list for the exposed-key deployment, in order. **Do step 1 first, today** — the leaked key should be treated as compromised the moment it was public.
 
-**Phase 2 — Full breadth**
+**1. Rotate the Google key (urgent).**
+- In Google Cloud Console, **delete or regenerate** the key currently in `.env.local` (`AIzaSy…Qc3A`). It was served inside the public GitHub Pages bundle, so assume strangers have it.
+- Create a **fresh** key, restricted to the Places API (New), with a quota cap and a budget alert.
+- Put the new key **only** in the Worker as `npx wrangler secret put GOOGLE_PLACES_KEY`. Never in `.env.local`, never in any `VITE_*` var, never committed.
+
+**2. Take down / neutralize the GitHub Pages deployment.**
+- Disable GitHub Pages for the repo (Settings → Pages → unset the source), or make the repo private if it's public.
+- **Delete `.github/workflows/deploy.yml`** — it builds for Pages and injects the key into the client bundle. It is the mechanism that leaked the key and must not run again.
+- Remove the `VITE_GOOGLE_PLACES_KEY` GitHub Actions secret (no longer used; reduces footprint).
+- Note: rotating the key (step 1) is what actually protects you. Scrubbing the built artifact matters less because the *old* key is now dead — but still remove the public deployment so the dead key and any stale bundle aren't lingering.
+
+**3. Remove client-side key usage in code.**
+- Edit `AddItem.tsx`: delete `const API_KEY = import.meta.env.VITE_GOOGLE_PLACES_KEY`, remove the `X-Goog-Api-Key` headers, and point the two fetches at the Worker (`type: 'autocomplete'` / `type: 'details'`).
+- Delete `VITE_GOOGLE_PLACES_KEY` from `.env.local`. Add `VITE_PROXY_URL` (non-secret) for the Worker endpoint if convenient.
+- Keep `.env.local` in `.gitignore` (already there) — it just won't hold secrets anymore.
+
+**4. Stand up Cloudflare.**
+- New `proxy/` Worker (copy the Hunger Habit structure: `wrangler.toml`, `src/index.js`, `wrangler secret put`). Deploy with `npx wrangler deploy`; note the `*.workers.dev` URL.
+- Connect the GitHub repo to **Cloudflare Pages** (framework preset: Vite; build `npm run build`; output `dist`). Every push to `main` auto-deploys to a free `*.pages.dev` HTTPS URL.
+- Put the Worker URL into the app (Settings → Proxy URL, or `VITE_PROXY_URL`).
+
+**5. Verify.**
+- Confirm the new key works *only* through the Worker, and that the deployed bundle contains **no** `AIza…` string (search the built JS).
+- Confirm the old key is dead (a direct call with it should fail).
+- Install the PWA to the home screen from the `*.pages.dev` URL and confirm offline launch.
+
+**6. (Optional) git history.** The key was not found in the git *source* history (`git log -S AIza` is empty — it only ever lived in the gitignored `.env.local` and the built bundle), so a history rewrite is likely unnecessary. If you want belt-and-suspenders, rewrite history with `git filter-repo` or simply start a fresh private repo. Either way, key rotation in step 1 is the real protection.
+
+---
+
+## 11. Build Phases (revised)
+
+**Phase 0 — Security migration (do now, before more features)**
+Rotate the key (§10.1). Tear down the Pages workflow (§10.2). Stand up the Worker proxy and Cloudflare Pages (§10.4). Move `AddItem.tsx` onto the proxy (§10.3). Verify no key in the bundle (§10.5). *Exit criteria: app deployed on `*.pages.dev`, place search works through the Worker, no key anywhere in client code.*
+
+**Phase 1 — Storage hardening**
+Migrate persistence from `localStorage` to **IndexedDB**. Add `navigator.storage.persist()` request + a Settings storage-status readout. Confirm export/import round-trips cleanly on the new store.
+
+**Phase 2 — Full breadth** *(unchanged features)*
 All categories, Favorites view, search/filter/sort, tags, restaurant dish lists, map links.
 
 **Phase 3 — Polish & data safety**
-Export/import JSON, seed-data load on first run, empty states, animations, offline verification, deploy to Vercel/Netlify + verify add-to-home-screen install.
+Empty states, animations, offline verification, seed-on-first-run confirmation, PWA install verification on iOS + Android.
+
+**Phase 4 — Optional cloud sync**
+Add the `SyncProvider` interface and a Cloudflare D1 (or KV) backing via a Worker route, gated behind a Settings toggle + sync token. Last-write-wins on `updatedAt`. Designed so Hunger Habit can reuse the same provider.
 
 ---
 
-## 9. Claude Code Setup Notes
+## 12. Claude Code Setup Notes
 
-- Create the repo: `gh repo create pcb-scouting-list --private --source=. --remote=origin`
-- Run `/init` in Claude Code to generate `CLAUDE.md`; seed it with: project purpose, the stack table (§2), the `Item` model (§3), the design tokens (§6), and the build phases (§8). This keeps Claude Code anchored across sessions.
-- Two-terminal workflow: Claude Code in one, `npm run dev` (Vite) in the other for hot reload; open the local URL on your phone (same Wi-Fi) to test on-device.
-- Add `pcb-scouting-list-backup.json` and `dist/` to `.gitignore`.
+- Repo stays **private**: `gh repo create pcb-scouting-list --private` (already done — keep it private).
+- Two-terminal workflow: Claude Code in one, `npm run dev` (Vite) in the other for hot reload. For on-device testing pre-deploy, open the local URL on the phone (same Wi-Fi); post-deploy, just use the `*.pages.dev` URL.
+- Worker dev: `npx wrangler dev` runs the proxy locally; point `VITE_PROXY_URL` at it during development.
+- `.gitignore` already covers `node_modules/`, `dist/`, `dev-dist/`, `.env.local`, and `pcb-scouting-list-backup.json`. Keep it that way.
+- **Never** reintroduce a `VITE_`-prefixed secret — anything `VITE_*` is public by definition.
+
+---
+
+## 13. Cost summary (everything free)
+
+| Item | Cost |
+|---|---|
+| Cloudflare Pages hosting + `*.pages.dev` HTTPS subdomain | $0 |
+| Cloudflare Worker proxy (≤100k req/day) | $0 |
+| Cloudflare D1 / KV for optional sync (personal-scale) | $0 |
+| Google Places API | Free monthly credit; capped by quota + budget alert so it can't surprise-bill |
+| Custom domain | **Not needed.** Optional only; the one thing that would ever cost money on any host |
 
 ---
 
 ## Open questions / easy to change later
 
-- Replace data on import, or merge? (v1: replace.)
-- Heading font: Fraunces+Nunito Sans, or fully rounded Quicksand?
-- Any extra category you want (e.g. *Shops/Markets*, *Sunset spots*)?
+- D1 (relational, future-proof) vs. KV (dead-simple) for the optional sync backend — defaulting to D1 unless KV's simplicity wins for v1.
+- Replace data on import, or merge-by-id? (v1: replace.)
+- Whether to add real accounts (Cloudflare Access) once more than one app shares the sync layer.
+- Heading font: Fraunces + Nunito Sans (locked) vs. fully rounded Quicksand.
