@@ -28,7 +28,15 @@ export default defineConfig({
       // service worker must serve index.html for any in-app route when offline,
       // so an installed/offline deep link like /browse doesn't 404. (Online, the
       // Worker's not_found_handling = single-page-application handles this.)
-      workbox: { navigateFallback: '/index.html' },
+      workbox: {
+        navigateFallback: '/index.html',
+        // Precache the bundled fonts too. vite-plugin-pwa's default glob omits
+        // woff/woff2, so without this the Fraunces/Nunito faces only survive
+        // offline via the (evictable) HTTP cache — headings would silently fall
+        // back to system fonts once that's cleared. Precaching makes offline
+        // typography durable.
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+      },
       // Keep the service worker OFF in dev — it caches the app shell and can
       // serve a stale/broken state back to every device. The SW still builds
       // for production (`npm run build`); offline install is verified in Phase 3.
