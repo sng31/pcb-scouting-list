@@ -1,0 +1,18 @@
+# Cloudflare Workers config for the PCB Scouting List APP (the static PWA).
+#
+# This is NOT the Google Places proxy — that's a separate Worker in proxy/ with
+# its own proxy/wrangler.toml and the encrypted GOOGLE_PLACES_KEY secret. This
+# file only tells Cloudflare to serve the built `dist/` folder as a static site
+# (Workers Static Assets), so `npx wrangler deploy` publishes the SPA.
+#
+# No secrets ever live here. The app reads VITE_PROXY_URL / VITE_PROXY_TOKEN at
+# BUILD time from the Workers Builds "Variables" (both are non-secret/friction-only).
+
+name = "pcb-scouting-list"
+compatibility_date = "2025-06-01"
+
+[assets]
+directory = "./dist"
+# SPA routing: serve index.html (200) for any path React Router owns, so deep
+# links and refreshes don't 404.
+not_found_handling = "single-page-application"
