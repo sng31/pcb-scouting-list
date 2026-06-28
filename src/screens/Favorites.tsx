@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Heart } from 'lucide-react'
+import { Heart, Search, X } from 'lucide-react'
 import { useStore } from '../store'
 import { CATEGORIES, CATEGORY_LABEL } from '../types'
 import type { Category } from '../types'
@@ -10,29 +11,77 @@ const PLACE_CATEGORIES = CATEGORIES.filter((c) => c !== 'task')
 
 export default function Favorites() {
   const items = useStore((s) => s.items)
+  const [search, setSearch] = useState('')
+
   const favorites = items
     .filter((it) => it.favorite && it.category !== 'task')
     .sort((a, b) => a.name.localeCompare(b.name))
 
+  const q = search.trim().toLowerCase()
+  const filtered = q
+    ? favorites.filter(
+        (it) =>
+          it.name.toLowerCase().includes(q) ||
+          it.description?.toLowerCase().includes(q) ||
+          it.tags.some((t) => t.toLowerCase().includes(q)),
+      )
+    : favorites
+
   const groups = PLACE_CATEGORIES.map((cat) => ({
     cat,
-    items: favorites.filter((it) => it.category === cat),
+    items: filtered.filter((it) => it.category === cat),
   })).filter((g) => g.items.length > 0)
 
   return (
     <div className="animate-rise">
-      <div className="sticky top-0 z-10 bg-sand/95 px-5 pt-6 pb-3 backdrop-blur">
-        <h1 className="text-2xl text-ink">Favorites</h1>
-        <p className="mt-0.5 text-sm text-muted">
-          {favorites.length === 0
-            ? 'None saved yet'
-            : `${favorites.length} saved place${favorites.length === 1 ? '' : 's'}`}
-        </p>
+      <div className="sticky top-0 z-10 space-y-2.5 bg-sand/95 px-5 pt-6 pb-3 backdrop-blur">
+        <div>
+          <h1 className="text-2xl text-ink">Favorites</h1>
+          <p className="mt-0.5 text-sm text-muted">
+            {favorites.length === 0
+              ? 'None saved yet'
+              : q
+              ? `${filtered.length} of ${favorites.length} saved`
+              : `${favorites.length} saved place${favorites.length === 1 ? '' : 's'}`}
+          </p>
+        </div>
+
+        {favorites.length > 0 && (
+          <div className="relative">
+            <Search
+              size={16}
+              strokeWidth={2}
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted"
+            />
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search favorites by name, tag…"
+              className="w-full rounded-[var(--radius-pill)] border border-line bg-surface py-2.5 pl-9 pr-9 text-base text-ink outline-none placeholder:text-muted/60 focus:border-seafoam"
+            />
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted"
+              >
+                <X size={15} />
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="space-y-7 px-5 pb-6">
         {favorites.length === 0 ? (
           <EmptyFavorites />
+        ) : groups.length === 0 ? (
+          <p className="rounded-[var(--radius-card)] bg-surface p-6 text-center text-muted shadow-[var(--shadow-coastal-sm)]">
+            No favorites match “{search.trim()}”.{' '}
+            <button onClick={() => setSearch('')} className="font-semibold text-coral">
+              Clear search
+            </button>
+          </p>
         ) : (
           groups.map(({ cat, items }) => (
             <section key={cat}>

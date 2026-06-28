@@ -28,11 +28,20 @@ export default function Home() {
       </header>
 
       <div className="space-y-7 px-5 py-6">
-        {/* ── Quick stats ── */}
+        {/* ── Quick stats (tappable) ── */}
         <section className="grid grid-cols-3 gap-3">
-          <Stat label="Want to try" value={counts.want} tone="text-coral" />
-          <Stat label="Been there" value={counts.been} tone="text-seafoam" />
-          <Stat label="Favorites" value={counts.favorites} tone="text-ink" />
+          <Stat label="Want to try" value={counts.want} tone="text-coral" to="/browse?status=want" />
+          <Stat
+            label="Been there"
+            value={counts.been}
+            tone="text-seafoam"
+            onClick={() =>
+              document
+                .getElementById('recently-visited')
+                ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+          />
+          <Stat label="Favorites" value={counts.favorites} tone="text-ink" to="/favorites" />
         </section>
 
         {/* ── Category tiles ── */}
@@ -64,7 +73,7 @@ export default function Home() {
         </section>
 
         {/* ── Recently visited ── */}
-        <section>
+        <section id="recently-visited" className="scroll-mt-4">
           <h2 className="mb-3 text-xl text-ink">Recently visited</h2>
           {recent.length === 0 ? (
             <p className="rounded-[var(--radius-card)] bg-surface p-4 text-sm text-muted shadow-[var(--shadow-coastal-sm)]">
@@ -98,13 +107,40 @@ export default function Home() {
   )
 }
 
-function Stat({ label, value, tone }: { label: string; value: number; tone: string }) {
-  return (
-    <div className="rounded-[var(--radius-card)] bg-surface p-4 text-center shadow-[var(--shadow-coastal-sm)]">
+function Stat({
+  label,
+  value,
+  tone,
+  to,
+  onClick,
+}: {
+  label: string
+  value: number
+  tone: string
+  to?: string
+  onClick?: () => void
+}) {
+  const cls =
+    'block rounded-[var(--radius-card)] bg-surface p-4 text-center shadow-[var(--shadow-coastal-sm)] transition-transform active:scale-[0.97]'
+  const inner = (
+    <>
       <div className={`font-display text-3xl ${tone}`}>{value}</div>
       <div className="mt-0.5 text-xs text-muted">{label}</div>
-    </div>
+    </>
   )
+  if (to)
+    return (
+      <Link to={to} className={cls}>
+        {inner}
+      </Link>
+    )
+  if (onClick)
+    return (
+      <button type="button" onClick={onClick} className={`${cls} w-full`}>
+        {inner}
+      </button>
+    )
+  return <div className={cls}>{inner}</div>
 }
 
 function Wave() {

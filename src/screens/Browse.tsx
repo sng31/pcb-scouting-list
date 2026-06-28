@@ -68,9 +68,15 @@ export default function Browse() {
   const catParam = params.get('cat')
   const active: Category = isBrowseCategory(catParam) ? catParam : 'restaurant'
 
+  // Allow deep links like /browse?status=want (e.g. Home's "Want to try" stat)
+  // to land here with the status filter pre-applied.
+  const statusParam = params.get('status')
+  const initialStatus: StatusFilter =
+    statusParam === 'want' || statusParam === 'been' ? statusParam : 'all'
+
   const [search, setSearch] = useState('')
   const [areaFilter, setAreaFilter] = useState<AreaFilter>('all')
-  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>(initialStatus)
   const [sort, setSort] = useState<SortMode>('alpha')
 
   const raw = selectByCategory(items, active)
