@@ -4,11 +4,12 @@ A personal, phone-first PWA for settling into and exploring Panama City Beach, P
 and the surrounding Gulf coast. Track places and tasks, mark them *want to try → been there*,
 rate them, take notes (incl. standout dishes), and favorite the best.
 
-**Local-first, free, no required backend.** Data lives on-device (currently `localStorage` via
-zustand `persist`; migrating to **IndexedDB** in Phase 1 — the next piece of work). JSON
-export/import is the guaranteed backup (already built), and an **optional** Cloudflare-backed sync
-is planned for cache-clear survival + multi-device. No accounts required by default. Soft coastal
-aesthetic. Seeded with ~156 real area places on first run.
+**Local-first, free, no required backend.** Data lives on-device in **IndexedDB** via zustand
+`persist` (a custom adapter in `src/storage.ts`; legacy `localStorage` data is migrated in
+transparently on first read), hardened with `navigator.storage.persist()`. JSON export/import is the
+guaranteed backup (already built), and an **optional** Cloudflare-backed sync is planned for
+cache-clear survival + multi-device. No accounts required by default. Soft coastal aesthetic.
+Seeded with ~156 real area places on first run.
 
 **Keys are never in client code.** The Google Places key lives only in a Cloudflare Worker proxy
 (encrypted Wrangler secret). Anything `VITE_*` is public by definition — never put a secret there.
@@ -24,7 +25,7 @@ cleanup, §11 for phases). Seed data: `seed.json` (conforms to the Item schema).
 | Build/dev | Vite |
 | Routing | React Router — **BrowserRouter** (clean URLs; SPA fallback via Worker + SW `navigateFallback`) |
 | App state | Zustand |
-| Local persistence | `localStorage` via zustand `persist` **today**; target **IndexedDB** + `navigator.storage.persist()` in Phase 1 |
+| Local persistence | **IndexedDB** via zustand `persist` (custom adapter in `src/storage.ts`, transparent `localStorage`→IDB migration) + `navigator.storage.persist()` |
 | Styling | Tailwind CSS v4 + CSS-variable design tokens |
 | Icons | lucide-react |
 | IDs | `crypto.randomUUID()` |
@@ -139,10 +140,9 @@ attaches the key and field mask and returns normalized fields. `AddItem.tsx` mus
 
 ## Build Phases
 
-> **Status (reconciled with the code, not the original plan):** Phase 0 ✅ done. Phase 2's feature
-> breadth was largely built before the migration, so it's effectively ✅ done too. **Phase 1
-> (storage hardening) is the real next piece of work.** The numbering is historical — don't read it
-> as strict order.
+> **Status (reconciled with the code, not the original plan):** Phases 0–3 are ✅ done — the app is
+> feature-complete and shipped. Only **Phase 4 (optional cloud sync)** remains, and it's explicitly
+> optional. The numbering is historical — don't read it as strict order.
 
 **Phase 0 — Security migration** ✅ *done*
 Rotated the leaked Google key (restricted to Places API New + quota cap). Removed the GitHub Pages
@@ -150,18 +150,24 @@ workflow. Stood up the Worker proxy with an app-token guard. Deployed the app as
 static assets. Moved `AddItem.tsx` onto the proxy. Fixed the `base`/`start_url` subpath, switched
 to BrowserRouter, removed `_redirects`/`vercel.json` cruft. Verified no `AIza…` string in the bundle.
 
-**Phase 1 — Storage hardening** ⬅️ *next / current*
-Migrate persistence from `localStorage` (current) → **IndexedDB**; add `navigator.storage.persist()`
-+ a Settings storage-status readout. Export/import is already built — just confirm it round-trips on
-the new backend.
+**Phase 1 — Storage hardening** ✅ *done*
+Persistence migrated `localStorage` → **IndexedDB** (custom zustand-`persist` adapter in
+`src/storage.ts`, with transparent one-time `localStorage`→IDB migration and a `localStorage`
+fallback). Added `navigator.storage.persist()` on launch, async-safe hydration (first-run seed moved
+into `onRehydrateStorage`, gated by a `hasHydrated` flag + loading splash), and a Settings
+storage-status readout (backend, permanent vs best-effort, usage/quota). Verified in-browser:
+fresh seed, migration, persistence across reload.
 
 **Phase 2 — Full breadth** ✅ *largely done*
 All 7 categories, Favorites view, Browse search/filter (area, status)/sort (alpha/newest/rating),
 tags, restaurant dish lists, and map/website links are implemented. Revisit only for gaps.
 
-**Phase 3 — Polish & data safety** ◐ *partial*
-Empty states and card animations exist. Remaining: offline verification, and verify PWA install
-from the `*.workers.dev` URL.
+**Phase 3 — Polish & data safety** ✅ *done*
+Empty states and card animations exist. Offline verified against the production build (app shell,
+deep-link SPA fallback, IndexedDB data all work offline); fonts added to the Workbox precache so
+offline typography is durable (`globPatterns` includes `woff`/`woff2`). PWA installability confirmed
+via CDP (manifest + SW + SVG icon all valid). Home quick-stat tiles link out (Want→Browse filtered,
+Favorites→Favorites, Been there→Recently visited), and Favorites has a search bar.
 
 **Phase 4 — Optional cloud sync**
 `SyncProvider` interface backed by Cloudflare D1/KV via a Worker route, gated behind a Settings
