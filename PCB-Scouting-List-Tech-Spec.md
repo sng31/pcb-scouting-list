@@ -28,7 +28,7 @@ Because the app's Google usage is the *web service* kind, the **Worker-proxy pat
 
 - **Phone-first.** Designed for a phone screen, installable to the home screen, works offline.
 - **Free, no dedicated server.** Hosted on Cloudflare's free tier. No bills, no machine of mine acting as a server, no keeping a laptop running.
-- **Usable on the go.** Deployed to a public HTTPS URL (a free `*.pages.dev` subdomain), not a local-network-only dev server.
+- **Usable on the go.** Deployed to a public HTTPS URL (a free `*.workers.dev` subdomain), not a local-network-only dev server.
 - **Secrets stay secret.** No API key is ever shipped in client code. Keys live only in the Worker as encrypted secrets.
 - **Local-first, durable data.** Data is instant and offline off the device, with JSON export/import as a guaranteed backup and an **optional** Cloudflare-backed cloud sync so a browser-cache clear or a second device doesn't lose or fragment data.
 - **Low-friction logging.** Marking *been*, tapping a rating, jotting a note should each take one or two taps.
@@ -51,7 +51,7 @@ Because the app's Google usage is the *web service* kind, the **Worker-proxy pat
 | Icons | **lucide-react** | Clean, consistent line icons |
 | IDs | `crypto.randomUUID()` | Built-in, no dependency |
 | PWA | **vite-plugin-pwa** | Manifest, service worker, offline cache, add-to-home-screen |
-| **Hosting** | **Cloudflare Pages** (free) | Free HTTPS + free `*.pages.dev` subdomain (required for PWA install); auto-deploy from GitHub; no custom domain needed |
+| **Hosting** | **Cloudflare Workers static assets** (free) | Free HTTPS + free `*.workers.dev` subdomain (required for PWA install); auto-deploy from GitHub via Workers Builds; root `wrangler.toml` serves `dist/` with SPA fallback. *(Was planned as Cloudflare Pages; the unified dashboard now creates a Worker instead — equivalent for a static SPA.)* |
 | **API proxy** | **Cloudflare Worker** (free) | Holds the Google key server-side; the only component that ever sees it |
 | **Optional cloud sync** | **Cloudflare D1** (SQL) or **Workers KV** (key-value) | Same account as hosting; free tier; lets data survive a cache clear and sync across devices when enabled |
 
@@ -82,7 +82,7 @@ No charts, no analytics libraries, no notifications — kept deliberately lean.
                 └───────────────────────────────────────────────┘
 ```
 
-1. Phone loads the static PWA from **Pages** over HTTPS.
+1. Phone loads the static PWA from **Cloudflare (Workers static assets)** over HTTPS.
 2. App shell is cached by the service worker → works offline.
 3. When the user searches/adds a place, the app calls the **Worker**, which attaches the Google key (never in the browser) and calls Google Places.
 4. The Worker returns only the fields the app needs.
@@ -111,7 +111,7 @@ A small Worker (mirroring the Hunger Habit proxy) brokers the two Places calls t
 **Worker responsibilities:**
 - Hold `GOOGLE_PLACES_KEY` as a Wrangler secret: `npx wrangler secret put GOOGLE_PLACES_KEY`.
 - Call the Places API (New) endpoints with `X-Goog-Api-Key` + a tight `X-Goog-FieldMask` (move the field mask from the client into the Worker).
-- Restrict CORS to the app's own origin(s): the `*.pages.dev` URL plus `http://localhost:5173` for dev. (Don't leave `Access-Control-Allow-Origin: *` in production.)
+- Restrict CORS to the app's own origin(s): `*.<sub>.workers.dev` (the app is a Worker) and `*.pages.dev`, plus `http://localhost:5173` for dev and anything in `ALLOWED_ORIGINS`. (Don't leave `Access-Control-Allow-Origin: *` in production.)
 - **App-token guard:** require an `X-App-Token` header matching a `PROXY_APP_TOKEN` secret; reject mismatches with `401` before any work is done. (No-op if the secret is unset.)
 - Optional: a tiny in-Worker rate-limit / daily counter as a backstop against runaway usage.
 
@@ -328,31 +328,45 @@ This is the un-do list for the exposed-key deployment, in order. **Do step 1 fir
 
 **4. Stand up Cloudflare.**
 - New `proxy/` Worker (copy the Hunger Habit structure: `wrangler.toml`, `src/index.js`, `wrangler secret put`). Deploy with `npx wrangler deploy`; note the `*.workers.dev` URL.
-- Connect the GitHub repo to **Cloudflare Pages** (framework preset: Vite; build `npm run build`; output `dist`). Every push to `main` auto-deploys to a free `*.pages.dev` HTTPS URL.
-- Put the Worker URL into the app (Settings → Proxy URL, or `VITE_PROXY_URL`).
+- Connect the GitHub repo to Cloudflare (Workers & Pages → Create → import repository). On the current unified dashboard this creates a **Worker** serving static assets, configured by the root `wrangler.toml` (`[assets] directory=./dist`, `not_found_handling="single-page-application"`). Build `npm run build`; deploy `npx wrangler deploy`. Every push to `main` auto-deploys to a free `*.workers.dev` HTTPS URL. *(The original plan said Cloudflare Pages; the unified dashboard no longer offers a separate Pages git flow for new projects — Workers static assets is the equivalent.)*
+- Set build variables `VITE_PROXY_URL` and `VITE_PROXY_TOKEN` (non-secret) in the project settings so they're baked in at build time.
 
 **5. Verify.**
 - Confirm the new key works *only* through the Worker, and that the deployed bundle contains **no** `AIza…` string (search the built JS).
 - Confirm the old key is dead (a direct call with it should fail).
-- Install the PWA to the home screen from the `*.pages.dev` URL and confirm offline launch.
+- Install the PWA to the home screen from the `*.workers.dev` URL and confirm offline launch.
 
 **6. (Optional) git history.** The key was not found in the git *source* history (`git log -S AIza` is empty — it only ever lived in the gitignored `.env.local` and the built bundle), so a history rewrite is likely unnecessary. If you want belt-and-suspenders, rewrite history with `git filter-repo` or simply start a fresh private repo. Either way, key rotation in step 1 is the real protection.
 
 ---
 
-## 11. Build Phases (revised)
+## 11. Build Phases (revised — status reconciled with the code, June 2026)
 
-**Phase 0 — Security migration (do now, before more features)**
-Rotate the key (§10.1). Tear down the Pages workflow (§10.2). Stand up the Worker proxy and Cloudflare Pages (§10.4). Move `AddItem.tsx` onto the proxy (§10.3). Verify no key in the bundle (§10.5). *Exit criteria: app deployed on `*.pages.dev`, place search works through the Worker, no key anywhere in client code.*
+> The numbering below is historical. In practice Phase 2's breadth was built before the migration,
+> so the actual outstanding work is **Phase 1 (storage hardening)**, then Phase 3 polish.
 
-**Phase 1 — Storage hardening**
-Migrate persistence from `localStorage` to **IndexedDB**. Add `navigator.storage.persist()` request + a Settings storage-status readout. Confirm export/import round-trips cleanly on the new store.
+**Phase 0 — Security migration** ✅ **done**
+Rotated the key (§10.1, restricted to Places API New + quota cap). Tore down the Pages workflow
+(§10.2). Stood up the Worker proxy with an **app-token guard** (§4) and deployed the app as
+**Cloudflare Workers static assets** (not Pages — Cloudflare's unified dashboard creates a Worker
+when you connect a repo; root `wrangler.toml` uses `[assets]` + `not_found_handling`). Moved
+`AddItem.tsx` onto the proxy (§10.3). Also fixed the GitHub-Pages `base`/`start_url` subpath,
+switched `HashRouter` → `BrowserRouter`, and removed `_redirects` + `vercel.json`. Verified no key in
+the bundle (§10.5). *Exit criteria met: app live on `*.workers.dev`, place search works through the
+Worker, no key in client code.*
 
-**Phase 2 — Full breadth** *(unchanged features)*
-All categories, Favorites view, search/filter/sort, tags, restaurant dish lists, map links.
+**Phase 1 — Storage hardening** ⬅️ **next / current**
+Migrate persistence from `localStorage` (still the live backend) to **IndexedDB**. Add
+`navigator.storage.persist()` request + a Settings storage-status readout. Export/import already
+works (Settings) — just confirm it round-trips cleanly on the new store.
 
-**Phase 3 — Polish & data safety**
-Empty states, animations, offline verification, seed-on-first-run confirmation, PWA install verification on iOS + Android.
+**Phase 2 — Full breadth** ✅ **largely done**
+Implemented: all 7 categories, Favorites view, Browse search + filters (area, status) + sort
+(alpha/newest/rating), tags, restaurant dish lists, and map/website links. Revisit only for gaps.
+
+**Phase 3 — Polish & data safety** ◐ **partial**
+Done: empty states, card animations. Remaining: offline verification, seed-on-first-run
+confirmation, PWA install verification on iOS + Android (from the `*.workers.dev` URL).
 
 **Phase 4 — Optional cloud sync**
 Add the `SyncProvider` interface and a Cloudflare D1 (or KV) backing via a Worker route, gated behind a Settings toggle + sync token. Last-write-wins on `updatedAt`. Designed so Hunger Habit can reuse the same provider.
@@ -362,7 +376,8 @@ Add the `SyncProvider` interface and a Cloudflare D1 (or KV) backing via a Worke
 ## 12. Claude Code Setup Notes
 
 - Repo stays **private**: `gh repo create pcb-scouting-list --private` (already done — keep it private).
-- Two-terminal workflow: Claude Code in one, `npm run dev` (Vite) in the other for hot reload. For on-device testing pre-deploy, open the local URL on the phone (same Wi-Fi); post-deploy, just use the `*.pages.dev` URL.
+- Two-terminal workflow: Claude Code in one, `npm run dev` (Vite) in the other for hot reload. For on-device testing pre-deploy, open the local URL on the phone (same Wi-Fi); post-deploy, just use the `*.workers.dev` URL.
+- The app deploys via **Cloudflare Workers Builds** on push to `main` (build `npm run build`, deploy `npx wrangler deploy` reading the root `wrangler.toml`). The proxy in `proxy/` is a *separate* Worker, deployed manually with `npx wrangler deploy` from `proxy/`.
 - Worker dev: `npx wrangler dev` runs the proxy locally; point `VITE_PROXY_URL` at it during development.
 - `.gitignore` already covers `node_modules/`, `dist/`, `dev-dist/`, `.env.local`, and `pcb-scouting-list-backup.json`. Keep it that way.
 - **Never** reintroduce a `VITE_`-prefixed secret — anything `VITE_*` is public by definition.
@@ -373,7 +388,7 @@ Add the `SyncProvider` interface and a Cloudflare D1 (or KV) backing via a Worke
 
 | Item | Cost |
 |---|---|
-| Cloudflare Pages hosting + `*.pages.dev` HTTPS subdomain | $0 |
+| Cloudflare Workers static-assets hosting + `*.workers.dev` HTTPS subdomain | $0 |
 | Cloudflare Worker proxy (≤100k req/day) | $0 |
 | Cloudflare D1 / KV for optional sync (personal-scale) | $0 |
 | Google Places API | Free monthly credit; capped by quota + budget alert so it can't surprise-bill |
