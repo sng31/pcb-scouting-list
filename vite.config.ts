@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/pcb-scouting-list/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
@@ -19,11 +19,16 @@ export default defineConfig({
         background_color: '#FBF8F3',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/pcb-scouting-list/',
+        start_url: '/',
         icons: [
           { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
         ],
       },
+      // SPA offline routing: now that we use BrowserRouter (clean URLs), the
+      // service worker must serve index.html for any in-app route when offline,
+      // so an installed/offline deep link like /browse doesn't 404. (Online, the
+      // Worker's not_found_handling = single-page-application handles this.)
+      workbox: { navigateFallback: '/index.html' },
       // Keep the service worker OFF in dev — it caches the app shell and can
       // serve a stale/broken state back to every device. The SW still builds
       // for production (`npm run build`); offline install is verified in Phase 3.
